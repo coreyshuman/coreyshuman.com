@@ -16,25 +16,36 @@ module.exports = {
       xxlmax: { max: '1350px' }
     },
     fontFamily: {
-      display: ['Quicksand', 'sans-serif'],
-      body: ['Quicksand', 'sans-serif']
+      title: ['Quicksand', 'Helvetica Neue', 'sans-serif'],
+      body: ['Montserrat', 'Arial', 'sans-serif']
+    },
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      red: '#c33c54',
+      indigo: '#254e70',
+      blue: '#37718e',
+      green: '#42dca3',
+      teal: '#8ee3ef',
+      celeste: '#aef3e7',
+      steel: '#e5e7eb',
+      gray: '#6b7280',
+      black: '#000',
+      white: '#fff'
     },
     borderWidth: {
       default: '1px',
-      '0': '0',
-      '2': '2px',
-      '4': '4px'
+      0: '0',
+      2: '2px',
+      4: '4px'
     },
     extend: {
-      colors: {
-        cyan: '#9cdbff'
-      },
       spacing: {
-        '96': '24rem',
-        '128': '32rem'
+        96: '24rem',
+        128: '32rem'
       },
       height: {
-        '84': '22rem'
+        84: '22rem'
       },
       width: {
         '3/2': '150%',
@@ -43,17 +54,20 @@ module.exports = {
       },
       margin: {
         '-fullh': '-100vh'
+      },
+      animation: {
+        'button-hover': 'transition all .3s ease-in-out'
       }
     },
     inset: {
-      '0': 0,
-      '16': '16px',
-      '32': '32px',
-      '64': '64px',
+      0: 0,
+      16: '16px',
+      32: '32px',
+      64: '64px',
       '2rem': '2rem',
       '3rem': '3rem'
     }
   },
   variants: {},
   plugins: []
-}
+};
