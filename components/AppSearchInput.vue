@@ -5,7 +5,7 @@
       type="search"
       autocomplete="off"
       placeholder="Search Articles"
-      class="block w-64 pl-2 pr-3 py-2 truncate leading-5 placeholder-white border-white border-2 text-white focus:border-celeste rounded-md focus:outline-none bg-transparent"
+      class="block w-64 pl-2 pr-3 py-2 truncate leading-5 placeholder-white border-white border-2 text-white focus:border-celeste rounded-md focus:outline-none bg-black bg-opacity-60"
     />
     <ul
       v-if="articles.length"

@@ -1,6 +1,8 @@
 <template>
-  <div>
+  <div class="m-8">
+    <TheHeader />
     <Nuxt />
+    <TheFooter />
     <div id="canvasdiv">
       <div id="fps"></div>
     </div>
@@ -28,6 +30,10 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+}
+
+body {
+  background-color: black;
 }
 
 *,
