@@ -1,7 +1,7 @@
 <template>
   <footer class="flex w-100 flex-col border-gray border-t-2 text-white">
     <ul class="flex flex-row flex-1 m-4 justify-center text-green text-title text-lg">
-      <li class="m-2" v-for="social of socials" :key="social.name">
+      <li v-for="social of socials" :key="social.name" class="m-2">
         <a
           :href="social.url"
           class="flex-none bg-transparent hover:bg-green text-blue-700 font-semibold hover:text-black py-2 px-4 border border-green hover:border-transparent rounded transition duration-300"
