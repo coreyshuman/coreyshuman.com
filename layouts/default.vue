@@ -3,19 +3,23 @@
     <TheHeader />
     <Nuxt />
     <TheFooter />
-    <div id="canvasdiv">
-      <div id="fps"></div>
-    </div>
+    <ConstellationBackground :config="constellationConfig" />
   </div>
 </template>
 
 <script>
 export default {
   name: 'App',
-  mounted() {
-    const externalScript = document.createElement('script');
-    externalScript.setAttribute('src', 'js/constellation.js');
-    document.head.appendChild(externalScript);
+  data() {
+    return {
+      constellationConfig: {
+      }
+    }
+  },
+  created() {
+    this.$root.$on('updateConstellation', (config) => {
+      this.constellationConfig = {...config}
+    })
   }
 };
 </script>
@@ -41,27 +45,5 @@ body {
 *::after {
   box-sizing: border-box;
   margin: 0;
-}
-
-canvas {
-  display: block;
-}
-
-#canvasdiv {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -100;
-}
-
-#fps {
-  position: fixed;
-  top: 10;
-  left: 10;
-  width: 50;
-  height: 20;
-  color: white;
 }
 </style>

@@ -2,7 +2,7 @@
   <div class="text-steel">
     <div class="flex items-center">
       <h1 class="flex-1 font-bold text-4xl">Latest Posts</h1>
-      <span class="flex-1 text-right"><NuxtLink to="/blog" class="text-celeste"> View Archive </NuxtLink></span>
+      <span class="flex-1 text-right"><NuxtLink to="/blog" class="text-celeste">View Archive</NuxtLink></span>
     </div>
     <ul class="flex flex-wrap">
       <li v-for="article of articles" :key="article.slug" class="xs:w-full md:w-1/2 px-2 xs:mb-6 md:mb-12 article-card">
@@ -39,6 +39,9 @@ export default {
       articles,
       tags
     };
+  },
+  mounted() {
+    this.$root.$emit('updateConstellation', {});
   }
 };
 </script>
