@@ -28,13 +28,10 @@ export default {
   },
   watch: {
     config(newConfig) {
-      console.log('update config')
-      console.log(newConfig)
       if(!newConfig) {
         newConfig = {};
       }
       newConfig = {...this.configDefaults, ...newConfig};
-      console.log(newConfig)
       window.constellation.defaultSettings();
       for (const prop in newConfig) {
         if (Object.prototype.hasOwnProperty.call(newConfig, prop)) {
