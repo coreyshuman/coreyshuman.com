@@ -5,15 +5,24 @@
 export default {
   mounted() {
     this.$root.$emit('updateConstellation', {
-      pointDensity: 60,
-      attractRange: [0, 0],
-      attractForce: [0, 0],
-      repelRange: [0, 70],
-      repelForce: [.4, .6],
-      maxLineLength: 0,
-      backgroundColor: "#cccccc",
-      pointColor: "#ffffff",
-      lineColor: "#000000"
+      pointDensity: 5,
+      pointSize: 3,
+      friction: .050,
+      frictionMinVelocity: .5,
+      attractDistanceRange: [1, 100],
+      attractForceRange: [0,0],
+      repelDistanceRange: [200, 300],
+      repelForceRange: [0, .01],
+      maxLineLength: 70,
+      lineSize: 6,
+      screenBlur: .6,
+      maxInteractDistance: 60,
+      maxInteractForce: 3000,
+      interactMode: "attract",
+      backgroundColor: "#250052",
+      pointColor: "#fff700",
+      lineColor: "#250052",
+      pointInteractColor: "#250052",
     });
   }
 }

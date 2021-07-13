@@ -37,16 +37,25 @@ export default {
   },
   mounted() {
     this.$root.$emit('updateConstellation', {
-						// pointDensity: 30,
-						attractRange: [10, 120],
-						attractForce: [.02, .03],
-						repelRange: [0, 80],
-						repelForce: [.02, .06],
-						maxLineLength: 20,
-						backgroundColor: "#8b0000",
-						pointColor: "#ff5733",
-						lineColor: "#ffd700"
-					});
+      pointDensity: 30,
+      pointSize: 3,
+      friction: .03,
+      frictionMinVelocity: .5,
+      attractDistanceRange: [0, 0],
+      attractForceRange: [0, 0],
+      repelDistanceRange: [0, 60],
+      repelForceRange: [.25, 0],
+      maxLineLength: 60,
+      lineSize: 1,
+      screenBlur: .6,
+      maxInteractDistance: 175,
+      maxInteractForce: 1,
+      interactMode: "repel",
+      backgroundColor: "#000000",
+      pointColor: "#0096ff",
+      lineColor: "#00fdff",
+      pointInteractColor: "#dd33dd",
+    });
   }
 };
 </script>
