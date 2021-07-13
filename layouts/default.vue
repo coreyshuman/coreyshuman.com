@@ -1,5 +1,5 @@
 <template>
-  <div class="m-8">
+  <div class="m-8 xxlmin:m-auto max-w-screen-xxlmin min-h-fullvh">
     <TheHeader />
     <Nuxt />
     <TheFooter />

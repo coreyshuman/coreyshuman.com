@@ -5,7 +5,11 @@
       <span class="flex-1 text-right"><NuxtLink to="/blog" class="text-celeste">View Archive</NuxtLink></span>
     </div>
     <ul class="flex flex-wrap">
-      <li v-for="article of articles" :key="article.slug" class="xs:w-full md:w-1/2 px-2 xs:mb-6 md:mb-12 article-card">
+      <li
+        v-for="article of articles"
+        :key="article.slug"
+        class="xs:w-full md:w-1/2 xl:w-1/3 px-2 xs:mb-6 md:mb-12 article-card"
+      >
         <BlogCard :article="article" />
       </li>
     </ul>
