@@ -1,7 +1,7 @@
 <template>
   <NuxtLink
     :to="{ name: 'blog-slug', params: { slug: article.slug } }"
-    class="flex transition-shadow duration-150 ease-in-out shadow-sm hover:shadow-md flex-col bg-black bg-opacity-60 text-white border-steel border-2 rounded-lg"
+    class="flex transition-shadow duration-150 ease-in-out shadow-sm hover:shadow-md flex-col bg-black bg-opacity-60 text-white border-steel border-2 rounded-lg h-full"
   >
     <img
       v-if="article.img"

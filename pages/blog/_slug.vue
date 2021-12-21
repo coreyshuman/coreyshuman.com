@@ -127,6 +127,9 @@ export default {
 };
 </script>
 <style>
+.nuxt-content {
+  color: white;
+}
 .nuxt-content p {
   margin-bottom: 20px;
 }

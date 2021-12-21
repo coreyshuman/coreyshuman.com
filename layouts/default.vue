@@ -1,8 +1,10 @@
 <template>
   <div class="m-8 xxlmin:m-auto max-w-screen-xxlmin min-h-fullvh">
-    <TheHeader />
-    <Nuxt />
-    <TheFooter />
+    <div class="firefox:bg-black firefox:bg-opacity-50 min-h-fullvh backdrop-filter backdrop-blur-sm">
+      <TheHeader />
+      <Nuxt class="pb-40" />
+      <TheFooter class="absolute bottom-0 w-full h-40" />
+    </div>
     <ConstellationBackground :config="constellationConfig" />
   </div>
 </template>

@@ -1,6 +1,6 @@
 # Coreyshuman.com
 
-My website built using the Nuxt [content module](https://content.nuxtjs.org/), a git files based headless CMS.
+My website built using the Nuxt [content module](https://content.nuxtjs.org/), a git-based headless CMS.
 
 ## Build Setup
 
