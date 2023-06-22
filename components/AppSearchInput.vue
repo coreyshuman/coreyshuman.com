@@ -5,16 +5,18 @@
       type="search"
       autocomplete="off"
       placeholder="Search Articles"
-      class="block w-64 pl-2 pr-3 py-2 truncate leading-5 placeholder-white border-white border-2 text-white focus:border-celeste rounded-md focus:outline-none bg-black bg-opacity-60"
+      class="block w-64 pl-2 pr-3 py-2 truncate leading-5 placeholder-white border-white border-2 text-white focus:border-green rounded-md focus:outline-none bg-black bg-opacity-60"
+      @blur.prevent="searchQuery=''"
     />
     <ul
-      v-if="articles.length"
-      class="z-10 w-auto absolute flex-1 top-40 bg-white dark:bg-gray rounded-md border border-gray overflow-hidden"
+      v-if="articles.length && searchQuery"
+      class="z-10 w-64 absolute flex-1 top-40 bg-black bg-opacity-60 rounded-md border-2 border-white overflow-hidden"
+      @mousedown.prevent
     >
-      <li v-for="article of articles" :key="article.slug">
+      <li v-for="article of articles" :key="article.slug" @click="searchQuery=''">
         <NuxtLink
-          :to="{ name: 'blog-slug', params: { slug: article.slug } }"
-          class="flex w-64 px-4 py-2 items-center leading-5 transition ease-in-out duration-150 text-blue hover:text-black"
+          :to="{ name: 'post-slug', params: { slug: article.slug } }"
+          class="flex w-64 px-4 py-2 items-center leading-5 transition ease-in-out duration-300 text-white hover:text-green"
         >
           <span v-html="highlightArticles(article.title)"></span>
         </NuxtLink>

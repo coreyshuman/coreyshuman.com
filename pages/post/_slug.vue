@@ -1,22 +1,21 @@
 <template>
-  <article class="flex lg:h-screen w-screen lg:overflow-hidden xs:flex-col lg:flex-row">
-    <div class="relative lg:w-1/2 xs:w-full xs:h-84 lg:h-full post-left">
+  <article class="flex w-full flex-col text-white">
+    <div class="relative w-full xs:h-60 post-left">
       <img :src="article.img" :alt="article.alt" class="absolute h-full w-full object-cover" />
-      <div class="overlay"></div>
-      <div class="absolute top-32 left-32 text-white">
-        <NuxtLink to="/"><Logo /></NuxtLink>
-        <div class="mt-16 -mb-3 flex uppercase text-sm">
-          <p class="mr-3">
-            {{ formatDate(article.updatedAt) }}
-          </p>
-          <span class="mr-3">•</span>
-          <p>{{ article.author.name }}</p>
-        </div>
-        <h1 class="text-6xl font-bold">{{ article.title }}</h1>
-        <span v-for="(tag, id) in article.tags" :key="id">
-          <NuxtLink :to="`/post/tag/${tags[tag].slug}`">
-            <span
-              class="
+      <div class="absolute h-full w-full bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm">
+        <div class="absolute top-30 left-32">
+          <div class="mt-16 flex uppercase text-sm">
+            <p class="mr-3">
+              {{ formatDate(article.date || article.updatedAt) }}
+            </p>
+            <span class="mr-3">•</span>
+            <p>{{ article.author.name }}</p>
+          </div>
+          <h1 class="xs:text-3xl md:text-4xl lg:text-5xl font-bold mb-2">{{ article.title }}</h1>
+          <span v-for="(tag, id) in article.tags" :key="id">
+            <NuxtLink :to="`/post/tag/${tags[tag].slug}`">
+              <span
+                class="
                 truncate
                 uppercase
                 tracking-wider
@@ -27,62 +26,63 @@
                 rounded-full
                 mr-2
                 mb-2
-                border border-light-border
+                border-2
+                border-light-border
                 dark:border-dark-border
                 transition-colors
+                hover:text-green
                 duration-300
                 ease-linear
               "
-            >
-              {{ tags[tag].name }}
-            </span>
+              >
+                {{ tags[tag].name }}
+              </span>
+            </NuxtLink>
+          </span>
+        </div>
+        <div class="flex absolute top-1rem sm:right-3rem right-1rem">
+          <NuxtLink
+            to="/"
+            class="mr-8 self-center text-white font-bold transition-colors hover:text-green duration-300 ease-linear"
+          >
+            All articles
           </NuxtLink>
-        </span>
-      </div>
-      <div class="flex absolute top-3rem right-3rem">
-        <NuxtLink to="/" class="mr-8 self-center text-white font-bold hover:underline"> All articles </NuxtLink>
-        <a
-          href="https://nuxtjs.org/blog/creating-blog-with-nuxt-content"
-          class="mr-8 self-center text-white font-bold hover:underline"
-        >
-          Tutorial
-        </a>
-        <AppSearchInput />
+          <AppSearchInput />
+        </div>
       </div>
     </div>
     <div
       class="
         relative
         xs:py-8 xs:px-8
-        lg:py-32 lg:px-16 lg:w-1/2
-        xs:w-full
+        lg:py-16 lg:px-16 
+        w-full
         h-full
-        overflow-y-scroll
         markdown-body
         post-right
         custom-scroll
       "
     >
-      <h1 class="font-bold text-4xl">{{ article.title }}</h1>
-      <p>{{ article.description }}</p>
+      <em>{{ article.description }}</em>
       <p class="pb-4">Post last updated: {{ formatDate(article.updatedAt) }}</p>
       <!-- table of contents -->
-      <nav class="pb-6">
+      <h2 v-if="article.toc.length" class="toc-header">Table of Contents</h2>
+      <nav class="pb-6 text-purple">
         <ul>
           <li
             v-for="link of article.toc"
             :key="link.id"
             :class="{
-              'font-semibold': link.depth === 2
-            }"
+            'font-semibold': link.depth === 2
+          }"
           >
             <nuxtLink
-              :to="`🔗${link.id}`"
+              :to="`#${link.id}`"
               class="hover:underline"
               :class="{
-                'py-2': link.depth === 2,
-                'ml-2 pb-2': link.depth === 3
-              }"
+              'py-2': link.depth === 2,
+              'ml-2 pb-2': link.depth === 3
+            }"
               >{{ link.text }}</nuxtLink
             >
           </li>
@@ -118,31 +118,59 @@ export default {
       next
     };
   },
+  mounted() {
+    this.$root.$emit('updateConstellation', {
+      pointDensity: 30,
+      pointSize: 3,
+      friction: .03,
+      frictionMinVelocity: .5,
+      attractDistanceRange: [0, 0],
+      attractForceRange: [0, 0],
+      repelDistanceRange: [0, 60],
+      repelForceRange: [.25, 0],
+      maxLineLength: 60,
+      lineSize: 1,
+      screenBlur: .6,
+      maxInteractDistance: 175,
+      maxInteractForce: 1,
+      interactMode: "repel",
+      backgroundColor: "#000000",
+      pointColor: "#0096ff",
+      lineColor: "#00fdff",
+      pointInteractColor: "#dd33dd",
+    });
+  },
   methods: {
     formatDate(date) {
       const options = { year: 'numeric', month: 'long', day: 'numeric' };
       return new Date(date).toLocaleDateString('en', options);
     }
-  }
+  },
+
 };
 </script>
 <style>
 .nuxt-content {
   color: white;
 }
+
 .nuxt-content p {
   margin-bottom: 20px;
 }
-.nuxt-content h2 {
+
+.nuxt-content h2,
+.toc-header {
   font-weight: bold;
   font-size: 28px;
 }
+
 .nuxt-content h3 {
   font-weight: bold;
   font-size: 22px;
 }
+
 .icon.icon-link {
-  background-image: url('~assets/svg/icon-hashtag.svg');
+  content: url('~assets/svg/fas-link.svg');
   display: inline-block;
   width: 20px;
   height: 20px;

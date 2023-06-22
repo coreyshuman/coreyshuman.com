@@ -865,3 +865,4 @@ class Constellation {
 }
 
 export { Constellation, Statistics };
+export default Constellation;

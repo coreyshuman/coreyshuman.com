@@ -32,6 +32,7 @@ module.exports = {
       green: '#42dca3',
       teal: '#8ee3ef',
       celeste: '#aef3e7',
+      purple: '#dd33dd',
       steel: '#e5e7eb',
       gray: '#6b7280',
       black: '#000',
@@ -46,7 +47,9 @@ module.exports = {
     minHeight: {
       0: '0',
       '1/4': '25%',
+      '1/3': '33%',
       '1/2': '50%',
+      '2/3': '67%',
       '3/4': '75%',
       full: '100%',
       fullvh: '100vh'
@@ -86,6 +89,7 @@ module.exports = {
       16: '16px',
       32: '32px',
       64: '64px',
+      '1rem': '1rem',
       '2rem': '2rem',
       '3rem': '3rem'
     }
