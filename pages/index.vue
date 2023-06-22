@@ -1,31 +1,35 @@
 <template>
   <div class="text-steel">
     <div class="flex flex-wrap">
-      <div v-for="home of homeHeader" :key="home.slug" class="xs:w-full md:w-1/2 xl:w-1/3 px-2 xs:mb-6 md:mb-12">
-        <h1 class="flex-1 font-bold text-4xl">{{ home.title }}</h1>
+      <div v-for="home of homeHeader" :key="home.slug" class="xs:w-full px-2 xs:mb-6 md:mb-12">
+        <h1 class="flex-1 font-bold text-4xl mb-3">{{ home.title }}</h1>
         <p class="font-bold text-steel text-sm text-body">
         <nuxt-content :document="home" />
       </p>
       </div>
     </div>
-    <div class="flex items-center">
-      <h1 class="flex-1 font-bold text-4xl">Latest Posts</h1>
-      <span class="flex-1 text-right"><NuxtLink to="/blog" class="text-celeste">View Archive</NuxtLink></span>
+    <div v-if="articles">
+      <div class="flex items-center">
+        <h1 class="flex-1 font-bold text-4xl mb-5">Latest Posts</h1>
+        <span class="flex-1 text-right"><NuxtLink to="/post" class="text-celeste">View Archive</NuxtLink></span>
+      </div>
+      <ul class="flex flex-wrap">
+        <li v-for="article of articles" :key="article.slug" class="xs:w-full md:w-1/2 xl:w-1/3 px-2 xs:mb-6 md:mb-12">
+          <BlogCard :type="'post'" :article="article" />
+        </li>
+      </ul>
     </div>
-    <ul class="flex flex-wrap">
-      <li v-for="article of articles" :key="article.slug" class="xs:w-full md:w-1/2 xl:w-1/3 px-2 xs:mb-6 md:mb-12">
-        <BlogCard :article="article" />
-      </li>
-    </ul>
-    <div class="flex items-center">
-      <h1 class="flex-1 font-bold text-4xl">Recent Projects</h1>
-      <span class="flex-1 text-right"><NuxtLink to="/projects" class="text-celeste">View Projects</NuxtLink></span>
+    <div v-if="projects">
+      <div class="flex items-center">
+        <h1 class="flex-1 font-bold text-4xl mb-5">Recent Projects</h1>
+        <span class="flex-1 text-right"><NuxtLink to="/projects" class="text-celeste">View Projects</NuxtLink></span>
+      </div>
+      <ul class="flex flex-wrap">
+        <li v-for="project of projects" :key="project.slug" class="xs:w-full md:w-1/2 xl:w-1/3 px-2 xs:mb-6 md:mb-12">
+          <BlogCard :type="'project'" :article="project" />
+        </li>
+      </ul>
     </div>
-    <ul class="flex flex-wrap">
-      <li v-for="project of projects" :key="project.slug" class="xs:w-full md:w-1/2 xl:w-1/3 px-2 xs:mb-6 md:mb-12">
-        <BlogCard :article="project" />
-      </li>
-    </ul>
   </div>
 </template>
 

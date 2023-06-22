@@ -14,7 +14,7 @@
         </div>
         <h1 class="text-6xl font-bold">{{ article.title }}</h1>
         <span v-for="(tag, id) in article.tags" :key="id">
-          <NuxtLink :to="`/blog/tag/${tags[tag].slug}`">
+          <NuxtLink :to="`/post/tag/${tags[tag].slug}`">
             <span
               class="
                 truncate

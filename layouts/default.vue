@@ -1,5 +1,5 @@
 <template>
-  <div class="m-8 xxlmin:m-auto max-w-screen-xxlmin min-h-fullvh">
+  <div class="m-0 sm:mx-8 xxlmin:m-auto max-w-screen-xxlmin min-h-fullvh">
     <div class="firefox:bg-black firefox:bg-opacity-50 min-h-fullvh backdrop-filter backdrop-blur-sm">
       <TheHeader />
       <Nuxt class="pb-40" />

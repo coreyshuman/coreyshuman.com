@@ -1,9 +1,9 @@
 <template>
   <div class="text-steel">
-    <h1 class="text-title font-bold text-4xl">Projects</h1>
+    <h1 class="text-title font-bold text-4xl mb-3">Projects</h1>
     <ul class="flex flex-wrap">
       <li v-for="article of projects" :key="article.slug" class="xs:w-full md:w-1/2 px-2 xs:mb-6 md:mb-12 article-card">
-        <BlogCard :article="article" />
+        <BlogCard :type="'project'" :article="article" />
       </li>
     </ul>
     <h3 class="mb-4 font-bold text-2xl uppercase text-center">Topics</h3>

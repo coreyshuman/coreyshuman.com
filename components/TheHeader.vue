@@ -1,10 +1,10 @@
 <template>
-  <header class="flex font-title font-medium text-white items-center border-gray border-b-2">
+  <header class="flex font-title font-medium text-white items-center border-gray border-b-2 mb-5">
     <NuxtLink to="/" class="flex align-middle items-center">
       <span class="flex align-middle text-xl">COREY<span class="font-semibold">SHUMAN</span>.COM</span>
     </NuxtLink>
-    <AppSearchInput class="ml-8" />
-    <span class="flex-1 justify-end pr-10">
+
+    <span class="flex-1 justify-end pr-10 hidden sm:block">
       <ul class="flex m-4 justify-end text-green text-title text-xl">
         <li v-for="link of links" :key="link.name" class="m-2">
           <NuxtLink
@@ -27,15 +27,15 @@ export default {
   data() {
     return {
       linkStatic: [
-        {name: 'About', url: '/about'},
-        {name: 'Projects', url: '/projects'},
-        {name: 'Blog', url: '/blog'},
+        {name: 'About', url: '/about', shown: true},
+        {name: 'Projects', url: '/project', shown: true},
+        {name: 'Articles', url: '/post', shown: true},
       ]
     }
   },
   computed: {
     links() {
-      return this.linkStatic.map((link) => { return {...link, selected: this.$route.path.includes(link.url)}})
+      return this.linkStatic.filter(item => item.shown).map((link) => { return {...link, selected: this.$route.path.includes(link.url)}})
     }
   }
 }

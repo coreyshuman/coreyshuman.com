@@ -2,6 +2,4 @@
 title: Welcome to my Page!
 ---
 
-Learn how to use @nuxt/content. Hello Corey.
-<!--more-->
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+My name is Corey Shuman. I've worked in software development as an engineer, educator, project manager, and most recently engineering director. Here on my site you'll find information on my various projects, includ
