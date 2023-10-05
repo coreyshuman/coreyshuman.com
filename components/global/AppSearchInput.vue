@@ -5,12 +5,12 @@
       type="search"
       autocomplete="off"
       placeholder="Search Articles"
-      class="block w-64 pl-2 pr-3 py-2 truncate leading-5 placeholder-white border-white border-2 text-white focus:border-green rounded-md focus:outline-none bg-black bg-opacity-60"
+      class="block xs:w-60 sm:w-64 pl-2 pr-3 py-2 truncate leading-5 placeholder-white border-white border-2 text-white focus:border-green rounded-md focus:outline-none bg-black bg-opacity-60"
       @blur.prevent="searchQuery=''"
     />
     <ul
       v-if="articles.length && searchQuery"
-      class="z-10 w-64 absolute flex-1 top-40 bg-black bg-opacity-60 rounded-md border-2 border-white overflow-hidden"
+      class="z-10 xs:w-60 sm:w-64 absolute flex-1 top-40 bg-black bg-opacity-60 rounded-md border-2 border-white overflow-hidden"
       @mousedown.prevent
     >
       <li v-for="article of articles" :key="article.slug" @click="searchQuery=''">
