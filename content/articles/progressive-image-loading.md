@@ -22,7 +22,6 @@ tags:
 
 - show progressive jpeg loading versus regular
 
-
 <video playsinline controls>
     <source src="/assets/blog/progressive-loading-demo/default-behavior.mp4" type="video/mp4">
 </video>
@@ -46,9 +45,6 @@ tags:
 <video playsinline controls>
     <source src="/assets/blog/progressive-loading-demo/with-loading.mp4" type="video/mp4">
 </video>
-
-
-
 
 Image reference
 https://unsplash.com/photos/IEWoxRpew-0

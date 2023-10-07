@@ -775,7 +775,7 @@ class Constellation {
 
     document.body.addEventListener(
       'touchcancel',
-      function (evt) {
+      function () {
         for (let i = 0; i < this.touches.length; i++) {
           this.touches.pop();
         }
@@ -785,7 +785,7 @@ class Constellation {
     // redraw screen and points on a screen resize
     window.addEventListener(
       'resize',
-      function (e) {
+      function () {
         this.setCanvasSize();
         this.updatePointCount();
       }.bind(this)

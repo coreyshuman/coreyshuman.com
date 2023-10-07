@@ -12,11 +12,11 @@ tags:
   - web development
 ---
 
-
 # notes
 
 - Install rustup
 - Install OpenOCD, windows binaries on GitHub https://github.com/openocd-org/openocd/releases
+
 ```
 - Download the binary zip file for Windows.
 - Extract into the C:\openocd-0.10.0 folder.
@@ -24,6 +24,7 @@ tags:
 - Check the OpenOCD version you are using. Open a new MinGW terminal and run the following commands:
 Note: You must start a new MinGW terminal to inherit the new Path values.
 ```
+
 ```
 $ which openocd
 /c/openocd-0.10.0/bin/openocd
@@ -33,6 +34,7 @@ Licensed under GNU GPL v2
 For bug reports, read
         http://openocd.org/doc/doxygen/bugs.html
 ```
+
 cts note: i used powershell, `which` doesn't work but `openocd -v` does
 
 - download arm gnu toolchain: https://developer.arm.com/Tools%20and%20Software/GNU%20Toolchain
@@ -42,7 +44,7 @@ cts note: i used powershell, `which` doesn't work but `openocd -v` does
   - install required `cargo install cargo-readme`
   - enter humility/ folder
   - `cargo build  --release`
-  - will download and install required components, compile, 
+  - will download and install required components, compile,
   - create env variable `HUBRIS_HUMILITY_PATH` point to exe file path: `humility/target/release/humility.exe`
 - pull down repo: https://github.com/oxidecomputer/hubris
 - enter hubris/ folder
@@ -54,6 +56,7 @@ cts note: i used powershell, `which` doesn't work but `openocd -v` does
   - will copy linked binary
 - plug in USB of stm32f4-discovery board
 - flash: `cargo xtask flash app/demo-stm32f4-discovery/app.toml`
+
 ```
 Finished release [optimized + debuginfo] target(s) in 3.15s
 target\demo-stm32f4-discovery\dist\kernel (unchanged)
@@ -66,7 +69,9 @@ humility: attaching with chip set to "STM32F407VGTx"
 humility: attached via ST-Link V2-1
 humility: flashing done
 ```
+
 - run humility debugger to view running tasks: `cargo xtask humility app/demo-stm32f4-discovery/app.toml -- tasks`
+
 ```
 PS D:\Devel\Rust\hubris> cargo xtask humility app/demo-stm32f4-discovery/app.toml -- tasks
     Finished dev [optimized + debuginfo] target(s) in 3.43s
@@ -83,8 +88,10 @@ ID TASK                 GEN PRI STATE
  6 hiffy                  0   3 notif: bit31(T+180)
  7 idle                   0   5 ready
 ```
+
 - run hubris kernel tests: `cargo xtask test test/tests-stm32fx/app.toml`
   - in my case a test was failing
+
 ```
     Finished release [optimized + debuginfo] target(s) in 3.12s
 target\tests-stm32fx\dist\kernel (unchanged)
@@ -156,10 +163,10 @@ humility: test output dumped to hubris.testout.1
 Error: humility failed
 ```
 
-
-
 # troubleshooting
+
 - check openocd can connect to device: `openocd.exe -f interface/stlink.cfg -f target/stm32f4x.cfg`
+
 ```
 PS D:\Devel\Rust\hubris> openocd.exe -f interface/stlink.cfg -f target/stm32f4x.cfg
 Open On-Chip Debugger 0.12.0-rc1 (2022-09-18-17:56)
@@ -178,11 +185,15 @@ Info : [stm32f4x.cpu] target has 6 breakpoints, 4 watchpoints
 Info : starting gdb server for stm32f4x.cpu on 3333
 Info : Listening on port 3333 for gdb connections
 ```
+
 - firmware out of date
+
 ```
 humility: attaching with chip set to "STM32F407VGTx"
 humility flash failed: The firmware on the probe is outdated
 Error: humility failed
 ```
+
 download STSW-LINK007 to update firmware: https://www.st.com/en/development-tools/stsw-link007.html
- - click device connect
+
+- click device connect

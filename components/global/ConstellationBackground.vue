@@ -51,7 +51,7 @@ export default {
     window.constellation.start();
 
     Statistics.initStats();
-    Statistics.showStats('statsdiv');
+    // Statistics.showStats('statsdiv');
   }
 };
 </script>

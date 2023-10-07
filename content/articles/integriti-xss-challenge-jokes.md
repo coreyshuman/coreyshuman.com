@@ -15,7 +15,6 @@ The challenge info page: https://challenge-1221.intigriti.io/
 
 The challenge itself: https://challenge-1221.intigriti.io/challenge/index.php?payload=
 
-
 ```js
 let theJoke = jokes[num];
 let jokeDiv = document.getElementById('snow').append('<h1>');
@@ -23,6 +22,7 @@ joke.innerText = '';
 punchline.innerText = '';
 ```
 
-<˂ᐸᚲ‹❮＜𝈶
+<˂ᐸᚲ‹❮＜ 𝈶
 =᐀⹀゠꓿＝
->˃ᐳ›❯＞𖼿𝈷
+
+> ˃ᐳ›❯＞ 𖼿𝈷

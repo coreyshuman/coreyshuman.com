@@ -11,8 +11,11 @@
     />
 
     <div class="p-6 flex flex-col justify-between w-full">
-      <h2 class="font-bold text-lg text-body text-green">{{ article.title }}</h2>
-      <p class="font-bold text-steel text-sm text-body">
+      <div class="flex flex-col lg:flex-row">
+        <h2 class="flex-1 flex-grow w-full font-bold text-lg text-body text-green">{{ article.title }}</h2>
+        <span class="text-body text-sm mb-2">{{ formatDate(article.date || article.updatedAt) }}</span>
+      </div>
+      <p class="text-body">
         {{ article.description }}
       </p>
     </div>
@@ -20,7 +23,10 @@
 </template>
 
 <script>
+import {util} from '../util/util';
+
 export default {
+  mixins:[util],
   props: {
     type: {
       type: String,

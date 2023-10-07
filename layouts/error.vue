@@ -1,5 +1,5 @@
 <template>
-  <div class="text-steel">
+  <div class="text-steel flex justify-center mt-12">
     <h1 v-if="error.statusCode === 404" class="text-title font-bold text-4xl">Page Not Found</h1>
     <h1 v-else class="text-title font-bold text-4xl">An Error Occurred</h1>
   </div>
@@ -7,7 +7,11 @@
 
 <script>
 export default {
-  props: ['error'],
+  props: {
+    error: {
+      type: Object,
+      required: true
+    }},
   mounted() {
     this.$root.$emit('updateConstellation', {
       pointDensity: 20,

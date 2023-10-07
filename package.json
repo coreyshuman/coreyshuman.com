@@ -8,7 +8,8 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "clean": "nuxt clean",
-    "prettier": "prettier --check .",
+    "prettier": "prettier --ignore-path .prettierignore --check .",
+    "prettier:format": "prettier --ignore-path .prettierignore --write .",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
     "lint": "yarn lint:js && yarn lint:style"
