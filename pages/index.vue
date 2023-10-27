@@ -3,9 +3,9 @@
     <div class="flex flex-wrap">
       <div v-for="home of homeHeader" :key="home.slug" class="xs:w-full xs:mb-6 md:mb-12">
         <h1 class="flex-1 font-bold font-title text-4xl mb-3">{{ home.title }}</h1>
-        <p class="font-bold text-sm px-2">
+        <div class="font-bold text-sm px-2">
           <nuxt-content :document="home" />
-        </p>
+        </div>
       </div>
     </div>
     <div v-if="articles">
@@ -46,12 +46,12 @@ export default {
   async asyncData({ $content }) {
     const articles = await $content('articles')
       .only(['title', 'description', 'img', 'slug'])
-      .sortBy('createdAt', 'desc')
+      .sortBy('updated', 'desc')
       .limit(3)
       .fetch();
     const projects = await $content('projects')
-      .only(['name', 'description', 'img', 'slug'])
-      .sortBy('createdAt', 'desc')
+      .only(['title', 'description', 'img', 'slug'])
+      .sortBy('updated', 'desc')
       .limit(3)
       .fetch();
     const homeHeader = await $content('home')

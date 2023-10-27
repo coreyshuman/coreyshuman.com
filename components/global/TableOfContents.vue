@@ -1,6 +1,6 @@
 <template>
-  <div v-if="toc.length">
-    <h2 v-if="toc.length" class="font-bold text-2xl">Table of Contents</h2>
+  <div v-if="toc.length > 1">
+    <h2 class="font-bold text-2xl">Table of Contents</h2>
     <nav class="pb-6 text-purple">
       <ul>
         <li
@@ -29,7 +29,7 @@
 export default {
   props: {
       toc: {
-        type: Object,
+        type: Array,
         required: true
       }
   }

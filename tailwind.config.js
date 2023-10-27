@@ -23,24 +23,25 @@ module.exports = {
       body: ['Montserrat', 'Arial', 'sans-serif']
     },
     colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      red: '#c33c54',
-      indigo: '#254e70',
-      blue: '#37718e',
-      green: '#42dca3',
-      teal: '#8ee3ef',
-      celeste: '#aef3e7',
-      purple: '#dd33dd',
-      steel: '#e5e7eb',
-      gray: '#6b7280',
-      black: '#000',
-      white: '#fff'
+      transparent: 'var(--color-transparent)',
+      current: 'var(--color-current)',
+      red: 'var(--color-red)',
+      indigo: 'var(--color-indigo)',
+      blue: 'var(--color-blue)',
+      green: 'var(--color-green)',
+      teal: 'var(--color-teal)',
+      celeste: 'var(--color-celeste)',
+      purple: 'var(--color-purple)',
+      steel: 'var(--color-steel)',
+      gray: 'var(--color-gray)',
+      black: 'var(--color-black)',
+      white: 'var(--color-white)'
     },
     borderWidth: {
       default: '1px',
       0: '0',
       2: '2px',
+      3: '3px',
       4: '4px'
     },
     minHeight: {
@@ -69,6 +70,7 @@ module.exports = {
         128: '32rem'
       },
       height: {
+        '3px': '3px',
         84: '22rem'
       },
       width: {

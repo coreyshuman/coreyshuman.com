@@ -3,10 +3,10 @@ title: Progressive Image Loading for a Positive Low Bandwidth Experience
 description: I demonstrate how to use progressive jpegs and tiny blurred placeholder images to provide a positive low-bandwidth experience when using high quality or large images on a website.
 img: https://images.unsplash.com/photo-1588010986054-727675e6f36a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60
 alt: my third blog post
+created: 2022-01-01
+updated: 2022-01-02
 author: 
-  name: Choi
-  bio: All about Choi and where he works and what he does
-  img: https://images.unsplash.com/photo-1534471770828-9bde524ee634?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60
+  name: Corey Shuman
 tags: 
   - javascript
   - web development

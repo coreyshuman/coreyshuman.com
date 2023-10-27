@@ -2,9 +2,29 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+:root {
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-red: #c33c54;
+  --color-indigo: #254e70;
+  --color-blue: #37718e;
+  --color-green: #42dca3;
+  --color-teal: #8ee3ef;
+  --color-celeste: #aef3e7;
+  --color-purple: #d3d;
+  --color-steel: #e5e7eb;
+  --color-gray: #6b7280;
+  --color-black: #000;
+  --color-white: #fff;
+}
+
 .nuxt-content-highlight {
   @apply relative;
 }
 .nuxt-content-highlight .filename {
   @apply absolute right-0 text-celeste font-light z-10 mr-2 mt-1 text-sm;
+}
+
+.nuxt-content-container .nuxt-content a {
+  @apply text-celeste underline;
 }

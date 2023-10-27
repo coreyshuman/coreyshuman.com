@@ -1,14 +1,17 @@
 <template>
-  <header class="flex flex-col sm:flex-row items-center border-gray border-b-2 mb-5">
-    <NuxtLink to="/" class="flex flex-grow align-middle items-center w-full">
-      <span class="flex align-middle text-xl">
-        COREY
-        <span class="font-semibold">SHUMAN</span>
-        .COM
-      </span>
-    </NuxtLink>
+  <header class="mb-5">
+    <div class="flex flex-col sm:flex-row items-center">
+      <NuxtLink to="/" class="flex flex-grow align-middle items-center w-full">
+        <span class="flex align-middle text-xl">
+          COREY
+          <span class="font-semibold">SHUMAN</span>
+          .COM
+        </span>
+      </NuxtLink>
 
-    <HeaderNavMenu :links="links" />
+      <HeaderNavMenu :links="links" />
+    </div>
+    <Separator />
   </header>
 </template>
 <script>

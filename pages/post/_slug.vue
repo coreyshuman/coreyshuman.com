@@ -4,8 +4,8 @@
     <div
       class="
         relative
-        xs:py-8 xs:px-8
-        lg:py-16 lg:px-16 
+        xs:py-8 xs:px-4
+        lg:py-16 lg:px-8 
         w-full
         h-full
         markdown-body
@@ -14,12 +14,10 @@
       "
     >
       <em>{{ article.description }}</em>
-      <p class="pb-4">Post last updated: {{ formatDate(article.updatedAt) }}</p>
+      <p class="pb-4">Post last updated: {{ formatDate(article.updated) }}</p>
       <TableOfContents :toc="article.toc"></TableOfContents>
       <!-- content from markdown -->
       <nuxt-content :document="article" />
-      <!-- content author component -->
-      <author :author="article.author" />
       <!-- prevNext component -->
       <PrevNext :prev="prev" :next="next" class="mt-8" />
     </div>
@@ -32,14 +30,13 @@ export default {
   mixins:[util],
   async asyncData({ $content, params }) {
     const article = await $content('articles', params.slug).fetch();
-    const tagsList = await $content('tags')
+    const tags = await $content('tags')
       .only(['name', 'slug'])
       .where({ name: { $containsAny: article.tags } })
       .fetch();
-    const tags = Object.assign({}, ...tagsList.map((s) => ({ [s.name]: s })));
     const [prev, next] = await $content('articles')
       .only(['title', 'slug'])
-      .sortBy('createdAt', 'asc')
+      .sortBy('created', 'asc')
       .surround(params.slug)
       .fetch();
     return {

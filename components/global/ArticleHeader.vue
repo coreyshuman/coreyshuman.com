@@ -5,15 +5,15 @@
       <div class="absolute top-30 xs:left-16 xs:right-16 sm:left-32 sm:right-32">
         <div class="mt-16 flex uppercase text-sm">
           <p class="mr-3">
-            {{ formatDate(article.date || article.updatedAt) }}
+            {{ formatDate(article.created || article.createdAt) }}
           </p>
           <span class="mr-3">•</span>
           <p>{{ article.author.name }}</p>
         </div>
         <h1 class="xs:text-3xl md:text-4xl lg:text-5xl font-bold mb-2">{{ article.title }}</h1>
-        <div class="flex flex-wrap">
-          <span v-for="(tag, id) in article.tags" :key="id">
-            <CategoryPill :tag="tags[tag]"></CategoryPill>
+        <div v-if="tags" class="flex flex-wrap">
+          <span v-for="(tag, id) in tags" :key="id">
+            <CategoryPill :tag="tag"></CategoryPill>
           </span>
         </div>
       </div>
@@ -41,7 +41,7 @@ export default {
         required: true
       },
       tags: {
-        type: Object,
+        type: Array,
         required: true
       }
   }

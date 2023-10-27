@@ -13,11 +13,11 @@ export default {
     async asyncData({ $content }) {
     const projects = await $content('projects')
       .only(['title', 'description', 'img', 'alt', 'slug'])
-      .sortBy('createdAt', 'desc')
+      .sortBy('created', 'desc')
       .fetch();
     const tags = await $content('tags')
       .only(['name', 'description', 'img', 'slug'])
-      .sortBy('createdAt', 'asc')
+      .sortBy('name', 'asc')
       .fetch();
     return {
       projects,
@@ -40,10 +40,10 @@ export default {
       maxInteractDistance: 60,
       maxInteractForce: 3000,
       interactMode: "attract",
-      backgroundColor: "#250052",
+      backgroundColor: "#100020",
       pointColor: "#fff700",
-      lineColor: "#250052",
-      pointInteractColor: "#250052",
+      lineColor: "#100020",
+      pointInteractColor: "#100020",
     });
   }
 }
