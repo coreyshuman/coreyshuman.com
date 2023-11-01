@@ -7,18 +7,29 @@ export default {
   props: {},
   mounted() {
     document.addEventListener('mousemove', this.updateMousePosition);
-    // window.addEventListener('resize', this.handleResize);
+    document.addEventListener('touchstart', this.updateMousePosition);
+    document.addEventListener('touchmove', this.updateMousePosition);
     this.updateMousePosition({clientX: 0, clientY: 0});
   },
   beforeDestroy() {
     document.removeEventListener('mousemove', this.updateMousePosition);
-    // window.removeEventListener('resize', this.handleResize);
+    document.removeEventListener('touchstart', this.updateMousePosition);
+    document.removeEventListener('touchmove', this.updateMousePosition);
   },
   methods: {
     updateMousePosition(e) {
       const {x, y} = this.$el.getBoundingClientRect();
-      this.$el.style.setProperty("--x", `${e.clientX - x}px`);
-      this.$el.style.setProperty("--y", `${e.clientY - y}px`);
+      let clientX = 0;
+      let clientY = 0;
+      if(e.changedTouches) {
+        clientX = e.changedTouches[0].clientX;
+        clientY = e.changedTouches[0].clientY;
+      } else if(e.clientX) {
+        clientX = e.clientX;
+        clientY = e.clientY;
+      }
+      this.$el.style.setProperty("--x", `${clientX - x}px`);
+      this.$el.style.setProperty("--y", `${clientY - y}px`);
     }
   }
 

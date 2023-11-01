@@ -1,7 +1,7 @@
 <template>
   <NuxtLink
     :to="{ name: `${type}-slug`, params: { slug: article.slug } }"
-    class="group relative flex transition-shadow duration-150 ease-in-out shadow-sm hover:shadow-md flex-col bg-black bg-opacity-60 text-white rounded-lg h-full"
+    class="group relative flex transition-shadow duration-150 ease-in-out shadow-sm hover:shadow-md flex-col bg-black-transparent text-white rounded-lg h-full"
   >
     <img
       v-if="article.img"
@@ -54,11 +54,15 @@ export default {
   },
   mounted() {
     document.addEventListener('mousemove', this.updateMousePosition);
+    document.addEventListener('touchstart', this.updateMousePosition);
+    document.addEventListener('touchmove', this.updateMousePosition);
     window.addEventListener('resize', this.handleResize);
     this.updateMousePosition(lastLocation);
   },
   beforeDestroy() {
     document.removeEventListener('mousemove', this.updateMousePosition);
+    document.removeEventListener('touchstart', this.updateMousePosition);
+    document.removeEventListener('touchmove', this.updateMousePosition);
     window.removeEventListener('resize', this.handleResize);
   },
   methods: {
@@ -68,8 +72,17 @@ export default {
       const ctx = canvas.getContext("2d");
       canvas.width = Math.ceil(this.$el.clientWidth);
       canvas.height = Math.ceil(this.$el.clientHeight);
-      // Create Radial
-      const grd = ctx.createRadialGradient(e.clientX - x, e.clientY - y, 5, e.clientX - x, e.clientY - y, settings.radialSize);
+      let clientX = 0;
+      let clientY = 0;
+      if(e.changedTouches) {
+        clientX = e.changedTouches[0].clientX;
+        clientY = e.changedTouches[0].clientY;
+      } else if(e.clientX) {
+        clientX = e.clientX;
+        clientY = e.clientY;
+      }
+
+      const grd = ctx.createRadialGradient(clientX - x, clientY - y, 5, clientX - x, clientY - y, settings.radialSize);
       grd.addColorStop(0, settings.radialColor);
       grd.addColorStop(1, settings.borderColor);
 

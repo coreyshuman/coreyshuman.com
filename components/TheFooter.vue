@@ -2,11 +2,11 @@
   <footer class="text-steel">
     <div class="flex w-100 flex-col ">
       <Separator />
-      <ul class="flex flex-row flex-1 m-4 justify-center text-green text-title text-lg">
-        <li v-for="social of socials" :key="social.name" class="m-0 sm:m-2">
+      <ul class="flex flex-row flex-1 m-2 md:m-4 justify-center text-green text-title text-lg">
+        <li v-for="social of socials" :key="social.name" class="m-0 ml-1 sm:m-2">
           <a
             :href="social.url"
-            class="flex-none bg-transparent hover:bg-green font-semibold hover:text-black py-2 px-4 border border-green hover:border-transparent rounded transition duration-300"
+            class="flex-none bg-transparent hover:bg-green font-semibold hover:text-black py-2 px-1 sm:px-4 border border-green hover:border-transparent rounded transition duration-300"
           >
             <fa-layers class="fa-1x">
               <fa :icon="['fab', social.icon]" />

@@ -42,7 +42,10 @@
 </template>
 
 <script>
+import {util} from '../util/util';
+
 export default {
+  mixins:[util],
   async asyncData({ $content }) {
     const articles = await $content('articles')
       .only(['title', 'description', 'img', 'slug'])
@@ -65,7 +68,20 @@ export default {
     };
   },
   mounted() {
-    this.$root.$emit('updateConstellation', {});
+    const setting = {
+      lineColor: '#AEF3E7',
+      pointColor: '#37A1AE',
+      pointInteractColor: '#C33C54'
+    };
+
+    if(this.canvasSupportsDisplayP3() && this.canvasSupportsWideGamutCSSColors()) {
+      console.log('advanced canvas color');
+      setting.lineColor = 'oklch(95% 0.0816 182.73)';
+      setting.pointColor = 'oklch(86.6% 0.1425 207.16)';
+      setting.pointInteractColor = 'oklch(55.86% 0.235 14.4)';
+    }
+
+    this.$root.$emit('updateConstellation', setting);
   }
 };
 </script>

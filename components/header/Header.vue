@@ -1,7 +1,7 @@
 <template>
   <header class="mb-5">
     <div class="flex flex-col sm:flex-row items-center">
-      <NuxtLink to="/" class="flex flex-grow align-middle items-center w-full">
+      <NuxtLink to="/" class="flex flex-grow align-middle items-center w-full px-1 sm:p-0">
         <span class="flex align-middle text-xl">
           COREY
           <span class="font-semibold">SHUMAN</span>

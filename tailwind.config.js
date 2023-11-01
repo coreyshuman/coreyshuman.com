@@ -35,6 +35,7 @@ module.exports = {
       steel: 'var(--color-steel)',
       gray: 'var(--color-gray)',
       black: 'var(--color-black)',
+      'black-transparent': 'var(--color-black-transparent)',
       white: 'var(--color-white)'
     },
     borderWidth: {

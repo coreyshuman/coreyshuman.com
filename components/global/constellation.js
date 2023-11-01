@@ -5,7 +5,7 @@
   https://github.com/coreyshuman/Constellation
 
 	
-    Copyright (C) 2015 - 2021 Corey Shuman <ctshumancode@gmail.com>
+    Copyright (C) 2015 - 2023 Corey Shuman <ctshumancode@gmail.com>
 	
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Lesser General Public License as published by
@@ -349,7 +349,12 @@ class Constellation {
       throw new Error("'canvasContainer' setting must be a valid DOM element id.");
     }
     container.appendChild(this.canvas);
-    this.context = this.canvas.getContext('2d');
+    if (this.displaySupportsP3Color() && this.canvasSupportsDisplayP3()) {
+      this.context = this.canvas.getContext('2d', { colorSpace: 'display-p3' });
+    } else {
+      this.context = this.canvas.getContext('2d');
+    }
+
     this.points = [];
     this.canvasOffset = this.getOffset(this.canvas);
     // stores cursor position
@@ -383,6 +388,7 @@ class Constellation {
     };
 
     this.settings = { ...this.settings, ...defaultSettings };
+    this.updatePointCount();
   }
 
   updateSetting(settingName, value) {
@@ -436,7 +442,7 @@ class Constellation {
       case 'backgroundColor':
       case 'pointColor':
       case 'pointInteractColor':
-        // todo verify color
+        // todo verify color, including p3 support
         break;
       case 'interactMode':
         if (value !== 'attract') {
@@ -861,6 +867,29 @@ class Constellation {
   // map a value linearly from the range x1,x2 to the range y1,y2
   linearMap(value, yRange, xRange) {
     return ((value - xRange[0]) * (yRange[1] - yRange[0])) / (xRange[1] - xRange[0]) + yRange[0];
+  }
+
+  displaySupportsP3Color() {
+    return matchMedia('(color-gamut: p3)').matches;
+  }
+
+  canvasSupportsDisplayP3() {
+    const canvas = document.createElement('canvas');
+    try {
+      // Safari throws a TypeError if the colorSpace option is supported, but
+      // the system requirements (minimum macOS or iOS version) for Display P3
+      // support are not met.
+      const context = canvas.getContext('2d', { colorSpace: 'display-p3' });
+      return context.getContextAttributes().colorSpace === 'display-p3';
+    } catch {}
+    return false;
+  }
+
+  canvasSupportsWideGamutCSSColors() {
+    const context = document.createElement('canvas').getContext('2d');
+    const initialFillStyle = context.fillStyle;
+    context.fillStyle = 'color(display-p3 0 1 0)';
+    return context.fillStyle !== initialFillStyle;
   }
 }
 
