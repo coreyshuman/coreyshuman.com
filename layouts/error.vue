@@ -6,14 +6,17 @@
 </template>
 
 <script>
+import { util } from '~/util/util';
+
 export default {
+  mixins:[util],
   props: {
     error: {
       type: Object,
       required: true
     }},
   mounted() {
-    this.$root.$emit('updateConstellation', {
+    const setting = {
       pointDensity: 20,
       pointSize: 3,
       friction: .015,
@@ -28,11 +31,20 @@ export default {
       maxInteractDistance: 60,
       maxInteractForce: .62,
       interactMode: "attract",
-      backgroundColor: "#8b0000",
-      pointColor: "#ff5733",
+      backgroundColor: "#780000",
+      pointColor: "#ff6a4b",
       lineColor: "#ffd700",
       pointInteractColor: "#ffcc33",
-    });
+    };
+
+    if(this.canvasSupportsDisplayP3() && this.canvasSupportsWideGamutCSSColors()) {
+      setting.backgroundColor = 'oklch(35.89% 0.1643 29.23)';
+      setting.lineColor = 'oklch(88.68% 0.182 95.33)';
+      setting.pointColor = 'oklch(70.59% 0.237 33.69163741550973)';
+      setting.pointInteractColor = 'oklch(86.66% 0.2013 88.68371543063601)';
+    }
+
+    this.$root.$emit('updateConstellation', setting);
   }
 };
 </script>

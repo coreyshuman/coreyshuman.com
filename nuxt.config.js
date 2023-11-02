@@ -100,9 +100,26 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {},
+  build: {
+    postcss: {
+      plugins: {
+        // 'postcss-preset-env':false
+      },
+      preset: {
+        // Change the postcss-preset-env settings
+        features: {
+          'oklab-function': {
+            preserve: true,
+            subFeatures: {
+              displayP3: true
+            }
+          }
+        }
+      }
+    }
+  },
   server: {
     host: '0.0.0.0',
     port: '3000'
-  }
+  },
 };

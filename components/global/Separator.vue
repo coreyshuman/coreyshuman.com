@@ -37,6 +37,6 @@ export default {
 </script>
 <style scoped>
 .separatorBackground {
-  background: radial-gradient(250px circle at var(--x) var(--y), var(--color-teal) 0, var(--color-gray));
+  background: radial-gradient(250px circle at var(--x) var(--y), var(--color-celeste) 0, var(--color-gray));
 }
 </style>

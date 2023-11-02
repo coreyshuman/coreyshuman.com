@@ -9,8 +9,11 @@
   </div>
 </template>
 <script>
+import { util } from '~/util/util';
+
 export default {
-    async asyncData({ $content }) {
+  mixins:[util],
+  async asyncData({ $content }) {
     const projects = await $content('projects')
       .only(['title', 'description', 'img', 'alt', 'slug'])
       .sortBy('created', 'desc')
@@ -25,7 +28,7 @@ export default {
     };
   },
   mounted() {
-    this.$root.$emit('updateConstellation', {
+    const setting = {
       pointDensity: 5,
       pointSize: 3,
       friction: .050,
@@ -44,7 +47,16 @@ export default {
       pointColor: "#fff700",
       lineColor: "#100020",
       pointInteractColor: "#100020",
-    });
+    };
+
+    if(this.canvasSupportsDisplayP3() && this.canvasSupportsWideGamutCSSColors()) {
+      setting.backgroundColor = 'oklch(13.89% 0.075 304.5)';
+      setting.lineColor = 'oklch(13.89% 0.075 304.5)';
+      setting.pointColor = 'oklch(95.15% 0.2209 107.32)';
+      setting.pointInteractColor = 'oklch(13.89% 0.075 304.5)';
+    }
+
+    this.$root.$emit('updateConstellation', setting);
   }
 }
 </script>

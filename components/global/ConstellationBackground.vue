@@ -5,8 +5,10 @@
 </template>
 <script>
 import {Constellation, Statistics} from './constellation'
+import { util } from '~/util/util';
 
 export default {
+  mixins:[util],
   props: {
     config: {
       type: Object,
@@ -18,11 +20,12 @@ export default {
   },
   data() {
     return {
-      // constellation: null,
       configDefaults: {
         lineColor: '#AEF3E7',
         pointColor: '#37A1AE',
-        pointInteractColor: '#C33C54'
+        pointInteractColor: '#C33C54',
+        pingPongPhysicsUpdates: true,
+        useQueuedDraws: false
       }
     }
   },
@@ -32,12 +35,20 @@ export default {
         newConfig = {};
       }
       newConfig = {...this.configDefaults, ...newConfig};
+      window.constellation.stop();
       window.constellation.defaultSettings();
       for (const prop in newConfig) {
         if (Object.prototype.hasOwnProperty.call(newConfig, prop)) {
-          window.constellation.updateSetting(prop, newConfig[prop]);
+          let value = newConfig[prop];
+          // oklch conversion Safari workaround
+          if(this.isOklchColor(value) && !this.canvasSupportsOklchColors()) {
+            value = this.oklchToP3(value);
+          }
+
+          window.constellation.updateSetting(prop, value);
         }
       }
+      window.constellation.start();
     }
   },
   mounted() {

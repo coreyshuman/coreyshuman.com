@@ -21,7 +21,10 @@
 </template>
 
 <script>
+import { util } from '~/util/util';
+
 export default {
+  mixins:[util],
   async asyncData({ $content }) {
     const articles = await $content('articles')
       .only(['title', 'description', 'img', 'slug', 'author', 'created', 'updated'])
@@ -37,7 +40,7 @@ export default {
     };
   },
   mounted() {
-    this.$root.$emit('updateConstellation', {
+    const setting = {
       pointDensity: 30,
       pointSize: 3,
       friction: .03,
@@ -55,8 +58,16 @@ export default {
       backgroundColor: "#000000",
       pointColor: "#0096ff",
       lineColor: "#00fdff",
-      pointInteractColor: "#dd33dd",
-    });
+      pointInteractColor: "#e500e6",
+    };
+
+    if(this.canvasSupportsDisplayP3() && this.canvasSupportsWideGamutCSSColors()) {
+      setting.lineColor = 'oklch(90.07% 0.1632 195.79801207647859)';
+      setting.pointColor = 'oklch(66.24% 0.2013 249.84330207949222)';
+      setting.pointInteractColor = 'oklch(64.77% 0.3253 328.12)';
+    }
+
+    this.$root.$emit('updateConstellation', setting);
   }
 };
 </script>

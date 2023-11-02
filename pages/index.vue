@@ -69,14 +69,13 @@ export default {
   },
   mounted() {
     const setting = {
-      lineColor: '#AEF3E7',
-      pointColor: '#37A1AE',
-      pointInteractColor: '#C33C54'
+      lineColor: '#aef3e7',
+      pointColor: '#37a1ae',
+      pointInteractColor: '#d70049'
     };
 
     if(this.canvasSupportsDisplayP3() && this.canvasSupportsWideGamutCSSColors()) {
-      console.log('advanced canvas color');
-      setting.lineColor = 'oklch(95% 0.0816 182.73)';
+      setting.lineColor = 'oklch(91.5% 0.071 182.73)';
       setting.pointColor = 'oklch(86.6% 0.1425 207.16)';
       setting.pointInteractColor = 'oklch(55.86% 0.235 14.4)';
     }

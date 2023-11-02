@@ -2,9 +2,12 @@
   <div class="text-steel">About</div>
 </template>
 <script>
+import { util } from '~/util/util';
+
 export default {
+  mixins:[util],
   mounted() {
-    this.$root.$emit('updateConstellation', {
+    const setting = {
       pointDensity: 16,
       pointSize: 3,
       friction: .0675,
@@ -19,11 +22,22 @@ export default {
       maxInteractDistance: 450,
       maxInteractForce: .1500,
       interactMode: "attract",
-      backgroundColor: "#254e70",
-      pointColor: "#254e70",
-      lineColor: "#8ee3ef",
-      pointInteractColor: "#254e70",
-      });
+      backgroundColor: "#00142d",
+      pointColor: "#00142d",
+      lineColor: "#0068eb",
+      pointInteractColor: "#00142d",
+    };
+
+
+
+      if(this.canvasSupportsDisplayP3() && this.canvasSupportsWideGamutCSSColors()) {
+        setting.backgroundColor = 'oklch(19.12% 0.074 252.64)';
+        setting.pointColor = 'oklch(19.12% 0.074 252.64)';
+        setting.pointInteractColor = 'oklch(19.12% 0.074 252.64)';
+        setting.lineColor = 'oklch(55% 0.261 259.05)';
+      }
+
+      this.$root.$emit('updateConstellation', setting);
   }
 }
 </script>

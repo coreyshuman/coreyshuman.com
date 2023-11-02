@@ -5,7 +5,7 @@
     >
       <Header class="font-title font-medium text-steel" />
       <Nuxt />
-      <TheFooter class="w-full h-36" />
+      <TheFooter />
     </div>
     <ConstellationBackground :config="constellationConfig" />
   </div>

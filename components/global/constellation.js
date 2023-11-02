@@ -235,7 +235,7 @@ class DrawnPoint {
   updateLocation({ dt, maxX, maxY, friction, frictionMinV }) {
     this.x += this.dx * dt;
     this.y += this.dy * dt;
-
+ 
     if (this.y < 0) {
       this.y = 0;
       this.dy = -this.dy;
@@ -361,6 +361,8 @@ class Constellation {
     this.cursor = new Point();
     // store touch positions on mobile
     this.touches = [];
+
+    requestAnimationFrame(this.run.bind(this));
   }
 
   defaultSettings() {
@@ -442,7 +444,7 @@ class Constellation {
       case 'backgroundColor':
       case 'pointColor':
       case 'pointInteractColor':
-        // todo verify color, including p3 support
+        // todo verify color
         break;
       case 'interactMode':
         if (value !== 'attract') {
@@ -804,7 +806,6 @@ class Constellation {
     }
     this.running = true;
     this.lastFrameTime = 0;
-    requestAnimationFrame(this.run.bind(this));
   }
 
   stop() {
@@ -812,25 +813,25 @@ class Constellation {
   }
 
   run(timestamp) {
-    let dt = timestamp - this.lastFrameTime;
-    this.lastFrameTime = timestamp;
+    if(this.this.running) {
+      let dt = timestamp - this.lastFrameTime;
+      this.lastFrameTime = timestamp;
 
-    // if we were in the background, don't let dt run away
-    if (dt > 200) {
-      dt = 200;
-    }
+      // if we were in the background, don't let dt run away
+      if (dt > 200) {
+        dt = 200;
+      }
 
-    Statistics.startUpdate();
-    this.update(dt);
-    Statistics.endUpdate();
-    Statistics.startDraw();
-    this.draw();
-    Statistics.endDraw();
-
-    if (this.running) {
-      requestAnimationFrame(this.run.bind(this));
+      Statistics.startUpdate();
+      this.update(dt);
+      Statistics.endUpdate();
+      Statistics.startDraw();
+      this.draw();
+      Statistics.endDraw();
       Statistics.incrementFrameCount();
     }
+
+    requestAnimationFrame(this.run.bind(this));
   }
 
   // calculate point count based on density setting and screen size
@@ -883,13 +884,6 @@ class Constellation {
       return context.getContextAttributes().colorSpace === 'display-p3';
     } catch {}
     return false;
-  }
-
-  canvasSupportsWideGamutCSSColors() {
-    const context = document.createElement('canvas').getContext('2d');
-    const initialFillStyle = context.fillStyle;
-    context.fillStyle = 'color(display-p3 0 1 0)';
-    return context.fillStyle !== initialFillStyle;
   }
 }
 

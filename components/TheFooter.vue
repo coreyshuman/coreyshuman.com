@@ -1,6 +1,6 @@
 <template>
-  <footer class="text-steel">
-    <div class="flex w-100 flex-col ">
+  <footer class="flex flex-grow items-end text-steel">
+    <div class="flex flex-col w-screen">
       <Separator />
       <ul class="flex flex-row flex-1 m-2 md:m-4 justify-center text-green text-title text-lg">
         <li v-for="social of socials" :key="social.name" class="m-0 ml-1 sm:m-2">

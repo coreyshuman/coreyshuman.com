@@ -30,15 +30,6 @@
 <script>
 import {util} from '../util/util';
 
-const lastLocation = {clientX: 0, clientY: 0};
-
-const settings = {
-  radialColor: '#8ee3ef',
-  radialSize: 300,
-  borderColor: '#666',
-  borderWidth: 3,
-  borderRadius: 8
-};
 
 export default {
   mixins:[util],
@@ -52,12 +43,29 @@ export default {
       required: true
     }
   },
+  data() {
+    return {
+      lastLocation: {clientX: 0, clientY: 0},
+      settings: {
+        radialColor: '#6dffeb',
+        radialSize: 300,
+        borderColor: '#666',
+        borderWidth: 3,
+        borderRadius: 8
+      }
+    }
+  },
+  beforeMount() {
+    if(this.canvasSupportsDisplayP3() && this.canvasSupportsWideGamutCSSColors()) {
+      this.settings.radialColor = 'oklch(91.47% 0.1479 182.73)';
+    }
+  },
   mounted() {
     document.addEventListener('mousemove', this.updateMousePosition);
     document.addEventListener('touchstart', this.updateMousePosition);
     document.addEventListener('touchmove', this.updateMousePosition);
     window.addEventListener('resize', this.handleResize);
-    this.updateMousePosition(lastLocation);
+    this.updateMousePosition(this.lastLocation);
   },
   beforeDestroy() {
     document.removeEventListener('mousemove', this.updateMousePosition);
@@ -82,29 +90,29 @@ export default {
         clientY = e.clientY;
       }
 
-      const grd = ctx.createRadialGradient(clientX - x, clientY - y, 5, clientX - x, clientY - y, settings.radialSize);
-      grd.addColorStop(0, settings.radialColor);
-      grd.addColorStop(1, settings.borderColor);
+      const grd = ctx.createRadialGradient(clientX - x, clientY - y, 5, clientX - x, clientY - y, this.settings.radialSize);
+      grd.addColorStop(0, this.settings.radialColor);
+      grd.addColorStop(1, this.settings.borderColor);
 
       ctx.fillStyle = grd;
-      ctx.fillRect(settings.borderRadius + 1, 0, canvas.width - 2 * (settings.borderRadius + 1), settings.borderWidth); // top
-      ctx.fillRect(settings.borderRadius + 2, canvas.height - settings.borderWidth, canvas.width - 2 * (settings.borderRadius + 1), canvas.height); // bottom
-      ctx.fillRect(0, settings.borderRadius + 1, settings.borderWidth, canvas.height - 2 * (settings.borderRadius + 1)); // left
-      ctx.fillRect(canvas.width - settings.borderWidth, settings.borderRadius + 1, canvas.width, canvas.height - 2 * (settings.borderRadius + 1)); // right
+      ctx.fillRect(this.settings.borderRadius + 1, 0, canvas.width - 2 * (this.settings.borderRadius + 1), this.settings.borderWidth); // top
+      ctx.fillRect(this.settings.borderRadius + 2, canvas.height - this.settings.borderWidth, canvas.width - 2 * (this.settings.borderRadius + 1), canvas.height); // bottom
+      ctx.fillRect(0, this.settings.borderRadius + 1, this.settings.borderWidth, canvas.height - 2 * (this.settings.borderRadius + 1)); // left
+      ctx.fillRect(canvas.width - this.settings.borderWidth, this.settings.borderRadius + 1, canvas.width, canvas.height - 2 * (this.settings.borderRadius + 1)); // right
 
       ctx.strokeStyle = grd;
-      ctx.lineWidth = settings.borderWidth;
-      ctx.arc(settings.borderRadius + settings.borderWidth / 2.2 + .25, settings.borderRadius + settings.borderWidth / 2.2 + .25, settings.borderRadius, Math.PI, 3/2 * Math.PI); // top left
-      ctx.moveTo(settings.borderRadius, canvas.height);
-      ctx.arc(settings.borderRadius + settings.borderWidth / 2.2 + .25, canvas.height - settings.borderRadius - (settings.borderWidth / 2.2 + .25), settings.borderRadius, 1/2 * Math.PI, Math.PI); // bottom left
-      ctx.moveTo(canvas.width - settings.borderRadius, 0);
-      ctx.arc(canvas.width - settings.borderRadius - (settings.borderWidth / 2.2 + .25), settings.borderRadius + settings.borderWidth / 2.2 + .25, settings.borderRadius, 3/2 * Math.PI, 2 * Math.PI); // top right
-      ctx.moveTo(canvas.width, canvas.height - settings.borderRadius);
-      ctx.arc(canvas.width - settings.borderRadius - (settings.borderWidth / 2.2 + .25), canvas.height - settings.borderRadius - (settings.borderWidth / 2.2 + .25), settings.borderRadius, 0, 1/2 * Math.PI); // bottom right
+      ctx.lineWidth = this.settings.borderWidth;
+      ctx.arc(this.settings.borderRadius + this.settings.borderWidth / 2.2 + .25, this.settings.borderRadius + this.settings.borderWidth / 2.2 + .25, this.settings.borderRadius, Math.PI, 3/2 * Math.PI); // top left
+      ctx.moveTo(this.settings.borderRadius, canvas.height);
+      ctx.arc(this.settings.borderRadius + this.settings.borderWidth / 2.2 + .25, canvas.height - this.settings.borderRadius - (this.settings.borderWidth / 2.2 + .25), this.settings.borderRadius, 1/2 * Math.PI, Math.PI); // bottom left
+      ctx.moveTo(canvas.width - this.settings.borderRadius, 0);
+      ctx.arc(canvas.width - this.settings.borderRadius - (this.settings.borderWidth / 2.2 + .25), this.settings.borderRadius + this.settings.borderWidth / 2.2 + .25, this.settings.borderRadius, 3/2 * Math.PI, 2 * Math.PI); // top right
+      ctx.moveTo(canvas.width, canvas.height - this.settings.borderRadius);
+      ctx.arc(canvas.width - this.settings.borderRadius - (this.settings.borderWidth / 2.2 + .25), canvas.height - this.settings.borderRadius - (this.settings.borderWidth / 2.2 + .25), this.settings.borderRadius, 0, 1/2 * Math.PI); // bottom right
       ctx.stroke();
     },
     handleResize() {
-      this.updateMousePosition(lastLocation);
+      this.updateMousePosition(this.lastLocation);
     }
   }
 
