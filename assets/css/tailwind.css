@@ -3,35 +3,24 @@
 @import 'tailwindcss/utilities';
 
 :root {
-  --color-transparent: transparent;
-  --color-current: currentColor;
-  --color-red: #d70049;
-  --color-indigo: #254e70;
-  --color-blue: #37718e;
-  --color-green: #00df9f;
-  --color-teal: #49ebff;
-  --color-celeste: #6dffeb;
-  --color-purple: #ff71fd;
-  --color-steel: #e5e7eb;
-  --color-gray: #6b7280;
-  --color-black: #000;
-  --color-black-transparent: #0006;
-  --color-white: #fff;
-}
-
-@media (color-gamut: p3) {
-  :root {
-    --color-current: currentColor;
-    --color-red: oklch(55.86% 0.235 14.4);
-    --color-green: oklch(80.06% 0.2185 163.81);
-    --color-teal: oklch(86.6% 0.1425 207.16);
-    --color-celeste: oklch(91.5% 0.1469 182.73);
-    --color-purple: oklch(76.76% 0.2666 328.12);
-    --color-steel: oklch(92.76% 0.006 264.53);
-    --color-gray: oklch(55.1% 0.023 264.36);
-    --color-black: oklch(0% 0 0);
-    --color-white: oklch(100% 0 0);
-  }
+  --color-red: oklch(55.86% 0.235 14.4);
+  --color-red-raw: 55.86% 0.235 14.4;
+  --color-green: oklch(80.06% 0.2185 163.81);
+  --color-green-raw: 80.06% 0.2185 163.81;
+  --color-teal: oklch(86.6% 0.1425 207.16);
+  --color-teal-raw: 86.6% 0.1425 207.16;
+  --color-celeste: oklch(91.5% 0.1469 182.73);
+  --color-celeste-raw: 91.5% 0.1469 182.73;
+  --color-purple: oklch(76.76% 0.2666 328.12);
+  --color-purple-raw: 76.76% 0.2666 328.12;
+  --color-steel: oklch(92.76% 0.006 264.53);
+  --color-steel-raw: 92.76% 0.006 264.53;
+  --color-gray: oklch(55.1% 0.023 264.36);
+  --color-gray-raw: 55.1% 0.023 264.36;
+  --color-black: oklch(0% 0 0);
+  --color-black-raw: 0% 0 0;
+  --color-white: oklch(100% 0 0);
+  --color-white-raw: 100% 0 0;
 }
 
 .nuxt-content-highlight {

@@ -235,7 +235,7 @@ class DrawnPoint {
   updateLocation({ dt, maxX, maxY, friction, frictionMinV }) {
     this.x += this.dx * dt;
     this.y += this.dy * dt;
- 
+
     if (this.y < 0) {
       this.y = 0;
       this.dy = -this.dy;
@@ -813,7 +813,7 @@ class Constellation {
   }
 
   run(timestamp) {
-    if(this.this.running) {
+    if (this.this.running) {
       let dt = timestamp - this.lastFrameTime;
       this.lastFrameTime = timestamp;
 

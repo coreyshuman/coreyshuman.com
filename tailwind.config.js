@@ -6,6 +6,18 @@
  */
 const plugin = require('tailwindcss/plugin');
 
+const colorWithOpacity = (colorName) => {
+  return ({ opacityVariable, opacityValue }) => {
+    if (opacityValue !== undefined) {
+      return `oklch(var(${colorName}-raw) / ${opacityValue})`;
+    }
+    if (opacityVariable !== undefined) {
+      return `oklch(var(${colorName}-raw) / var(${opacityVariable}, 1))`;
+    }
+    return `oklch(var(${colorName}-raw))`;
+  };
+};
+
 module.exports = {
   mode: 'jit',
   theme: {
@@ -23,20 +35,17 @@ module.exports = {
       body: ['Montserrat', 'Arial', 'sans-serif']
     },
     colors: {
-      transparent: 'var(--color-transparent)',
-      current: 'var(--color-current)',
-      red: 'var(--color-red)',
-      indigo: 'var(--color-indigo)',
-      blue: 'var(--color-blue)',
-      green: 'var(--color-green)',
-      teal: 'var(--color-teal)',
-      celeste: 'var(--color-celeste)',
-      purple: 'var(--color-purple)',
-      steel: 'var(--color-steel)',
-      gray: 'var(--color-gray)',
-      black: 'var(--color-black)',
-      'black-transparent': 'var(--color-black-transparent)',
-      white: 'var(--color-white)'
+      transparent: 'transparent',
+      current: 'currentColor',
+      red: colorWithOpacity('--color-red'),
+      green: colorWithOpacity('--color-green'),
+      teal: colorWithOpacity('--color-teal'),
+      celeste: colorWithOpacity('--color-celeste'),
+      purple: colorWithOpacity('--color-purple'),
+      steel: colorWithOpacity('--color-steel'),
+      gray: colorWithOpacity('--color-gray'),
+      black: colorWithOpacity('--color-black'),
+      white: colorWithOpacity('--color-white')
     },
     borderWidth: {
       default: '1px',

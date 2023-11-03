@@ -58,8 +58,8 @@ export const util = {
 
       // Matrix multiplication to convert lms to XYZ
       // This matrix is based on the D65 illuminant
-      const X =  1.2268798733741557 * l3 - 0.5578149965554813 * m3 + 0.2813910501772158 * s3;
-      const Y = -0.0405757626243137 * l3 + 1.1122868293970594 * m3 - 0.0717110666615170 * s3;
+      const X = 1.2268798733741557 * l3 - 0.5578149965554813 * m3 + 0.2813910501772158 * s3;
+      const Y = -0.0405757626243137 * l3 + 1.1122868293970594 * m3 - 0.071711066661517 * s3;
       const Z = -0.0763729497467214 * l3 - 0.4214933239627914 * m3 + 1.5869240244272418 * s3;
 
       return [X, Y, Z];
@@ -68,9 +68,9 @@ export const util = {
     xyzToP3(X, Y, Z) {
       // Matrix conversion from XYZ (D65) to linear Display P3.
       // The matrix is based on the D65 illuminant.
-      const p3Red   =  2.4934969119414250 * X - 0.9313836179191236 * Y - 0.4027107844507168 * Z;
-      const p3Green = -0.8294889695615750 * X + 1.7626640603183470 * Y + 0.0236246858419436 * Z;
-      const p3Blue  =  0.0358458302437843 * X - 0.0761723892680417 * Y + 0.9568845240076873 * Z;
+      const p3Red = 2.493496911941425 * X - 0.9313836179191236 * Y - 0.4027107844507168 * Z;
+      const p3Green = -0.829488969561575 * X + 1.762664060318347 * Y + 0.0236246858419436 * Z;
+      const p3Blue = 0.0358458302437843 * X - 0.0761723892680417 * Y + 0.9568845240076873 * Z;
 
       return [p3Red, p3Green, p3Blue];
     },
@@ -96,7 +96,7 @@ export const util = {
     },
 
     isOklchColor(color) {
-      if(typeof(color) !== 'string') {
+      if (typeof color !== 'string') {
         return false;
       }
 
