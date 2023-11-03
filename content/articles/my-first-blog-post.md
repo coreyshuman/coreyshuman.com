@@ -18,8 +18,8 @@ Welcome to my first blog post using content module
 
 This is some more info
 
-<div class="bg-blue-500 text-white p-4 mb-4">
-  This is HTML inside markdown that has a class some classes
+<div class="bg-purple text-steel p-4 mb-4">
+  This is HTML inside markdown that has some classes
 </div>
 
 <info-box>
@@ -28,21 +28,42 @@ This is some more info
   </template>
 </info-box>
 
-```js[nuxt.config.js]
-export default {
-  nuxt: "is the best"
+```js {1,3-5}[nuxt.config.js]
+const btn = document.getElementById('btn');
+let count = 0;
+
+function render() {
+  btn.innerText = `Count: ${count}`;
 }
+
+btn.addEventListener('click', () => {
+  // count from 1 to 10.
+  if (count < 10) {
+    count += 1;
+    render();
+  }
+});
 ```
 
-```html[my-first-blog-post.md]
+test
+
+```html
 <p>code styling is easy</p>
 ```
 
-### This is a sub heading
+### This is a sub heading h3
 
 This is some more info
 
-### This is another sub heading
+#### This is another sub heading h4
+
+This is some more info
+
+##### This is another sub heading h5
+
+This is some more info
+
+###### This is another sub heading h6
 
 This is some more info
 

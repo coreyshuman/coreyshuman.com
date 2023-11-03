@@ -4,13 +4,11 @@
     <div
       class="
         relative
-        xs:py-8 xs:px-4
+        py-8 px-0
+        xs:py-8 xs:px-2
         lg:py-16 lg:px-8 
         w-full
         h-full
-        markdown-body
-        post-right
-        custom-scroll
       "
     >
       <em>{{ article.description }}</em>

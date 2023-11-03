@@ -1,3 +1,5 @@
+import * as shiki from 'shikiji';
+
 export default {
   /*
    ** Nuxt target
@@ -90,8 +92,29 @@ export default {
    */
   content: {
     markdown: {
-      prism: {
-        theme: 'prism-themes/themes/prism-material-oceanic.css'
+      async highlighter() {
+        const highlighter = await shiki.getHighlighter({
+          // Complete themes: https://github.com/shikijs/shiki/tree/main/packages/shiki/themes
+          themes: [import('./theme/theme.mjs')],
+          langs: ['diff', 'json', 'js', 'ts', 'css', 'shell', 'html', 'md', 'yaml', 'csharp']
+        });
+        return (rawCode, lang, { lineHighlights, fileName }) => {
+          const lineLights = parseNumberRange(lineHighlights);
+          const header = fileName ? `<div class="nuxt-content-highlight-header">${fileName}</div>` : '';
+
+          const code = highlighter.codeToHtml(rawCode, {
+            lang: lang === 'null' ? 'md' : lang,
+            theme: 'corey-theme',
+            transforms: {
+              line(node, line) {
+                if (lineLights.includes(line)) {
+                  node.properties.class += ' highlight';
+                }
+              }
+            }
+          });
+          return header + code;
+        };
       }
     },
     nestedProperties: ['author.name']
@@ -123,3 +146,31 @@ export default {
     port: '3000'
   }
 };
+
+function parseNumberRange(rangeStr) {
+  const result = [];
+
+  if (rangeStr === null) {
+    return result;
+  }
+
+  // Split the string into parts separated by commas.
+  const parts = rangeStr.split(',');
+
+  for (const part of parts) {
+    // Check if part is a range (e.g. "3-5").
+    if (part.includes('-')) {
+      // Split the range into start and end numbers.
+      const range = part.split('-').map(Number);
+      // Generate all numbers within this range and add to the result.
+      for (let i = range[0]; i <= range[1]; i++) {
+        result.push(i);
+      }
+    } else {
+      // If it's not a range, simply add the number to the result.
+      result.push(Number(part));
+    }
+  }
+
+  return result;
+}
