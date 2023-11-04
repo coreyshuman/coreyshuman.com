@@ -23,6 +23,7 @@
       "pre-commit": "lint-staged"
     }
   },
+  "browserlists": "last 2 versions, not dead, > 0.2%",
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
@@ -46,6 +47,8 @@
     "husky": "^4.3.7",
     "lint-staged": "^10.5.3",
     "prettier": "^2.2.1",
+    "remark-behead": "^3.1.0",
+    "remark-emoji": "^4.0.1",
     "shikiji": "^0.6.12",
     "stylelint": "13.8.0",
     "stylelint-config-prettier": "8.0.2",

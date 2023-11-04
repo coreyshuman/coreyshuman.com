@@ -61,7 +61,10 @@ export default {
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    // this works, transpile doesn't :(
+    'remark-behead',
+    'remark-emoji'
   ],
   /*
    ** Nuxt.js modules
@@ -92,6 +95,12 @@ export default {
    */
   content: {
     markdown: {
+      tocDepth: 3,
+      remarkPlugins: [
+        ['remark-behead', {minDepth: 2}],
+        // https://github.com/wooorm/emoticon/blob/HEAD/support.md
+        ['remark-emoji', {accessible: true, emoticon: false}]
+      ],
       async highlighter() {
         const highlighter = await shiki.getHighlighter({
           // Complete themes: https://github.com/shikijs/shiki/tree/main/packages/shiki/themes
@@ -124,6 +133,25 @@ export default {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {
+    babel: {
+      presets(env, [ preset, options ]) {
+        const envTargets = {
+          client: { browsers: ["last 2 versions, not dead, > 0.2%"] },
+          server: { node: "current" },
+        }
+
+        // options.debug = true;
+        // options.modules = 'cjs';
+        options.targets = envTargets[env.envName];
+        return [
+          [ "@nuxt/babel-preset-app", options ]
+        ]
+      }
+    },
+    // keeping transpile even though it doesn't work
+    transpile: [
+      'remark-behead',
+    ],
     postcss: {
       plugins: {
         // 'postcss-preset-env':false
