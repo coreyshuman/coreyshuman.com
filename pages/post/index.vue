@@ -26,10 +26,14 @@ import { util } from '~/util/util';
 export default {
   mixins:[util],
   async asyncData({ $content }) {
-    const articles = await $content('articles')
-      .only(['title', 'description', 'img', 'slug', 'author', 'created', 'updated'])
+    let articles = await $content('articles')
+      .only(['title', 'description', 'img', 'slug', 'author', 'created', 'updated', 'published'])
       .sortBy('created', 'desc')
       .fetch();
+
+    if(process.env.NODE_ENV === 'production') {
+      articles = articles.filter(article => article.published === true);
+    }
     const tags = await $content('tags')
       .only(['name', 'slug'])
       .sortBy('name', 'asc')

@@ -97,14 +97,14 @@ export default {
     markdown: {
       tocDepth: 3,
       remarkPlugins: [
-        ['remark-behead', {minDepth: 2}],
-        // https://github.com/wooorm/emoticon/blob/HEAD/support.md
-        ['remark-emoji', {accessible: true, emoticon: false}]
+        ['remark-behead', { minDepth: 2 }],
+        // https://github.com/muan/emojilib/blob/main/dist/emoji-en-US.json
+        ['remark-emoji', { accessible: true, emoticon: false }]
       ],
       async highlighter() {
         const highlighter = await shiki.getHighlighter({
           // Complete themes: https://github.com/shikijs/shiki/tree/main/packages/shiki/themes
-          themes: [import('./theme/theme.mjs')],
+          themes: [import('./theme/code-highlight.mjs')],
           langs: ['diff', 'json', 'js', 'ts', 'css', 'shell', 'html', 'md', 'yaml', 'csharp']
         });
         return (rawCode, lang, { lineHighlights, fileName }) => {
@@ -134,24 +134,20 @@ export default {
    */
   build: {
     babel: {
-      presets(env, [ preset, options ]) {
+      presets(env, [preset, options]) {
         const envTargets = {
-          client: { browsers: ["last 2 versions, not dead, > 0.2%"] },
-          server: { node: "current" },
-        }
+          client: { browsers: ['last 2 versions, not dead, > 0.2%'] },
+          server: { node: 'current' }
+        };
 
         // options.debug = true;
         // options.modules = 'cjs';
         options.targets = envTargets[env.envName];
-        return [
-          [ "@nuxt/babel-preset-app", options ]
-        ]
+        return [['@nuxt/babel-preset-app', options]];
       }
     },
     // keeping transpile even though it doesn't work
-    transpile: [
-      'remark-behead',
-    ],
+    transpile: ['remark-behead'],
     postcss: {
       plugins: {
         // 'postcss-preset-env':false

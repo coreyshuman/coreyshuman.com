@@ -48,12 +48,13 @@ export default {
   mixins:[util],
   async asyncData({ $content }) {
     const articles = await $content('articles')
-      .only(['title', 'description', 'img', 'slug'])
+      .only(['title', 'description', 'img', 'alt', 'slug'])
+      .where({published: {$eq: true}})
       .sortBy('updated', 'desc')
       .limit(3)
       .fetch();
     const projects = await $content('projects')
-      .only(['title', 'description', 'img', 'slug'])
+      .only(['title', 'description', 'img', 'alt', 'slug'])
       .sortBy('updated', 'desc')
       .limit(3)
       .fetch();
