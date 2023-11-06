@@ -65,6 +65,26 @@ export default {
       lineColor: "#00fdff",
       pointInteractColor: "#dd33dd",
     });
+
+        // update colors in code
+        const tokens = document.querySelectorAll('pre.shiki code span.line span');
+
+        for(const token of tokens) {
+          const tokenColor = token.style.color;
+          console.log(tokenColor)
+          switch(tokenColor) {
+            case 'rgb(0, 0, 1)': token.style.color = 'var(--color-highlight-foreground)'; break;
+            case 'rgb(0, 0, 2)': token.style.color = 'var(--color-highlight-string)'; break;
+            case 'rgb(0, 0, 3)': token.style.color = 'var(--color-highlight-boolean)'; break;
+            case 'rgb(0, 0, 4)': token.style.color = 'var(--color-highlight-punctuation)'; break;
+            case 'rgb(0, 0, 5)': token.style.color = 'var(--color-highlight-number)'; break;
+            case 'rgb(0, 0, 6)': token.style.color = 'var(--color-highlight-function)'; break;
+            case 'rgb(0, 0, 7)': token.style.color = 'var(--color-highlight-attribute)'; break;
+            case 'rgb(0, 0, 8)': token.style.color = 'var(--color-highlight-type)'; break;
+            case 'rgb(0, 0, 9)': token.style.color = 'var(--color-highlight-property)'; break;
+            case 'rgb(0, 0, 10)': token.style.color = 'var(--color-highlight-comment)'; break;
+          }
+        }
   }
 };
 </script>
