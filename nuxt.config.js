@@ -110,14 +110,49 @@ export default {
         return (rawCode, lang, { lineHighlights, fileName }) => {
           const lineLights = parseNumberRange(lineHighlights);
           const header = fileName ? `<div class="nuxt-content-highlight-header">${fileName}</div>` : '';
-
+          // start debug
+          let tokens = null;
+          let tokenIdx = 0;
+          if (fileName === 'print-explanation.code') {
+            tokens = highlighter.codeToThemedTokens(rawCode, {
+              lang: lang === 'null' ? 'md' : lang,
+              theme: 'corey-theme',
+              includeExplanation: true
+            });
+            // console.log(JSON.stringify(tokens));
+          }
+          // end debug
           const code = highlighter.codeToHtml(rawCode, {
             lang: lang === 'null' ? 'md' : lang,
             theme: 'corey-theme',
+
             transforms: {
               line(node, line) {
+                tokenIdx = 0;
                 if (lineLights.includes(line)) {
                   node.properties.class += ' highlight';
+                }
+              },
+              token(node, line, col) {
+                if (tokens !== null) {
+                  try {
+                    if (node.children[0].value !== tokens[line - 1][tokenIdx].content) {
+                      if (tokens[line - 1][tokenIdx].content.match(/\s/g)) {
+                        tokenIdx++;
+                      } else {
+                        console.error('no match: ---------');
+                        console.log(node.children[0].value);
+                        console.log(tokens[line - 1][tokenIdx].content);
+                        console.log(`line:${line - 1} idx:${tokenIdx}`);
+                      }
+                    }
+                    node.properties['data-explanation'] = JSON.stringify(
+                      tokens[line - 1][tokenIdx].explanation
+                    ).replaceAll('"', "'");
+                  } catch {
+                    console.error('.');
+                  }
+                  tokenIdx++;
                 }
               }
             }

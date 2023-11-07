@@ -1,0 +1,3248 @@
+[
+  [
+    {
+      "content": "using",
+      "color": "#000005",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "using",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "keyword.other.directive.using.cs",
+              "themeMatches": [
+                { "name": "Other Keyword", "scope": "keyword.other", "settings": { "foreground": "#000005" } },
+                {
+                  "name": "Keyword",
+                  "scope": "keyword, modifier, variable.language.this, support.type.object, constant.language",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " System",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        { "content": " ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] },
+        {
+          "content": "System",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "entity.name.type.namespace.cs",
+              "themeMatches": [
+                {
+                  "name": "Type",
+                  "scope": "entity.name.type, entity.other.inherited-class, entity.other",
+                  "settings": { "foreground": "#000008" }
+                },
+                {
+                  "name": "Class",
+                  "scope": "entity.name, entity.name.type.class, support.type, support.class, meta.use",
+                  "settings": { "foreground": "#000008" }
+                },
+                {
+                  "name": "C# namespace",
+                  "scope": "source.cs entity.name.type.namespace",
+                  "settings": { "foreground": "#000001" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": ";",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": ";",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.terminator.statement.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "content": "using",
+      "color": "#000005",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "using",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "keyword.other.directive.using.cs",
+              "themeMatches": [
+                { "name": "Other Keyword", "scope": "keyword.other", "settings": { "foreground": "#000005" } },
+                {
+                  "name": "Keyword",
+                  "scope": "keyword, modifier, variable.language.this, support.type.object, constant.language",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " System",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        { "content": " ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] },
+        {
+          "content": "System",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "entity.name.type.namespace.cs",
+              "themeMatches": [
+                {
+                  "name": "Type",
+                  "scope": "entity.name.type, entity.other.inherited-class, entity.other",
+                  "settings": { "foreground": "#000008" }
+                },
+                {
+                  "name": "Class",
+                  "scope": "entity.name, entity.name.type.class, support.type, support.class, meta.use",
+                  "settings": { "foreground": "#000008" }
+                },
+                {
+                  "name": "C# namespace",
+                  "scope": "source.cs entity.name.type.namespace",
+                  "settings": { "foreground": "#000001" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": ".",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": ".",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.accessor.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "ComponentModel",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "ComponentModel",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "entity.name.type.namespace.cs",
+              "themeMatches": [
+                {
+                  "name": "Type",
+                  "scope": "entity.name.type, entity.other.inherited-class, entity.other",
+                  "settings": { "foreground": "#000008" }
+                },
+                {
+                  "name": "Class",
+                  "scope": "entity.name, entity.name.type.class, support.type, support.class, meta.use",
+                  "settings": { "foreground": "#000008" }
+                },
+                {
+                  "name": "C# namespace",
+                  "scope": "source.cs entity.name.type.namespace",
+                  "settings": { "foreground": "#000001" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": ";",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": ";",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.terminator.statement.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "content": "//",
+      "color": "#000004",
+      "fontStyle": 1,
+      "explanation": [
+        {
+          "content": "//",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "comment.line.double-slash.cs",
+              "themeMatches": [
+                {
+                  "name": "Comment",
+                  "scope": "comment, comment.block, comment.block.documentation",
+                  "settings": { "foreground": "#000000a", "fontStyle": "italic" }
+                }
+              ]
+            },
+            {
+              "scopeName": "punctuation.definition.comment.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                {
+                  "name": "Comment",
+                  "scope": "comment punctuation.definition.comment, comment punctuation.definition.tag, string.quoted.docstring",
+                  "settings": { "foreground": "#000000a", "fontStyle": "italic" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "test",
+      "color": "#000001",
+      "fontStyle": 1,
+      "explanation": [
+        {
+          "content": "test",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "comment.line.double-slash.cs",
+              "themeMatches": [
+                {
+                  "name": "Comment",
+                  "scope": "comment, comment.block, comment.block.documentation",
+                  "settings": { "foreground": "#000000a", "fontStyle": "italic" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "content": "namespace",
+      "color": "#000008",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "namespace",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "storage.type.namespace.cs",
+              "themeMatches": [
+                {
+                  "name": "Storage",
+                  "scope": "storage.type, storage.modifier, storage.control",
+                  "settings": { "foreground": "#000007" }
+                },
+                { "name": "C# type", "scope": "source.cs storage.type", "settings": { "foreground": "#000008" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " Application",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        { "content": " ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] },
+        {
+          "content": "Application",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "entity.name.type.namespace.cs",
+              "themeMatches": [
+                {
+                  "name": "Type",
+                  "scope": "entity.name.type, entity.other.inherited-class, entity.other",
+                  "settings": { "foreground": "#000008" }
+                },
+                {
+                  "name": "Class",
+                  "scope": "entity.name, entity.name.type.class, support.type, support.class, meta.use",
+                  "settings": { "foreground": "#000008" }
+                },
+                {
+                  "name": "C# namespace",
+                  "scope": "source.cs entity.name.type.namespace",
+                  "settings": { "foreground": "#000001" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": ".",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": ".",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.accessor.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "Services",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "Services",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "entity.name.type.namespace.cs",
+              "themeMatches": [
+                {
+                  "name": "Type",
+                  "scope": "entity.name.type, entity.other.inherited-class, entity.other",
+                  "settings": { "foreground": "#000008" }
+                },
+                {
+                  "name": "Class",
+                  "scope": "entity.name, entity.name.type.class, support.type, support.class, meta.use",
+                  "settings": { "foreground": "#000008" }
+                },
+                {
+                  "name": "C# namespace",
+                  "scope": "source.cs entity.name.type.namespace",
+                  "settings": { "foreground": "#000001" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "content": "{",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "{",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.curlybrace.open.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "content": "    ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": "    ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": "abstract",
+      "color": "#000007",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "abstract",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "storage.modifier.abstract.cs",
+              "themeMatches": [
+                {
+                  "name": "Storage",
+                  "scope": "storage.type, storage.modifier, storage.control",
+                  "settings": { "foreground": "#000007" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": " ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": "class",
+      "color": "#000008",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "class",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "storage.type.class.cs",
+              "themeMatches": [
+                {
+                  "name": "Storage",
+                  "scope": "storage.type, storage.modifier, storage.control",
+                  "settings": { "foreground": "#000007" }
+                },
+                { "name": "C# type", "scope": "source.cs storage.type", "settings": { "foreground": "#000008" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": " ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": "ControllerServiceBase",
+      "color": "#000008",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "ControllerServiceBase",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "entity.name.type.class.cs",
+              "themeMatches": [
+                {
+                  "name": "Type",
+                  "scope": "entity.name.type, entity.other.inherited-class, entity.other",
+                  "settings": { "foreground": "#000008" }
+                },
+                {
+                  "name": "Class",
+                  "scope": "entity.name, entity.name.type.class, support.type, support.class, meta.use",
+                  "settings": { "foreground": "#000008" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": " ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": ":",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": ":",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.separator.colon.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": " ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": "IService",
+      "color": "#000008",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "IService",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "entity.name.type.cs",
+              "themeMatches": [
+                {
+                  "name": "Type",
+                  "scope": "entity.name.type, entity.other.inherited-class, entity.other",
+                  "settings": { "foreground": "#000008" }
+                },
+                {
+                  "name": "Class",
+                  "scope": "entity.name, entity.name.type.class, support.type, support.class, meta.use",
+                  "settings": { "foreground": "#000008" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "content": "    ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": "    ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": "{",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "{",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.curlybrace.open.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "content": "        ///",
+      "color": "#000004",
+      "fontStyle": 1,
+      "explanation": [
+        {
+          "content": "        ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "comment.block.documentation.cs",
+              "themeMatches": [
+                {
+                  "name": "Comment",
+                  "scope": "comment, comment.block, comment.block.documentation",
+                  "settings": { "foreground": "#000000a", "fontStyle": "italic" }
+                },
+                {
+                  "name": "C# comment documentation",
+                  "scope": "source.cs comment.block.documentation.cs",
+                  "settings": { "foreground": "#000000a" }
+                }
+              ]
+            },
+            {
+              "scopeName": "punctuation.whitespace.comment.leading.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        },
+        {
+          "content": "///",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "comment.block.documentation.cs",
+              "themeMatches": [
+                {
+                  "name": "Comment",
+                  "scope": "comment, comment.block, comment.block.documentation",
+                  "settings": { "foreground": "#000000a", "fontStyle": "italic" }
+                },
+                {
+                  "name": "C# comment documentation",
+                  "scope": "source.cs comment.block.documentation.cs",
+                  "settings": { "foreground": "#000000a" }
+                }
+              ]
+            },
+            {
+              "scopeName": "punctuation.definition.comment.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                {
+                  "name": "Comment",
+                  "scope": "comment punctuation.definition.comment, comment punctuation.definition.tag, string.quoted.docstring",
+                  "settings": { "foreground": "#000000a", "fontStyle": "italic" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 1,
+      "explanation": [
+        {
+          "content": " ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "comment.block.documentation.cs",
+              "themeMatches": [
+                {
+                  "name": "Comment",
+                  "scope": "comment, comment.block, comment.block.documentation",
+                  "settings": { "foreground": "#000000a", "fontStyle": "italic" }
+                },
+                {
+                  "name": "C# comment documentation",
+                  "scope": "source.cs comment.block.documentation.cs",
+                  "settings": { "foreground": "#000000a" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "<",
+      "color": "#000004",
+      "fontStyle": 1,
+      "explanation": [
+        {
+          "content": "<",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "comment.block.documentation.cs",
+              "themeMatches": [
+                {
+                  "name": "Comment",
+                  "scope": "comment, comment.block, comment.block.documentation",
+                  "settings": { "foreground": "#000000a", "fontStyle": "italic" }
+                },
+                {
+                  "name": "C# comment documentation",
+                  "scope": "source.cs comment.block.documentation.cs",
+                  "settings": { "foreground": "#000000a" }
+                }
+              ]
+            },
+            {
+              "scopeName": "meta.tag.cs",
+              "themeMatches": [
+                {
+                  "name": "HTML tag outer",
+                  "scope": "meta.tag, punctuation.definition.tag",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            },
+            {
+              "scopeName": "punctuation.definition.tag.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                {
+                  "name": "Comment",
+                  "scope": "comment punctuation.definition.comment, comment punctuation.definition.tag, string.quoted.docstring",
+                  "settings": { "foreground": "#000000a", "fontStyle": "italic" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } },
+                {
+                  "name": "HTML tag outer",
+                  "scope": "meta.tag, punctuation.definition.tag",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "summary",
+      "color": "#000009",
+      "fontStyle": 1,
+      "explanation": [
+        {
+          "content": "summary",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "comment.block.documentation.cs",
+              "themeMatches": [
+                {
+                  "name": "Comment",
+                  "scope": "comment, comment.block, comment.block.documentation",
+                  "settings": { "foreground": "#000000a", "fontStyle": "italic" }
+                },
+                {
+                  "name": "C# comment documentation",
+                  "scope": "source.cs comment.block.documentation.cs",
+                  "settings": { "foreground": "#000000a" }
+                }
+              ]
+            },
+            {
+              "scopeName": "meta.tag.cs",
+              "themeMatches": [
+                {
+                  "name": "HTML tag outer",
+                  "scope": "meta.tag, punctuation.definition.tag",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            },
+            {
+              "scopeName": "entity.name.tag.cs",
+              "themeMatches": [
+                {
+                  "name": "Class",
+                  "scope": "entity.name, entity.name.type.class, support.type, support.class, meta.use",
+                  "settings": { "foreground": "#000008" }
+                },
+                { "name": "HTML tag inner", "scope": "entity.name.tag", "settings": { "foreground": "#000009" } }
+              ]
+            },
+            {
+              "scopeName": "entity.name.tag.localname.cs",
+              "themeMatches": [
+                {
+                  "name": "Class",
+                  "scope": "entity.name, entity.name.type.class, support.type, support.class, meta.use",
+                  "settings": { "foreground": "#000008" }
+                },
+                { "name": "HTML tag inner", "scope": "entity.name.tag", "settings": { "foreground": "#000009" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": ">",
+      "color": "#000004",
+      "fontStyle": 1,
+      "explanation": [
+        {
+          "content": ">",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "comment.block.documentation.cs",
+              "themeMatches": [
+                {
+                  "name": "Comment",
+                  "scope": "comment, comment.block, comment.block.documentation",
+                  "settings": { "foreground": "#000000a", "fontStyle": "italic" }
+                },
+                {
+                  "name": "C# comment documentation",
+                  "scope": "source.cs comment.block.documentation.cs",
+                  "settings": { "foreground": "#000000a" }
+                }
+              ]
+            },
+            {
+              "scopeName": "meta.tag.cs",
+              "themeMatches": [
+                {
+                  "name": "HTML tag outer",
+                  "scope": "meta.tag, punctuation.definition.tag",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            },
+            {
+              "scopeName": "punctuation.definition.tag.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                {
+                  "name": "Comment",
+                  "scope": "comment punctuation.definition.comment, comment punctuation.definition.tag, string.quoted.docstring",
+                  "settings": { "foreground": "#000000a", "fontStyle": "italic" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } },
+                {
+                  "name": "HTML tag outer",
+                  "scope": "meta.tag, punctuation.definition.tag",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "content": "        ///",
+      "color": "#000004",
+      "fontStyle": 1,
+      "explanation": [
+        {
+          "content": "        ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "comment.block.documentation.cs",
+              "themeMatches": [
+                {
+                  "name": "Comment",
+                  "scope": "comment, comment.block, comment.block.documentation",
+                  "settings": { "foreground": "#000000a", "fontStyle": "italic" }
+                },
+                {
+                  "name": "C# comment documentation",
+                  "scope": "source.cs comment.block.documentation.cs",
+                  "settings": { "foreground": "#000000a" }
+                }
+              ]
+            },
+            {
+              "scopeName": "punctuation.whitespace.comment.leading.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        },
+        {
+          "content": "///",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "comment.block.documentation.cs",
+              "themeMatches": [
+                {
+                  "name": "Comment",
+                  "scope": "comment, comment.block, comment.block.documentation",
+                  "settings": { "foreground": "#000000a", "fontStyle": "italic" }
+                },
+                {
+                  "name": "C# comment documentation",
+                  "scope": "source.cs comment.block.documentation.cs",
+                  "settings": { "foreground": "#000000a" }
+                }
+              ]
+            },
+            {
+              "scopeName": "punctuation.definition.comment.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                {
+                  "name": "Comment",
+                  "scope": "comment punctuation.definition.comment, comment punctuation.definition.tag, string.quoted.docstring",
+                  "settings": { "foreground": "#000000a", "fontStyle": "italic" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " Freqency in Hz that the task will run. Valid values 1 - 1000;",
+      "color": "#000001",
+      "fontStyle": 1,
+      "explanation": [
+        {
+          "content": " Freqency in Hz that the task will run. Valid values 1 - 1000;",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "comment.block.documentation.cs",
+              "themeMatches": [
+                {
+                  "name": "Comment",
+                  "scope": "comment, comment.block, comment.block.documentation",
+                  "settings": { "foreground": "#000000a", "fontStyle": "italic" }
+                },
+                {
+                  "name": "C# comment documentation",
+                  "scope": "source.cs comment.block.documentation.cs",
+                  "settings": { "foreground": "#000000a" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "content": "        ///",
+      "color": "#000004",
+      "fontStyle": 1,
+      "explanation": [
+        {
+          "content": "        ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "comment.block.documentation.cs",
+              "themeMatches": [
+                {
+                  "name": "Comment",
+                  "scope": "comment, comment.block, comment.block.documentation",
+                  "settings": { "foreground": "#000000a", "fontStyle": "italic" }
+                },
+                {
+                  "name": "C# comment documentation",
+                  "scope": "source.cs comment.block.documentation.cs",
+                  "settings": { "foreground": "#000000a" }
+                }
+              ]
+            },
+            {
+              "scopeName": "punctuation.whitespace.comment.leading.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        },
+        {
+          "content": "///",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "comment.block.documentation.cs",
+              "themeMatches": [
+                {
+                  "name": "Comment",
+                  "scope": "comment, comment.block, comment.block.documentation",
+                  "settings": { "foreground": "#000000a", "fontStyle": "italic" }
+                },
+                {
+                  "name": "C# comment documentation",
+                  "scope": "source.cs comment.block.documentation.cs",
+                  "settings": { "foreground": "#000000a" }
+                }
+              ]
+            },
+            {
+              "scopeName": "punctuation.definition.comment.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                {
+                  "name": "Comment",
+                  "scope": "comment punctuation.definition.comment, comment punctuation.definition.tag, string.quoted.docstring",
+                  "settings": { "foreground": "#000000a", "fontStyle": "italic" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 1,
+      "explanation": [
+        {
+          "content": " ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "comment.block.documentation.cs",
+              "themeMatches": [
+                {
+                  "name": "Comment",
+                  "scope": "comment, comment.block, comment.block.documentation",
+                  "settings": { "foreground": "#000000a", "fontStyle": "italic" }
+                },
+                {
+                  "name": "C# comment documentation",
+                  "scope": "source.cs comment.block.documentation.cs",
+                  "settings": { "foreground": "#000000a" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "</",
+      "color": "#000004",
+      "fontStyle": 1,
+      "explanation": [
+        {
+          "content": "</",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "comment.block.documentation.cs",
+              "themeMatches": [
+                {
+                  "name": "Comment",
+                  "scope": "comment, comment.block, comment.block.documentation",
+                  "settings": { "foreground": "#000000a", "fontStyle": "italic" }
+                },
+                {
+                  "name": "C# comment documentation",
+                  "scope": "source.cs comment.block.documentation.cs",
+                  "settings": { "foreground": "#000000a" }
+                }
+              ]
+            },
+            {
+              "scopeName": "meta.tag.cs",
+              "themeMatches": [
+                {
+                  "name": "HTML tag outer",
+                  "scope": "meta.tag, punctuation.definition.tag",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            },
+            {
+              "scopeName": "punctuation.definition.tag.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                {
+                  "name": "Comment",
+                  "scope": "comment punctuation.definition.comment, comment punctuation.definition.tag, string.quoted.docstring",
+                  "settings": { "foreground": "#000000a", "fontStyle": "italic" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } },
+                {
+                  "name": "HTML tag outer",
+                  "scope": "meta.tag, punctuation.definition.tag",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "summary",
+      "color": "#000009",
+      "fontStyle": 1,
+      "explanation": [
+        {
+          "content": "summary",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "comment.block.documentation.cs",
+              "themeMatches": [
+                {
+                  "name": "Comment",
+                  "scope": "comment, comment.block, comment.block.documentation",
+                  "settings": { "foreground": "#000000a", "fontStyle": "italic" }
+                },
+                {
+                  "name": "C# comment documentation",
+                  "scope": "source.cs comment.block.documentation.cs",
+                  "settings": { "foreground": "#000000a" }
+                }
+              ]
+            },
+            {
+              "scopeName": "meta.tag.cs",
+              "themeMatches": [
+                {
+                  "name": "HTML tag outer",
+                  "scope": "meta.tag, punctuation.definition.tag",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            },
+            {
+              "scopeName": "entity.name.tag.cs",
+              "themeMatches": [
+                {
+                  "name": "Class",
+                  "scope": "entity.name, entity.name.type.class, support.type, support.class, meta.use",
+                  "settings": { "foreground": "#000008" }
+                },
+                { "name": "HTML tag inner", "scope": "entity.name.tag", "settings": { "foreground": "#000009" } }
+              ]
+            },
+            {
+              "scopeName": "entity.name.tag.localname.cs",
+              "themeMatches": [
+                {
+                  "name": "Class",
+                  "scope": "entity.name, entity.name.type.class, support.type, support.class, meta.use",
+                  "settings": { "foreground": "#000008" }
+                },
+                { "name": "HTML tag inner", "scope": "entity.name.tag", "settings": { "foreground": "#000009" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": ">",
+      "color": "#000004",
+      "fontStyle": 1,
+      "explanation": [
+        {
+          "content": ">",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "comment.block.documentation.cs",
+              "themeMatches": [
+                {
+                  "name": "Comment",
+                  "scope": "comment, comment.block, comment.block.documentation",
+                  "settings": { "foreground": "#000000a", "fontStyle": "italic" }
+                },
+                {
+                  "name": "C# comment documentation",
+                  "scope": "source.cs comment.block.documentation.cs",
+                  "settings": { "foreground": "#000000a" }
+                }
+              ]
+            },
+            {
+              "scopeName": "meta.tag.cs",
+              "themeMatches": [
+                {
+                  "name": "HTML tag outer",
+                  "scope": "meta.tag, punctuation.definition.tag",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            },
+            {
+              "scopeName": "punctuation.definition.tag.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                {
+                  "name": "Comment",
+                  "scope": "comment punctuation.definition.comment, comment punctuation.definition.tag, string.quoted.docstring",
+                  "settings": { "foreground": "#000000a", "fontStyle": "italic" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } },
+                {
+                  "name": "HTML tag outer",
+                  "scope": "meta.tag, punctuation.definition.tag",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "content": "        ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": "        ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": "public",
+      "color": "#000007",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "public",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "storage.modifier.public.cs",
+              "themeMatches": [
+                {
+                  "name": "Storage",
+                  "scope": "storage.type, storage.modifier, storage.control",
+                  "settings": { "foreground": "#000007" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": " ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": "int",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "int",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "keyword.type.int.cs",
+              "themeMatches": [
+                {
+                  "name": "Keyword",
+                  "scope": "keyword, modifier, variable.language.this, support.type.object, constant.language",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": " ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": "TaskFrequency",
+      "color": "#000008",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "TaskFrequency",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "entity.name.variable.property.cs",
+              "themeMatches": [
+                {
+                  "name": "Class",
+                  "scope": "entity.name, entity.name.type.class, support.type, support.class, meta.use",
+                  "settings": { "foreground": "#000008" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "content": "        ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": "        ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": "{",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "{",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.curlybrace.open.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "content": "            ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": "            ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": "get",
+      "color": "#000008",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "get",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "storage.type.accessor.get.cs",
+              "themeMatches": [
+                {
+                  "name": "Storage",
+                  "scope": "storage.type, storage.modifier, storage.control",
+                  "settings": { "foreground": "#000007" }
+                },
+                { "name": "C# type", "scope": "source.cs storage.type", "settings": { "foreground": "#000008" } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "content": "            ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": "            ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": "{",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "{",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.curlybrace.open.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "content": "                ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "                ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.getter.cs", "themeMatches": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "return",
+      "color": "#000004",
+      "fontStyle": 1,
+      "explanation": [
+        {
+          "content": "return",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.getter.cs", "themeMatches": [] },
+            {
+              "scopeName": "keyword.control.flow.return.cs",
+              "themeMatches": [
+                {
+                  "name": "Keyword",
+                  "scope": "keyword, modifier, variable.language.this, support.type.object, constant.language",
+                  "settings": { "foreground": "#000004" }
+                },
+                {
+                  "name": "Keyword Control",
+                  "scope": ["keyword.control"],
+                  "settings": { "foreground": "#000004", "fontStyle": "italic" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " frequency",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": " ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.getter.cs", "themeMatches": [] }
+          ]
+        },
+        {
+          "content": "frequency",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.getter.cs", "themeMatches": [] },
+            {
+              "scopeName": "variable.other.readwrite.cs",
+              "themeMatches": [
+                {
+                  "name": "Variable",
+                  "scope": "variable, variable.parameter, support.variable, variable.language, support.constant, meta.definition.variable entity.name.function, meta.function-call.arguments",
+                  "settings": { "foreground": "#000001" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": ";",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": ";",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.getter.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.terminator.statement.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "content": "            ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "            ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.getter.cs", "themeMatches": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "}",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "}",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.curlybrace.close.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "content": "            ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": "            ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": "set",
+      "color": "#000008",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "set",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "storage.type.accessor.set.cs",
+              "themeMatches": [
+                {
+                  "name": "Storage",
+                  "scope": "storage.type, storage.modifier, storage.control",
+                  "settings": { "foreground": "#000007" }
+                },
+                { "name": "C# type", "scope": "source.cs storage.type", "settings": { "foreground": "#000008" } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "content": "            ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": "            ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": "{",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "{",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.curlybrace.open.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "content": "                frequency ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "                ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] }
+          ]
+        },
+        {
+          "content": "frequency",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "variable.other.readwrite.cs",
+              "themeMatches": [
+                {
+                  "name": "Variable",
+                  "scope": "variable, variable.parameter, support.variable, variable.language, support.constant, meta.definition.variable entity.name.function, meta.function-call.arguments",
+                  "settings": { "foreground": "#000001" }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "content": " ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "=",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "=",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "keyword.operator.assignment.cs",
+              "themeMatches": [
+                {
+                  "name": "Keyword",
+                  "scope": "keyword, modifier, variable.language.this, support.type.object, constant.language",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " value ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": " ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] }
+          ]
+        },
+        {
+          "content": "value",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "variable.other.value.cs",
+              "themeMatches": [
+                {
+                  "name": "Variable",
+                  "scope": "variable, variable.parameter, support.variable, variable.language, support.constant, meta.definition.variable entity.name.function, meta.function-call.arguments",
+                  "settings": { "foreground": "#000001" }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "content": " ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "content": ">",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": ">",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "keyword.operator.relational.cs",
+              "themeMatches": [
+                {
+                  "name": "Keyword",
+                  "scope": "keyword, modifier, variable.language.this, support.type.object, constant.language",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": " ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "1000",
+      "color": "#000005",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "1000",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "constant.numeric.decimal.cs",
+              "themeMatches": [
+                { "name": "Number", "scope": "constant.numeric", "settings": { "foreground": "#000005" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": " ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "?",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "?",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "keyword.operator.conditional.question-mark.cs",
+              "themeMatches": [
+                {
+                  "name": "Keyword",
+                  "scope": "keyword, modifier, variable.language.this, support.type.object, constant.language",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": " ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "1000",
+      "color": "#000005",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "1000",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "constant.numeric.decimal.cs",
+              "themeMatches": [
+                { "name": "Number", "scope": "constant.numeric", "settings": { "foreground": "#000005" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": " ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "content": ":",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": ":",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "keyword.operator.conditional.colon.cs",
+              "themeMatches": [
+                {
+                  "name": "Keyword",
+                  "scope": "keyword, modifier, variable.language.this, support.type.object, constant.language",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " value",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": " ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] }
+          ]
+        },
+        {
+          "content": "value",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "variable.other.value.cs",
+              "themeMatches": [
+                {
+                  "name": "Variable",
+                  "scope": "variable, variable.parameter, support.variable, variable.language, support.constant, meta.definition.variable entity.name.function, meta.function-call.arguments",
+                  "settings": { "foreground": "#000001" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": ";",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": ";",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.terminator.statement.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "content": "                ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "                ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "if",
+      "color": "#000004",
+      "fontStyle": 1,
+      "explanation": [
+        {
+          "content": "if",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "keyword.control.conditional.if.cs",
+              "themeMatches": [
+                {
+                  "name": "Keyword",
+                  "scope": "keyword, modifier, variable.language.this, support.type.object, constant.language",
+                  "settings": { "foreground": "#000004" }
+                },
+                {
+                  "name": "Keyword Control",
+                  "scope": ["keyword.control"],
+                  "settings": { "foreground": "#000004", "fontStyle": "italic" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": " ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "(",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "(",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.parenthesis.open.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "frequency ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "frequency",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "variable.other.readwrite.cs",
+              "themeMatches": [
+                {
+                  "name": "Variable",
+                  "scope": "variable, variable.parameter, support.variable, variable.language, support.constant, meta.definition.variable entity.name.function, meta.function-call.arguments",
+                  "settings": { "foreground": "#000001" }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "content": " ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "<",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "<",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "keyword.operator.relational.cs",
+              "themeMatches": [
+                {
+                  "name": "Keyword",
+                  "scope": "keyword, modifier, variable.language.this, support.type.object, constant.language",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": " ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "1",
+      "color": "#000005",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "1",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "constant.numeric.decimal.cs",
+              "themeMatches": [
+                { "name": "Number", "scope": "constant.numeric", "settings": { "foreground": "#000005" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": ")",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": ")",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.parenthesis.close.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " frequency ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": " ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] }
+          ]
+        },
+        {
+          "content": "frequency",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "variable.other.readwrite.cs",
+              "themeMatches": [
+                {
+                  "name": "Variable",
+                  "scope": "variable, variable.parameter, support.variable, variable.language, support.constant, meta.definition.variable entity.name.function, meta.function-call.arguments",
+                  "settings": { "foreground": "#000001" }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "content": " ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "=",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "=",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "keyword.operator.assignment.cs",
+              "themeMatches": [
+                {
+                  "name": "Keyword",
+                  "scope": "keyword, modifier, variable.language.this, support.type.object, constant.language",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": " ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "1",
+      "color": "#000005",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "1",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "constant.numeric.decimal.cs",
+              "themeMatches": [
+                { "name": "Number", "scope": "constant.numeric", "settings": { "foreground": "#000005" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": ";",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": ";",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.terminator.statement.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "content": "                period ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "                ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] }
+          ]
+        },
+        {
+          "content": "period",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "variable.other.readwrite.cs",
+              "themeMatches": [
+                {
+                  "name": "Variable",
+                  "scope": "variable, variable.parameter, support.variable, variable.language, support.constant, meta.definition.variable entity.name.function, meta.function-call.arguments",
+                  "settings": { "foreground": "#000001" }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "content": " ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "=",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "=",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "keyword.operator.assignment.cs",
+              "themeMatches": [
+                {
+                  "name": "Keyword",
+                  "scope": "keyword, modifier, variable.language.this, support.type.object, constant.language",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": " ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "(int)",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "(",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.parenthesis.open.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        },
+        {
+          "content": "int",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "keyword.type.int.cs",
+              "themeMatches": [
+                {
+                  "name": "Keyword",
+                  "scope": "keyword, modifier, variable.language.this, support.type.object, constant.language",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "content": ")",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.parenthesis.close.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "Math",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "Math",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "variable.other.object.cs",
+              "themeMatches": [
+                {
+                  "name": "Variable",
+                  "scope": "variable, variable.parameter, support.variable, variable.language, support.constant, meta.definition.variable entity.name.function, meta.function-call.arguments",
+                  "settings": { "foreground": "#000001" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": ".",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": ".",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.accessor.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "Round",
+      "color": "#000006",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "Round",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "entity.name.function.cs",
+              "themeMatches": [
+                {
+                  "name": "Function call",
+                  "scope": "entity.name.function, support.function",
+                  "settings": { "foreground": "#000006" }
+                },
+                {
+                  "name": "Class",
+                  "scope": "entity.name, entity.name.type.class, support.type, support.class, meta.use",
+                  "settings": { "foreground": "#000008" }
+                },
+                {
+                  "name": "C# function call",
+                  "scope": "source.cs meta.method-call meta.method, source.cs entity.name.function",
+                  "settings": { "foreground": "#000006" }
+                },
+                { "name": "Entity name", "scope": "entity.name.function", "settings": { "foreground": "#000006" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "(",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "(",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.parenthesis.open.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "1000",
+      "color": "#000005",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "1000",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "constant.numeric.decimal.cs",
+              "themeMatches": [
+                { "name": "Number", "scope": "constant.numeric", "settings": { "foreground": "#000005" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": " ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "/",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "/",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "keyword.operator.arithmetic.cs",
+              "themeMatches": [
+                {
+                  "name": "Keyword",
+                  "scope": "keyword, modifier, variable.language.this, support.type.object, constant.language",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": " ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "(decimal)",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "(",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.parenthesis.open.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        },
+        {
+          "content": "decimal",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "keyword.type.decimal.cs",
+              "themeMatches": [
+                {
+                  "name": "Keyword",
+                  "scope": "keyword, modifier, variable.language.this, support.type.object, constant.language",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "content": ")",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.parenthesis.close.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "frequency",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "frequency",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "variable.other.readwrite.cs",
+              "themeMatches": [
+                {
+                  "name": "Variable",
+                  "scope": "variable, variable.parameter, support.variable, variable.language, support.constant, meta.definition.variable entity.name.function, meta.function-call.arguments",
+                  "settings": { "foreground": "#000001" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": ");",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": ")",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.parenthesis.close.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        },
+        {
+          "content": ";",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.terminator.statement.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "content": "            ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "            ",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            { "scopeName": "meta.accessor.setter.cs", "themeMatches": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "content": "}",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "}",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.curlybrace.close.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "content": "        ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": "        ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": "}",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "}",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.curlybrace.close.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "content": "        ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": "        ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": "private",
+      "color": "#000007",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "private",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "storage.modifier.private.cs",
+              "themeMatches": [
+                {
+                  "name": "Storage",
+                  "scope": "storage.type, storage.modifier, storage.control",
+                  "settings": { "foreground": "#000007" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": " ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": "int",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "int",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "keyword.type.int.cs",
+              "themeMatches": [
+                {
+                  "name": "Keyword",
+                  "scope": "keyword, modifier, variable.language.this, support.type.object, constant.language",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": " ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": "frequency",
+      "color": "#000008",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "frequency",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "entity.name.variable.field.cs",
+              "themeMatches": [
+                {
+                  "name": "Class",
+                  "scope": "entity.name, entity.name.type.class, support.type, support.class, meta.use",
+                  "settings": { "foreground": "#000008" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": " ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": "=",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "=",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "keyword.operator.assignment.cs",
+              "themeMatches": [
+                {
+                  "name": "Keyword",
+                  "scope": "keyword, modifier, variable.language.this, support.type.object, constant.language",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": " ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": "2",
+      "color": "#000005",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "2",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "constant.numeric.decimal.cs",
+              "themeMatches": [
+                { "name": "Number", "scope": "constant.numeric", "settings": { "foreground": "#000005" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": ";",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": ";",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.terminator.statement.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "content": "        ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": "        ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": "private",
+      "color": "#000007",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "private",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "storage.modifier.private.cs",
+              "themeMatches": [
+                {
+                  "name": "Storage",
+                  "scope": "storage.type, storage.modifier, storage.control",
+                  "settings": { "foreground": "#000007" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": " ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": "int",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "int",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "keyword.type.int.cs",
+              "themeMatches": [
+                {
+                  "name": "Keyword",
+                  "scope": "keyword, modifier, variable.language.this, support.type.object, constant.language",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": " ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": "period",
+      "color": "#000008",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "period",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "entity.name.variable.field.cs",
+              "themeMatches": [
+                {
+                  "name": "Class",
+                  "scope": "entity.name, entity.name.type.class, support.type, support.class, meta.use",
+                  "settings": { "foreground": "#000008" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": " ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": "=",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "=",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "keyword.operator.assignment.cs",
+              "themeMatches": [
+                {
+                  "name": "Keyword",
+                  "scope": "keyword, modifier, variable.language.this, support.type.object, constant.language",
+                  "settings": { "foreground": "#000004" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": " ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": " ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": "500",
+      "color": "#000005",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "500",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "constant.numeric.decimal.cs",
+              "themeMatches": [
+                { "name": "Number", "scope": "constant.numeric", "settings": { "foreground": "#000005" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content": ";",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": ";",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.terminator.statement.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "content": "    ",
+      "color": "#000001",
+      "fontStyle": 0,
+      "explanation": [{ "content": "    ", "scopes": [{ "scopeName": "source.cs", "themeMatches": [] }] }]
+    },
+    {
+      "content": "}",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "}",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.curlybrace.close.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "content": "}",
+      "color": "#000004",
+      "fontStyle": 0,
+      "explanation": [
+        {
+          "content": "}",
+          "scopes": [
+            { "scopeName": "source.cs", "themeMatches": [] },
+            {
+              "scopeName": "punctuation.curlybrace.close.cs",
+              "themeMatches": [
+                {
+                  "name": "Punctuation",
+                  "scope": "punctuation, constant.other.symbol",
+                  "settings": { "foreground": "#000004" }
+                },
+                { "name": "Punctuation", "scope": "punctuation", "settings": { "foreground": "#000004" } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  []
+]

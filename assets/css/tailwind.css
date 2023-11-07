@@ -31,8 +31,7 @@
   --color-highlight-attribute: oklch(74.27% 0.135 311.06);
   --color-highlight-property: oklch(70.09% 0.157 18.62);
   --color-highlight-type: oklch(86.93% 0.128 81.06);
-  --color-highlight-comment: oklch(41.54% 0.031 272.84);
-  --shiki-color-text: --color-steel;
+  --color-highlight-comment: var(--color-green);
   --color-inline-highlight: oklch(28.34% 0.019 274.65 / 97.49%);
 }
 

@@ -7,7 +7,7 @@ const colorFunction = '#000006';
 const colorAttribute = '#000007';
 const colorType = '#000008';
 const colorProperty = '#000009';
-const colorComment = '#000008a';
+const colorComment = '#00000a';
 
 const coreyTheme = {
   name: 'corey-theme',
@@ -54,10 +54,14 @@ const coreyTheme = {
       scope: 'entity.name.type, entity.other.inherited-class, entity.other',
       settings: { foreground: colorType }
     },
-    { name: 'Comment', scope: 'comment', settings: { foreground: colorComment, fontStyle: 'italic' } },
     {
       name: 'Comment',
-      scope: 'comment punctuation.definition.comment, string.quoted.docstring',
+      scope: 'comment, comment.block, comment.block.documentation',
+      settings: { foreground: colorComment, fontStyle: 'italic' }
+    },
+    {
+      name: 'Comment',
+      scope: 'comment punctuation.definition.comment, comment punctuation.definition.tag, string.quoted.docstring',
       settings: { foreground: colorComment, fontStyle: 'italic' }
     },
     { name: 'Punctuation', scope: 'punctuation', settings: { foreground: colorPunctuation } },
@@ -156,6 +160,12 @@ const coreyTheme = {
     { name: 'C# return type', scope: 'source.cs meta.method.return-type', settings: { foreground: colorType } },
     { name: 'C# preprocessor', scope: 'source.cs meta.preprocessor', settings: { foreground: colorComment } },
     { name: 'C# namespace', scope: 'source.cs entity.name.type.namespace', settings: { foreground: colorText } },
+    {
+      name: 'C# comment documentation',
+      scope:
+        'source.cs comment.block.documentation.cs, source.cs comment entity.name.tag, source.cs comment entity.other.attribute-name, source.cs comment punctuation.separator, source.cs comment punctuation.definition.string, source.cs comment string',
+      settings: { foreground: colorComment }
+    },
     { name: 'JSX Text', scope: 'meta.jsx.children, SXNested', settings: { foreground: colorText } },
     { name: 'JSX Components name', scope: 'support.class.component', settings: { foreground: colorType } },
     {
