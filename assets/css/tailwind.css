@@ -21,17 +21,38 @@
   --color-black-raw: 0% 0 0;
   --color-white: oklch(100% 0 0);
   --color-white-raw: 100% 0 0;
-  --color-highlight-background: oklch(18% 0.019 274.65 / 87.84%);
-  --color-highlight-foreground: oklch(80.67% 0.037 278.61);
-  --color-highlight-string: oklch(88.37% 0.124 126.81);
-  --color-highlight-punctuation: oklch(85.61% 0.094 225.87);
-  --color-highlight-boolean: oklch(79.8% 0.119 9.67);
-  --color-highlight-number: oklch(74.86% 0.138 37.46);
-  --color-highlight-function: oklch(74.41% 0.131 264.28);
-  --color-highlight-attribute: oklch(74.27% 0.135 311.06);
-  --color-highlight-property: oklch(70.09% 0.157 18.62);
-  --color-highlight-type: oklch(86.93% 0.128 81.06);
-  --color-highlight-comment: var(--color-green);
+  --color-darkblue: #0f111a;
+  --color-metal: #324852;
+  --color-silver: #a6babc;
+  --color-steel-temp: #cddeff;
+  --color-ocean: #007a82;
+  --color-blue: #0096ff;
+  --color-teal-temp: #49ebff;
+  --color-green-temp: #00df90;
+  --color-darkgreen: #009668;
+  --color-yellow: #f9d884;
+  --color-gold: #ca8f2f;
+  --color-orange: #eb8174;
+  --color-red-temp: #d70049;
+  --color-purple-temp: #d3d;
+  --color-lavender: #a06bff;
+  --color-highlight-background: oklch(18% 0.019 274.65 / 87.84%); /* darkblue */
+  --color-highlight-foreground: var(--color-steel);
+  --color-highlight-string: var(--color-orange);
+  --color-highlight-punctuation: var(--color-silver);
+  --color-highlight-boolean: var(--color-blue);
+  --color-highlight-number: var(--color-green);
+  --color-highlight-function: var(--color-yellow);
+  --color-highlight-attribute: var(--color-yellow);
+  --color-highlight-property: var(--color-steel);
+  --color-highlight-type: var(--color-green);
+  --color-highlight-comment: var(--color-ocean);
+  --color-highlight-keyword: var(--color-blue);
+  --color-highlight-operator: var(--color-teal);
+  --color-highlight-other: var(--color-red);
+  --color-highlight-storage: var(--color-purple-temp);
+  --color-highlight-object: var(--color-gold);
+  --color-highlight-control: var(--color-lavender);
   --color-inline-highlight: oklch(28.34% 0.019 274.65 / 97.49%);
 }
 
@@ -81,27 +102,27 @@
 }
 
 .nuxt-content-container .nuxt-content h1 {
-  @apply font-bold text-4xl text-green;
+  @apply font-bold text-4xl text-green mt-6;
 }
 
 .nuxt-content-container .nuxt-content h2 {
-  @apply font-semibold text-3xl text-green;
+  @apply font-semibold text-3xl text-green mt-6;
 }
 
 .nuxt-content-container .nuxt-content h3 {
-  @apply font-medium text-2xl text-green;
+  @apply font-medium text-2xl text-green mt-6;
 }
 
 .nuxt-content-container .nuxt-content h4 {
-  @apply font-medium text-xl text-green;
+  @apply font-medium text-xl text-green mt-4;
 }
 
 .nuxt-content-container .nuxt-content h5 {
-  @apply font-medium text-lg text-green;
+  @apply font-medium text-lg text-green mt-4;
 }
 
 .nuxt-content-container .nuxt-content h6 {
-  @apply font-medium text-base text-green italic;
+  @apply font-medium text-base text-green italic mt-4;
 }
 
 .nuxt-content-container ul {
@@ -113,4 +134,8 @@
   @apply inline-block px-1 m-0;
 
   background-color: var(--color-inline-highlight);
+}
+
+.nuxt-content-editor {
+  @apply bg-black bg-opacity-60;
 }

@@ -105,7 +105,7 @@ export default {
         const highlighter = await shiki.getHighlighter({
           // Complete themes: https://github.com/shikijs/shiki/tree/main/packages/shiki/themes
           themes: [import('./theme/code-highlight.mjs')],
-          langs: ['diff', 'json', 'js', 'ts', 'css', 'shell', 'html', 'md', 'yaml', 'csharp']
+          langs: ['diff', 'json', 'xml', 'js', 'ts', 'css', 'shell', 'html', 'md', 'yaml', 'csharp', 'c', 'cpp']
         });
         return (rawCode, lang, { lineHighlights, fileName }) => {
           const lineLights = parseNumberRange(lineHighlights);

@@ -71,7 +71,6 @@ export default {
 
         for(const token of tokens) {
           const tokenColor = token.style.color;
-          console.log(tokenColor)
           switch(tokenColor) {
             case 'rgb(0, 0, 1)': token.style.color = 'var(--color-highlight-foreground)'; break;
             case 'rgb(0, 0, 2)': token.style.color = 'var(--color-highlight-string)'; break;
@@ -83,6 +82,12 @@ export default {
             case 'rgb(0, 0, 8)': token.style.color = 'var(--color-highlight-type)'; break;
             case 'rgb(0, 0, 9)': token.style.color = 'var(--color-highlight-property)'; break;
             case 'rgb(0, 0, 10)': token.style.color = 'var(--color-highlight-comment)'; break;
+            case 'rgb(0, 0, 11)': token.style.color = 'var(--color-highlight-keyword)'; break;
+            case 'rgb(0, 0, 12)': token.style.color = 'var(--color-highlight-storage)'; break;
+            case 'rgb(0, 0, 13)': token.style.color = 'var(--color-highlight-operator)'; break;
+            case 'rgb(0, 0, 14)': token.style.color = 'var(--color-highlight-other)'; break;
+            case 'rgb(0, 0, 15)': token.style.color = 'var(--color-highlight-object)'; break;
+            case 'rgb(0, 0, 16)': token.style.color = 'var(--color-highlight-control)'; break;
           }
         }
   }
