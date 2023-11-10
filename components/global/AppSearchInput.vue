@@ -37,7 +37,33 @@ export default {
   },
   methods: {
       highlightArticles(title) {
-        return highlight(title, this.searchQuery)
+        return this.highlight(title, this.searchQuery)
+      },
+      highlight(value, query) {
+        if(!value) {return;}
+        if(!query) {return;}
+        const valueLower = value.toLowerCase();
+        query = query.toLowerCase();
+        let output = '';
+        for(let i = 0; i<value.length; i++) {
+          if(valueLower[i] !== query[0]) {
+            output += value[i];
+            continue;
+          }
+
+          output += '<span class="font-bold">';
+          let k = 0;
+          do {
+            output += value[i];
+            k++;
+            i++;
+          } while(k < query.length && i < value.length && valueLower[i] === query[k]);
+          output += '</span>';
+          if(i < value.length) {
+            output += value[i];
+          }
+        }
+        return output;
       }
   },
   subscriptions() {
@@ -50,31 +76,4 @@ export default {
     };
   }
 }
-
-function highlight(value, query) {
-      if(!value) {return;}
-      if(!query) {return;}
-      const valueLower = value.toLowerCase();
-      query = query.toLowerCase();
-      let output = '';
-      for(let i = 0; i<value.length; i++) {
-        if(valueLower[i] !== query[0]) {
-          output += value[i];
-          continue;
-        }
-
-        output += '<span class="font-bold">';
-        let k = 0;
-        do {
-          output += value[i];
-          k++;
-          i++;
-        } while(k < query.length && i < value.length && valueLower[i] === query[k]);
-        output += '</span>';
-        if(i < value.length) {
-          output += value[i];
-        }
-      }
-      return output;
-    }
 </script>

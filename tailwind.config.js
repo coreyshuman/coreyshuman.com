@@ -45,7 +45,8 @@ module.exports = {
       steel: colorWithOpacity('--color-steel'),
       gray: colorWithOpacity('--color-gray'),
       black: colorWithOpacity('--color-black'),
-      white: colorWithOpacity('--color-white')
+      white: colorWithOpacity('--color-white'),
+      darkblue: colorWithOpacity('--color-darkblue')
     },
     borderWidth: {
       default: '1px',
@@ -74,6 +75,7 @@ module.exports = {
         60: '.6',
         70: '.7',
         80: '.8',
+        87: '.87',
         90: '.9'
       },
       spacing: {
@@ -82,7 +84,8 @@ module.exports = {
       },
       height: {
         '3px': '3px',
-        84: '22rem'
+        84: '22rem',
+        88: '23rem'
       },
       width: {
         '3/2': '150%',

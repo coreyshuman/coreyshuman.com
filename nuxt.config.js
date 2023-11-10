@@ -94,12 +94,14 @@ export default {
    ** See https://content.nuxtjs.org/configuration
    */
   content: {
+    liveEdit: false,
     markdown: {
       tocDepth: 3,
       remarkPlugins: [
         ['remark-behead', { minDepth: 2 }],
         // https://github.com/muan/emojilib/blob/main/dist/emoji-en-US.json
-        ['remark-emoji', { accessible: true, emoticon: false }]
+        ['remark-emoji', { accessible: true, emoticon: false }],
+        ['~/remark/remarkEmbedCode.js']
       ],
       async highlighter() {
         const highlighter = await shiki.getHighlighter({

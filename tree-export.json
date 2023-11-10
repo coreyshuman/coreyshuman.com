@@ -1,0 +1,183 @@
+{
+  "type": "root",
+  "children": [
+    {
+      "type": "heading",
+      "depth": 2,
+      "children": [
+        {
+          "type": "link",
+          "url": "#code-runner",
+          "title": null,
+          "children": [],
+          "data": {
+            "hProperties": { "ariaHidden": "true", "tabIndex": -1 },
+            "hChildren": [
+              {
+                "type": "element",
+                "tagName": "span",
+                "properties": { "className": ["icon", "icon-link"] },
+                "children": []
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "value": "Code Runner",
+          "position": {
+            "start": { "line": 2, "column": 3, "offset": 4 },
+            "end": { "line": 2, "column": 14, "offset": 15 }
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 2, "column": 1, "offset": 2 },
+        "end": { "line": 2, "column": 14, "offset": 15 }
+      },
+      "data": { "hProperties": { "id": "code-runner" }, "id": "code-runner" }
+    },
+    {
+      "type": "html",
+      "value": "<info-box>\r\n  <template #info-box>\r\n    This is a vue component inside markdown using slots\r\n  </template>\r\n</info-box>",
+      "position": {
+        "start": { "line": 4, "column": 1, "offset": 19 },
+        "end": { "line": 8, "column": 12, "offset": 138 }
+      }
+    },
+    {
+      "type": "code",
+      "lang": "js",
+      "meta": null,
+      "value": "var code = 'test';",
+      "position": {
+        "start": { "line": 10, "column": 1, "offset": 142 },
+        "end": { "line": 12, "column": 4, "offset": 172 }
+      }
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "children": [
+        {
+          "type": "link",
+          "url": "#space",
+          "title": null,
+          "children": [],
+          "data": {
+            "hProperties": { "ariaHidden": "true", "tabIndex": -1 },
+            "hChildren": [
+              {
+                "type": "element",
+                "tagName": "span",
+                "properties": { "className": ["icon", "icon-link"] },
+                "children": []
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "value": "space",
+          "position": {
+            "start": { "line": 14, "column": 4, "offset": 179 },
+            "end": { "line": 14, "column": 9, "offset": 184 }
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 14, "column": 1, "offset": 176 },
+        "end": { "line": 14, "column": 9, "offset": 184 }
+      },
+      "data": { "hProperties": { "id": "space" }, "id": "space" }
+    },
+    {
+      "type": "html",
+      "position": {
+        "start": { "line": 16, "column": 1, "offset": 188 },
+        "end": { "line": 17, "column": 22, "offset": 223 }
+      },
+      "value": "<embed-code\r\n::template #code-html>"
+    },
+    {
+      "type": "code",
+      "lang": "html[index.html]",
+      "meta": null,
+      "value": "  <h1>Hello World</h1>\r\n  <p>Here is some content</p>",
+      "position": {
+        "start": { "line": 18, "column": 1, "offset": 225 },
+        "end": { "line": 21, "column": 4, "offset": 304 }
+      }
+    },
+    {
+      "type": "html",
+      "position": {
+        "start": { "line": 22, "column": 1, "offset": 306 },
+        "end": { "line": 23, "column": 3, "offset": 312 }
+      },
+      "value": "<\r\n::>"
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "children": [
+        {
+          "type": "link",
+          "url": "#space-1",
+          "title": null,
+          "children": [],
+          "data": {
+            "hProperties": { "ariaHidden": "true", "tabIndex": -1 },
+            "hChildren": [
+              {
+                "type": "element",
+                "tagName": "span",
+                "properties": { "className": ["icon", "icon-link"] },
+                "children": []
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "value": "space",
+          "position": {
+            "start": { "line": 25, "column": 4, "offset": 319 },
+            "end": { "line": 25, "column": 9, "offset": 324 }
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 25, "column": 1, "offset": 316 },
+        "end": { "line": 25, "column": 9, "offset": 324 }
+      },
+      "data": { "hProperties": { "id": "space-1" }, "id": "space-1" }
+    },
+    {
+      "type": "html",
+      "value": "<embed-code-a>\r\n  <template #code-html>\r\n``html\r\n<h1>Hello World</h1>\r\n<p>Here is some content</p>\r\n``\r\n  </template>\r\n</embed-code-a>",
+      "position": {
+        "start": { "line": 27, "column": 1, "offset": 328 },
+        "end": { "line": 34, "column": 16, "offset": 464 }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Code box should show above",
+          "position": {
+            "start": { "line": 38, "column": 1, "offset": 472 },
+            "end": { "line": 38, "column": 27, "offset": 498 }
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 38, "column": 1, "offset": 472 },
+        "end": { "line": 38, "column": 27, "offset": 498 }
+      }
+    }
+  ],
+  "position": { "start": { "line": 1, "column": 1, "offset": 0 }, "end": { "line": 40, "column": 1, "offset": 502 } }
+}

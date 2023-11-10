@@ -22,6 +22,7 @@
   --color-white: oklch(100% 0 0);
   --color-white-raw: 100% 0 0;
   --color-darkblue: #0f111a;
+  --color-darkblue-raw: 18% 0.019 274.65;
   --color-metal: #324852;
   --color-silver: #a6babc;
   --color-steel-temp: #cddeff;
@@ -36,7 +37,7 @@
   --color-red-temp: #d70049;
   --color-purple-temp: #d3d;
   --color-lavender: #a06bff;
-  --color-highlight-background: oklch(18% 0.019 274.65 / 87.84%); /* darkblue */
+  --color-highlight-background: oklch(18% 0.019 274.65 / 87.84%);
   --color-highlight-foreground: var(--color-steel);
   --color-highlight-string: var(--color-orange);
   --color-highlight-punctuation: var(--color-silver);
@@ -77,11 +78,11 @@
   counter-reset: linecount;
 }
 
-.nuxt-content-container code .line {
+.nuxt-content-highlight code span.line {
   counter-increment: linecount;
 }
 
-.nuxt-content-highlight code .line::before {
+.nuxt-content-highlight code span.line::before {
   @apply inline-block w-10 text-gray text-right m-0 p-0;
 
   content: counter(linecount) '. ';
