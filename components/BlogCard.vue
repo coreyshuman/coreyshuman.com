@@ -77,7 +77,12 @@ export default {
     updateMousePosition(e) {
       const { x, y } = this.$el.getBoundingClientRect();
       const canvas = this.$refs.canvas;
-      const ctx = canvas.getContext("2d");
+      let ctx;
+      if (this.displaySupportsP3Color() && this.canvasSupportsDisplayP3()) {
+        ctx = canvas.getContext('2d', { colorSpace: 'display-p3' });
+      } else {
+        ctx = canvas.getContext('2d');
+      }
       canvas.width = Math.ceil(this.$el.clientWidth);
       canvas.height = Math.ceil(this.$el.clientHeight);
       let clientX = 0;

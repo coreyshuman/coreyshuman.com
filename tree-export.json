@@ -1,183 +1,316 @@
-{
-  "type": "root",
-  "children": [
-    {
-      "type": "heading",
-      "depth": 2,
-      "children": [
-        {
-          "type": "link",
-          "url": "#code-runner",
-          "title": null,
-          "children": [],
-          "data": {
-            "hProperties": { "ariaHidden": "true", "tabIndex": -1 },
-            "hChildren": [
-              {
-                "type": "element",
-                "tagName": "span",
-                "properties": { "className": ["icon", "icon-link"] },
-                "children": []
-              }
-            ]
-          }
-        },
-        {
-          "type": "text",
-          "value": "Code Runner",
-          "position": {
-            "start": { "line": 2, "column": 3, "offset": 4 },
-            "end": { "line": 2, "column": 14, "offset": 15 }
-          }
+[
+  {
+    "type": "heading",
+    "depth": 3,
+    "children": [
+      {
+        "type": "link",
+        "url": "#custom-embed-code",
+        "title": null,
+        "children": [],
+        "data": {
+          "hProperties": { "ariaHidden": "true", "tabIndex": -1 },
+          "hChildren": [
+            {
+              "type": "element",
+              "tagName": "span",
+              "properties": { "className": ["icon", "icon-link"] },
+              "children": []
+            }
+          ]
         }
-      ],
-      "position": {
-        "start": { "line": 2, "column": 1, "offset": 2 },
-        "end": { "line": 2, "column": 14, "offset": 15 }
       },
-      "data": { "hProperties": { "id": "code-runner" }, "id": "code-runner" }
-    },
-    {
-      "type": "html",
-      "value": "<info-box>\r\n  <template #info-box>\r\n    This is a vue component inside markdown using slots\r\n  </template>\r\n</info-box>",
-      "position": {
-        "start": { "line": 4, "column": 1, "offset": 19 },
-        "end": { "line": 8, "column": 12, "offset": 138 }
-      }
-    },
-    {
-      "type": "code",
-      "lang": "js",
-      "meta": null,
-      "value": "var code = 'test';",
-      "position": {
-        "start": { "line": 10, "column": 1, "offset": 142 },
-        "end": { "line": 12, "column": 4, "offset": 172 }
-      }
-    },
-    {
-      "type": "heading",
-      "depth": 3,
-      "children": [
-        {
-          "type": "link",
-          "url": "#space",
-          "title": null,
-          "children": [],
-          "data": {
-            "hProperties": { "ariaHidden": "true", "tabIndex": -1 },
-            "hChildren": [
-              {
-                "type": "element",
-                "tagName": "span",
-                "properties": { "className": ["icon", "icon-link"] },
-                "children": []
-              }
-            ]
-          }
-        },
-        {
-          "type": "text",
-          "value": "space",
-          "position": {
-            "start": { "line": 14, "column": 4, "offset": 179 },
-            "end": { "line": 14, "column": 9, "offset": 184 }
-          }
+      {
+        "type": "text",
+        "value": "Custom Embed Code",
+        "position": {
+          "start": { "line": 2, "column": 4, "offset": 5 },
+          "end": { "line": 2, "column": 21, "offset": 22 }
         }
-      ],
-      "position": {
-        "start": { "line": 14, "column": 1, "offset": 176 },
-        "end": { "line": 14, "column": 9, "offset": 184 }
-      },
-      "data": { "hProperties": { "id": "space" }, "id": "space" }
-    },
-    {
-      "type": "html",
-      "position": {
-        "start": { "line": 16, "column": 1, "offset": 188 },
-        "end": { "line": 17, "column": 22, "offset": 223 }
-      },
-      "value": "<embed-code\r\n::template #code-html>"
-    },
-    {
-      "type": "code",
-      "lang": "html[index.html]",
-      "meta": null,
-      "value": "  <h1>Hello World</h1>\r\n  <p>Here is some content</p>",
-      "position": {
-        "start": { "line": 18, "column": 1, "offset": 225 },
-        "end": { "line": 21, "column": 4, "offset": 304 }
       }
-    },
-    {
-      "type": "html",
-      "position": {
-        "start": { "line": 22, "column": 1, "offset": 306 },
-        "end": { "line": 23, "column": 3, "offset": 312 }
-      },
-      "value": "<\r\n::>"
-    },
-    {
-      "type": "heading",
-      "depth": 3,
-      "children": [
-        {
-          "type": "link",
-          "url": "#space-1",
-          "title": null,
-          "children": [],
-          "data": {
-            "hProperties": { "ariaHidden": "true", "tabIndex": -1 },
-            "hChildren": [
-              {
-                "type": "element",
-                "tagName": "span",
-                "properties": { "className": ["icon", "icon-link"] },
-                "children": []
-              }
-            ]
-          }
-        },
-        {
-          "type": "text",
-          "value": "space",
-          "position": {
-            "start": { "line": 25, "column": 4, "offset": 319 },
-            "end": { "line": 25, "column": 9, "offset": 324 }
-          }
+    ],
+    "position": { "start": { "line": 2, "column": 1, "offset": 2 }, "end": { "line": 2, "column": 21, "offset": 22 } },
+    "data": { "hProperties": { "id": "custom-embed-code" }, "id": "custom-embed-code" }
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "value": "This demo uses a custom MDAST directive to wrap markdown code sections in a Vue component which provides syntax highlighting and a live demo of the code.",
+        "position": {
+          "start": { "line": 4, "column": 1, "offset": 26 },
+          "end": { "line": 4, "column": 154, "offset": 179 }
         }
-      ],
-      "position": {
-        "start": { "line": 25, "column": 1, "offset": 316 },
-        "end": { "line": 25, "column": 9, "offset": 324 }
-      },
-      "data": { "hProperties": { "id": "space-1" }, "id": "space-1" }
-    },
-    {
-      "type": "html",
-      "value": "<embed-code-a>\r\n  <template #code-html>\r\n``html\r\n<h1>Hello World</h1>\r\n<p>Here is some content</p>\r\n``\r\n  </template>\r\n</embed-code-a>",
-      "position": {
-        "start": { "line": 27, "column": 1, "offset": 328 },
-        "end": { "line": 34, "column": 16, "offset": 464 }
       }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "Code box should show above",
-          "position": {
-            "start": { "line": 38, "column": 1, "offset": 472 },
-            "end": { "line": 38, "column": 27, "offset": 498 }
-          }
-        }
-      ],
-      "position": {
-        "start": { "line": 38, "column": 1, "offset": 472 },
-        "end": { "line": 38, "column": 27, "offset": 498 }
-      }
+    ],
+    "position": {
+      "start": { "line": 4, "column": 1, "offset": 26 },
+      "end": { "line": 4, "column": 154, "offset": 179 }
     }
-  ],
-  "position": { "start": { "line": 1, "column": 1, "offset": 0 }, "end": { "line": 40, "column": 1, "offset": 502 } }
-}
+  },
+  { "type": "html", "value": "<embed-code>" },
+  { "type": "html", "value": "<template #html>" },
+  {
+    "type": "code",
+    "lang": "html[index.html]",
+    "meta": null,
+    "value": "  <h1 style=\"text-align:center;\">Hello World</h1>\r\n  <p>Here is some content</p>\r\n  <p>Counter: <span id=\"count\"></span></p>\r\n  <button>Reset</button>",
+    "position": {
+      "start": { "line": 9, "column": 1, "offset": 217 },
+      "end": { "line": 14, "column": 4, "offset": 393 }
+    }
+  },
+  { "type": "html", "value": "</template>" },
+  { "type": "html", "value": "<template #css>" },
+  {
+    "type": "code",
+    "lang": "css[style.css]",
+    "meta": null,
+    "value": "  body {\r\n    background: radial-gradient(#e66465, #9198e5);\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    color: white;\r\n    height: 90vh;\r\n  }\r\n  button {\r\n    background: radial-gradient(#387989, #6dd5ed);\r\n    background-repeat: no-repeat;\r\n  }",
+    "position": {
+      "start": { "line": 19, "column": 1, "offset": 420 },
+      "end": { "line": 31, "column": 4, "offset": 715 }
+    }
+  },
+  { "type": "html", "value": "</template>" },
+  { "type": "html", "value": "<template #js>" },
+  {
+    "type": "code",
+    "lang": "js[script.js]",
+    "meta": null,
+    "value": "  let count = 0;\r\n  let el = document.getElementById('count');\r\n  setInterval(() => {\r\n    el.innerText = count ++;\r\n  }, 200);\r\n  document.querySelector('button').addEventListener('click', () => {\r\n    count = 0;\r\n    el.innerText = 0;\r\n  });\r\n",
+    "position": {
+      "start": { "line": 36, "column": 1, "offset": 741 },
+      "end": { "line": 47, "column": 4, "offset": 1009 }
+    }
+  },
+  { "type": "html", "value": "</template>" },
+  { "type": "html", "value": "</embed-code>" },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "value": "Code box should show above",
+        "position": {
+          "start": { "line": 52, "column": 1, "offset": 1023 },
+          "end": { "line": 52, "column": 27, "offset": 1049 }
+        }
+      }
+    ],
+    "position": {
+      "start": { "line": 52, "column": 1, "offset": 1023 },
+      "end": { "line": 52, "column": 27, "offset": 1049 }
+    }
+  },
+  {
+    "type": "heading",
+    "depth": 3,
+    "children": [
+      {
+        "type": "link",
+        "url": "#js-only-example",
+        "title": null,
+        "children": [],
+        "data": {
+          "hProperties": { "ariaHidden": "true", "tabIndex": -1 },
+          "hChildren": [
+            {
+              "type": "element",
+              "tagName": "span",
+              "properties": { "className": ["icon", "icon-link"] },
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "type": "text",
+        "value": "JS-Only Example",
+        "position": {
+          "start": { "line": 54, "column": 4, "offset": 1056 },
+          "end": { "line": 54, "column": 19, "offset": 1071 }
+        }
+      }
+    ],
+    "position": {
+      "start": { "line": 54, "column": 1, "offset": 1053 },
+      "end": { "line": 54, "column": 19, "offset": 1071 }
+    },
+    "data": { "hProperties": { "id": "js-only-example" }, "id": "js-only-example" }
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "value": "This demo uses a custom MDAST directive to wrap markdown code sections in a Vue component which provides syntax highlighting and a live demo of the code.",
+        "position": {
+          "start": { "line": 56, "column": 1, "offset": 1075 },
+          "end": { "line": 56, "column": 154, "offset": 1228 }
+        }
+      }
+    ],
+    "position": {
+      "start": { "line": 56, "column": 1, "offset": 1075 },
+      "end": { "line": 56, "column": 154, "offset": 1228 }
+    }
+  },
+  { "type": "html", "value": "<embed-code>" },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "value": "::template #js",
+        "position": {
+          "start": { "line": 60, "column": 1, "offset": 1248 },
+          "end": { "line": 60, "column": 15, "offset": 1262 }
+        }
+      }
+    ],
+    "position": {
+      "start": { "line": 60, "column": 1, "offset": 1248 },
+      "end": { "line": 60, "column": 15, "offset": 1262 }
+    }
+  },
+  {
+    "type": "code",
+    "lang": "js[script.js]",
+    "meta": null,
+    "value": "  let nums = [1, 2, 3, 4, 5];\r\n  for(const num in nums) {\r\n    console.log(nums);\r\n  }",
+    "position": {
+      "start": { "line": 62, "column": 1, "offset": 1266 },
+      "end": { "line": 67, "column": 4, "offset": 1375 }
+    }
+  },
+  { "type": "html", "value": "</embed-code>" },
+  { "type": "html", "value": "" },
+  {
+    "type": "heading",
+    "depth": 2,
+    "children": [
+      {
+        "type": "link",
+        "url": "#reference",
+        "title": null,
+        "children": [],
+        "data": {
+          "hProperties": { "ariaHidden": "true", "tabIndex": -1 },
+          "hChildren": [
+            {
+              "type": "element",
+              "tagName": "span",
+              "properties": { "className": ["icon", "icon-link"] },
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "type": "text",
+        "value": "Reference",
+        "position": {
+          "start": { "line": 72, "column": 3, "offset": 1391 },
+          "end": { "line": 72, "column": 12, "offset": 1400 }
+        }
+      }
+    ],
+    "position": {
+      "start": { "line": 72, "column": 1, "offset": 1389 },
+      "end": { "line": 72, "column": 12, "offset": 1400 }
+    },
+    "data": { "hProperties": { "id": "reference" }, "id": "reference" }
+  },
+  {
+    "type": "heading",
+    "depth": 3,
+    "children": [
+      {
+        "type": "link",
+        "url": "#standard-embedded-view-component",
+        "title": null,
+        "children": [],
+        "data": {
+          "hProperties": { "ariaHidden": "true", "tabIndex": -1 },
+          "hChildren": [
+            {
+              "type": "element",
+              "tagName": "span",
+              "properties": { "className": ["icon", "icon-link"] },
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "type": "text",
+        "value": "Standard Embedded View Component",
+        "position": {
+          "start": { "line": 74, "column": 4, "offset": 1407 },
+          "end": { "line": 74, "column": 36, "offset": 1439 }
+        }
+      }
+    ],
+    "position": {
+      "start": { "line": 74, "column": 1, "offset": 1404 },
+      "end": { "line": 74, "column": 36, "offset": 1439 }
+    },
+    "data": { "hProperties": { "id": "standard-embedded-view-component" }, "id": "standard-embedded-view-component" }
+  },
+  {
+    "type": "html",
+    "value": "<info-box>\r\n  <template #info-box>\r\n    This is a vue component inside markdown using slots\r\n  </template>\r\n</info-box>",
+    "position": {
+      "start": { "line": 76, "column": 1, "offset": 1443 },
+      "end": { "line": 80, "column": 12, "offset": 1562 }
+    }
+  },
+  {
+    "type": "heading",
+    "depth": 3,
+    "children": [
+      {
+        "type": "link",
+        "url": "#standard-inline-code",
+        "title": null,
+        "children": [],
+        "data": {
+          "hProperties": { "ariaHidden": "true", "tabIndex": -1 },
+          "hChildren": [
+            {
+              "type": "element",
+              "tagName": "span",
+              "properties": { "className": ["icon", "icon-link"] },
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "type": "text",
+        "value": "Standard Inline Code",
+        "position": {
+          "start": { "line": 82, "column": 4, "offset": 1569 },
+          "end": { "line": 82, "column": 24, "offset": 1589 }
+        }
+      }
+    ],
+    "position": {
+      "start": { "line": 82, "column": 1, "offset": 1566 },
+      "end": { "line": 82, "column": 24, "offset": 1589 }
+    },
+    "data": { "hProperties": { "id": "standard-inline-code" }, "id": "standard-inline-code" }
+  },
+  {
+    "type": "code",
+    "lang": "js",
+    "meta": null,
+    "value": "var code = 'test';",
+    "position": {
+      "start": { "line": 84, "column": 1, "offset": 1593 },
+      "end": { "line": 86, "column": 4, "offset": 1623 }
+    }
+  }
+]

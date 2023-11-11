@@ -3,30 +3,21 @@ title: Embedding Code into a Post
 description: Custom code-runner component for demonstrating examples.
 img: https://images.unsplash.com/photo-1588432415392-51f6e1a61d5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80
 alt: my second blog post
-created: 2022-01-01
-updated: 2022-01-02
+publish: false
+created: 2023-11-09
+updated: 2023-11-10
 author: 
   name: Corey Shuman
 tags: 
   - nuxtjs
 ---
 
-# Code Runner
+# Custom Embed Code
 
-<info-box>
-  <template #info-box>
-    This is a vue component inside markdown using slots
-  </template>
-</info-box>
-
-```js
-var code = 'test';
-```
-
-## space
+This demo uses a custom MDAST directive to wrap markdown code sections in a Vue component which provides syntax highlighting and a live demo of the code.
 
 ::embed-code
-::template #code-html
+::template #html
 
 ```html[index.html]
   <h1 style="text-align:center;">Hello World</h1>
@@ -36,7 +27,7 @@ var code = 'test';
 ```
 
 ::
-::template #code-css
+::template #css
 
 ```css[style.css]
   body {
@@ -53,7 +44,7 @@ var code = 'test';
 ```
 
 ::
-::template #code-js
+::template #js
 
 ```js[script.js]
   let count = 0;
@@ -72,3 +63,37 @@ var code = 'test';
 ::
 
 Code box should show above
+
+# JS-Only Example
+
+This demo uses a custom MDAST directive to wrap markdown code sections in a Vue component which provides syntax highlighting and a live demo of the code.
+
+::embed-code
+
+::template #js
+
+```js[script.js]
+  for(let num = 0; num < 20; num++) {
+    console.log(num);
+  }
+  console.error('this is an error');
+```
+
+::
+::
+
+# Reference
+
+## Standard Embedded View Component
+
+<info-box>
+  <template #info-box>
+    This is a vue component inside markdown using slots
+  </template>
+</info-box>
+
+## Standard Inline Code
+
+```js
+var code = 'test';
+```

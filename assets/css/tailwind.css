@@ -54,38 +54,84 @@
   --color-highlight-storage: var(--color-purple-temp);
   --color-highlight-object: var(--color-gold);
   --color-highlight-control: var(--color-lavender);
-  --color-inline-highlight: oklch(28.34% 0.019 274.65 / 97.49%);
+  --color-inline-highlight: oklch(28.34% 0.019 274.65 / 80%);
+}
+
+.nuxt-content {
+  a {
+    @apply text-celeste underline transition duration-300;
+  }
+
+  a:hover {
+    @apply text-red;
+  }
+
+  h1 {
+    @apply font-bold text-4xl text-green mt-6;
+  }
+
+  h2 {
+    @apply font-semibold text-3xl text-green mt-6;
+  }
+
+  h3 {
+    @apply font-medium text-2xl text-green mt-6;
+  }
+
+  h4 {
+    @apply font-medium text-xl text-green mt-4;
+  }
+
+  h5 {
+    @apply font-medium text-lg text-green mt-4;
+  }
+
+  h6 {
+    @apply font-medium text-base text-green italic mt-4;
+  }
+
+  ul {
+    @apply list-disc mb-4 ml-6;
+  }
+
+  ul code,
+  p code {
+    @apply inline-block px-1 m-0;
+
+    background-color: var(--color-inline-highlight);
+  }
 }
 
 .nuxt-content-highlight {
   @apply relative my-2 sm:mb-4;
-}
 
-.nuxt-content-highlight pre {
-  @apply overflow-x-auto;
-}
-.nuxt-content-highlight .filename {
-  @apply absolute right-0 text-celeste font-light z-10 mr-2 mt-1 text-sm;
-}
+  pre {
+    @apply overflow-x-auto;
+  }
 
-.nuxt-content-highlight .line.highlight {
-  @apply inline-block w-full;
+  .filename {
+    @apply absolute right-0 text-celeste font-light z-10 mr-2 mt-1 text-sm;
+  }
 
-  background-color: oklch(36.05% 0.019 97.41 / 87.84%);
-}
+  .line.highlight {
+    @apply inline-block w-full;
 
-.nuxt-content-highlight code::before {
-  counter-reset: linecount;
-}
+    background-color: oklch(36.05% 0.019 97.41 / 87.84%);
+  }
 
-.nuxt-content-highlight code span.line {
-  counter-increment: linecount;
-}
+  code::before {
+    counter-reset: linecount;
+  }
 
-.nuxt-content-highlight code span.line::before {
-  @apply inline-block w-10 text-gray text-right m-0 p-0;
+  code span.line {
+    counter-increment: linecount;
+  }
 
-  content: counter(linecount) '. ';
+  code span.line::before {
+    @apply inline-block w-10 text-gray text-right m-0 p-0;
+
+    content: counter(linecount) '. ';
+  }
 }
 
 .nuxt-content-highlight-header {
@@ -94,49 +140,20 @@
   background-color: var(--color-highlight-background);
 }
 
-.nuxt-content-container .nuxt-content a {
-  @apply text-celeste underline transition duration-300;
-}
-
-.nuxt-content-container .nuxt-content a:hover {
-  @apply text-red;
-}
-
-.nuxt-content-container .nuxt-content h1 {
-  @apply font-bold text-4xl text-green mt-6;
-}
-
-.nuxt-content-container .nuxt-content h2 {
-  @apply font-semibold text-3xl text-green mt-6;
-}
-
-.nuxt-content-container .nuxt-content h3 {
-  @apply font-medium text-2xl text-green mt-6;
-}
-
-.nuxt-content-container .nuxt-content h4 {
-  @apply font-medium text-xl text-green mt-4;
-}
-
-.nuxt-content-container .nuxt-content h5 {
-  @apply font-medium text-lg text-green mt-4;
-}
-
-.nuxt-content-container .nuxt-content h6 {
-  @apply font-medium text-base text-green italic mt-4;
-}
-
-.nuxt-content-container ul {
-  @apply list-disc mb-4 ml-6;
-}
-
-.nuxt-content-container ul code,
-.nuxt-content-container p code {
-  @apply inline-block px-1 m-0;
-
-  background-color: var(--color-inline-highlight);
-}
-
 .nuxt-content-editor {
   @apply bg-black bg-opacity-60;
+}
+
+#embed-code {
+  .nuxt-content-highlight {
+    margin: 0 !important;
+    margin-top: 0.5rem !important;
+  }
+  .nuxt-content-highlight pre {
+    @apply h-88 overflow-y-auto;
+  }
+
+  .nuxt-content-highlight pre.shiki {
+    background-color: transparent !important;
+  }
 }

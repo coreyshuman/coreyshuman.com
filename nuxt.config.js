@@ -101,7 +101,7 @@ export default {
         ['remark-behead', { minDepth: 2 }],
         // https://github.com/muan/emojilib/blob/main/dist/emoji-en-US.json
         ['remark-emoji', { accessible: true, emoticon: false }],
-        ['~/remark/remarkEmbedCode.js']
+        ['~/remark/remarkEmbedCodeDirective.js']
       ],
       async highlighter() {
         const highlighter = await shiki.getHighlighter({

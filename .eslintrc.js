@@ -12,7 +12,9 @@ module.exports = {
   // add your custom rules here
   rules: {
     'no-unused-vars': ['warn', { vars: 'all', args: 'after-used', ignoreRestSiblings: false }],
+    'no-console': ['warn', { allow: ['warn', 'error'] }],
     'vue/no-v-html': 'off',
+    'import/prefer-default-export': 0,
     'prettier/prettier': [
       'warn',
       {
