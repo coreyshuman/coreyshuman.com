@@ -3,11 +3,16 @@
     :to="{ name: `${type}-slug`, params: { slug: article.slug } }"
     class="group relative flex transition-shadow duration-150 ease-in-out shadow-sm hover:shadow-md flex-col bg-black-transparent text-white rounded-lg h-full"
   >
-    <img
+    <ProgressiveImage
       v-if="article.img"
-      class="h-48 xxlmax:w-full object-cover rounded-t-lg m-px"
       :src="article.img"
       :alt="article.alt"
+      height="12rem"
+      width="calc(100% - 2px)"
+      size="medium"
+      fit="cover"
+      class="rounded-t-lg m-px"
+      image-class="rounded-t-lg"
     />
 
     <div class="p-6 flex flex-col justify-between w-full">

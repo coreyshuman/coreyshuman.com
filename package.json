@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "yarn build:images && nuxt build",
+    "build:images": "node image-build.mjs",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "clean": "nuxt clean",
@@ -49,6 +50,7 @@
     "prettier": "^2.2.1",
     "remark-behead": "^3.1.0",
     "remark-emoji": "^4.0.1",
+    "sharp": "^0.32.6",
     "shikiji": "^0.6.12",
     "stylelint": "13.8.0",
     "stylelint-config-prettier": "8.0.2",

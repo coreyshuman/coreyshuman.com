@@ -27,7 +27,7 @@ export default {
   mixins:[util],
   async asyncData({ $content }) {
     let articles = await $content('articles')
-      .only(['title', 'description', 'img', 'slug', 'author', 'created', 'updated', 'published'])
+      .only(['title', 'description', 'img', 'alt', 'slug', 'author', 'created', 'updated', 'published'])
       .sortBy('created', 'desc')
       .fetch();
 

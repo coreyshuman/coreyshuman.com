@@ -1,6 +1,15 @@
 <template>
   <div class="relative w-full h-60 post-left">
-    <img :src="article.img" :alt="article.alt" class="absolute h-full w-full object-cover" />
+    <ProgressiveImage
+      v-if="article.img"
+      :src="article.img"
+      :alt="article.alt"
+      width="100%"
+      height="100%"
+      size="large"
+      fit="cover"
+      class="absolute h-full w-full"
+    />
     <div class="absolute h-full w-full bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm">
       <div class="absolute top-30 xs:left-16 xs:right-16 sm:left-32 sm:right-32">
         <div class="mt-16 flex uppercase text-sm">

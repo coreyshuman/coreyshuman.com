@@ -1,7 +1,7 @@
 ---
 title: Setting Up Hubris on stm32f4-discovery
 description: Setting up a Windows environment to use Hubris with the stm32f4-discovery board.
-img: https://images.unsplash.com/photo-1588010986054-727675e6f36a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60
+img: /assets/headers/car.png
 alt: my third blog post
 published: true
 created: 2022-01-01

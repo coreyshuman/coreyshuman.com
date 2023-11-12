@@ -1,11 +1,23 @@
 <template>
-  <div class="text-steel">About</div>
+  <div class="text-steel">
+    About
+    <ProgressiveImage
+      src="/assets/headers/car.png"
+      alt="a car in a desert"
+      blur="2px"
+      loading-blur="2px"
+      size="large"
+      fit="fill"
+    ></ProgressiveImage>
+  </div>
 </template>
 <script>
+import ProgressiveImage from '~/components/global/ProgressiveImage.vue';
 import { util } from '~/util/util';
 
 export default {
-  mixins:[util],
+  components: { ProgressiveImage },
+  mixins: [util],
   mounted() {
     const setting = {
       pointDensity: 16,
@@ -27,17 +39,13 @@ export default {
       lineColor: "#0068eb",
       pointInteractColor: "#00142d",
     };
-
-
-
-      if(this.canvasSupportsDisplayP3() && this.canvasSupportsWideGamutCSSColors()) {
-        setting.backgroundColor = 'oklch(19.12% 0.074 252.64)';
-        setting.pointColor = 'oklch(19.12% 0.074 252.64)';
-        setting.pointInteractColor = 'oklch(19.12% 0.074 252.64)';
-        setting.lineColor = 'oklch(55% 0.261 259.05)';
-      }
-
-      this.$root.$emit('updateConstellation', setting);
+    if (this.canvasSupportsDisplayP3() && this.canvasSupportsWideGamutCSSColors()) {
+      setting.backgroundColor = 'oklch(19.12% 0.074 252.64)';
+      setting.pointColor = 'oklch(19.12% 0.074 252.64)';
+      setting.pointInteractColor = 'oklch(19.12% 0.074 252.64)';
+      setting.lineColor = 'oklch(55% 0.261 259.05)';
+    }
+    this.$root.$emit('updateConstellation', setting);
   }
 }
 </script>

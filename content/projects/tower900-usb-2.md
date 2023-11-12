@@ -1,7 +1,7 @@
 ---
 title: Tower 900 Custom IO 2
 description: Custom PCB design for USB 3.1 10Gb USB ports and high-quality audio on the Thermaltake Tower 900 PC Case.
-img: /assets/tower900/xray.png
+img: /assets/projects/tower900/xray.png
 alt: CAD software view of a PCB design with many colorful traces
 created: 2022-01-01
 updated: 2022-01-02

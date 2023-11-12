@@ -1,7 +1,7 @@
 ---
 title: Code Highlight Test Page
 description: This is a test page to validate code highlighting and theme colors.
-img: https://images.unsplash.com/photo-1588512285341-c481fb6de19d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1406&q=80
+img: /assets/headers/car.png
 alt: Hello i'm article 9
 created: 2021-01-01
 updated: 2021-01-02
