@@ -46,6 +46,10 @@ import assets from '../../assets/js/images';
       imageClass: {
         type: String,
         default: ''
+      },
+      radius: {
+        type: String,
+        default: ''
       }
     },
     data() {
@@ -65,22 +69,28 @@ import assets from '../../assets/js/images';
         if(this.loading) {
           style += `filter:blur(${this.loadingBlur});`;
         }
+        if(this.radius !== '') {
+          style += `border-radius:${this.radius}`;
+        }
         return style;
       },
       loaderClass() {
         return `thumbnail ${this.loading ? 'loading' : ''}`;
       },
       imageStyle() {
-        let style = `object-fit:${this.imageSize};`;
+        let style = `object-fit:${this.imageFit};`;
         if(this.blur) {
           style += `filter:blur(${this.blur});`;
+        }
+        if(this.radius !== '') {
+          style += `border-radius:${this.radius}`;
         }
         return style;
       },
       calcImageClass() {
         return this.imageClass;
       },
-      imageSize() {
+      imageFit() {
         let fit = 'none';
 
         switch(this.fit) {
@@ -128,10 +138,12 @@ import assets from '../../assets/js/images';
     methods: {
       onLoad(e) {
         this.loading = false;
+        this.thumbnail = '';
       },
       onError(e) {
         if(!this.error) {
-          // todo load a backup image
+          console.error(`Image ${this.imageSrc} not found.`);
+          this.imageSrc = '/generated/headers/moon_large.png';
         }
         this.error = true;
       },

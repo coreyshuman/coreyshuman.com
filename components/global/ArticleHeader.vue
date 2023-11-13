@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full h-60 post-left">
+  <div class="relative w-full">
     <ProgressiveImage
       v-if="article.img"
       :src="article.img"
@@ -10,9 +10,18 @@
       fit="cover"
       class="absolute h-full w-full"
     />
-    <div class="absolute h-full w-full bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm">
-      <div class="absolute top-30 xs:left-16 xs:right-16 sm:left-32 sm:right-32">
-        <div class="mt-16 flex uppercase text-sm">
+    <div class="w-full min-h-60 py-4 px-2 sm:px-8 lg:px-16 bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm">
+      <div class="flex justify-end">
+        <NuxtLink
+          to="/post"
+          class="sm:mr-8 xs:mr-2 self-center text-white font-bold transition-colors hover:text-green duration-300 ease-linear"
+        >
+          All articles
+        </NuxtLink>
+        <AppSearchInput />
+      </div>
+      <div class="">
+        <div class="mt-4 flex uppercase text-sm">
           <p class="mr-3">
             {{ formatDate(article.created || article.createdAt) }}
           </p>
@@ -25,15 +34,6 @@
             <CategoryPill :tag="tag"></CategoryPill>
           </span>
         </div>
-      </div>
-      <div class="flex absolute top-1rem sm:right-3rem right-1rem">
-        <NuxtLink
-          to="/post"
-          class="sm:mr-8 xs:mr-2 self-center text-white font-bold transition-colors hover:text-green duration-300 ease-linear"
-        >
-          All articles
-        </NuxtLink>
-        <AppSearchInput />
       </div>
     </div>
   </div>

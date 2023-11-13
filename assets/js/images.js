@@ -10,23 +10,79 @@ module.exports = {
       height: 1080,
       generated: {
         large: {
-          url: '/generated/car_large.png',
+          url: '/generated/headers/car_large.png',
           width: 1350,
           height: 759,
           size: 2898813
         },
         medium: {
-          url: '/generated/car_medium.jpeg',
+          url: '/generated/headers/car_medium.jpeg',
           width: 675,
           height: 380,
           size: 16965
         },
         thumb: {
-          url: '/generated/car_thumb.webp',
+          url: '/generated/headers/car_thumb.webp',
           width: 60,
           height: 34,
           size: 314,
           data: 'data:image/webp;base64,UklGRjIBAABXRUJQVlA4ICYBAADwBwCdASo8ACIAPtFcp1AoJKMqKBVZyUAaCWMAsSA4j/nf+BTtffQZQWyl9OeCboPcbcQdDLw2IuMyO7eJQMnsM5YNP5tKkAAA97CY9Au6bC2q7/B+husYF2B4JBaCukRtrdV4asNFrzvC67PrFnWW/O7yELvDJ81XQYmqJkFKrtTg7NfYNjPxSH9yA04vPDGZE+zA0Omi8bS7vXpottkFrg7KivSgMEQzoIdWbYwckN5VdsQ2DZCnDnWnW4GLfKEK8Fg22GaoAOP+GMVEMKovRRBncmX2m1vxpljEkTN7swTK92ilPUSD75FIIXuDwsxUGh8dzc8vBXyu4lzpNUmmrOWHAaZTKyCjHqpL2l3nRw0GqLm8hlrdq080/rktFyUAtxPzgAA='
+        }
+      }
+    },
+    {
+      name: 'clouds',
+      src: '/assets/headers/clouds.jpg',
+      size: 2957948,
+      width: 4032,
+      height: 3024,
+      generated: {
+        large: {
+          url: '/generated/headers/clouds_large.png',
+          width: 1350,
+          height: 1013,
+          size: 3402517
+        },
+        medium: {
+          url: '/generated/headers/clouds_medium.jpeg',
+          width: 675,
+          height: 506,
+          size: 39446
+        },
+        thumb: {
+          url: '/generated/headers/clouds_thumb.webp',
+          width: 60,
+          height: 45,
+          size: 884,
+          data: 'data:image/webp;base64,UklGRmwDAABXRUJQVlA4IGADAACQEACdASo8AC0APtFUoEwoJKMiMBgMAQAaCWwAuRgl0v+17y54zn5vP/vlX/UV9ziX5tQhCkx3m5EVe+Cnj/7VtznyI8UmCg9JEaXLs+dKoPHfx85FjykF2CNAv32QQ52NRyeIfcE0o2T7p/kGERiOTmPNH+q8X1MQBD6BzBiiVtuNJp2EGvL7JSvcTIAA/urL3mdSa+ETdRSYL0gfQPrwWnNI2LFLVnn3gt05mRRN1ir7OD1Vzi20cQsGAuPRL2dioN7PxVUBYOCZLJGa36eU/5+CECfQVvuX39eSAyXNvAOfxLC/KqA+y0WzG5tCBOeGq79SP3aK/m1VewDPmEfcl2JUMBnkkdCALrzgtBlS9kF4WvaW2vx5CqkjdHZgtx7q+3uWace/8/g+Jxpn5Pd0PBtpk/dEHNVzoeo3/zjInAoTc59xQtHCgh3Ge5A/tiahHJMp3OWS+xgF8BSkeodYpx3hVW7GzcwoK4FVvPnjZBdTDpANw5tNW0x2VwGywVObeXZCI3jtRACGh0ZSgqT5jc/MMdP2KmQieNB48kSAN8ClYaSzs9rQpqT7fXFLReKnI8MrS2duMPQiBBWoHsvlle2xEZq1pPm61NQfjgEoybC0Gm/EBzUeYf/UDR1GbIjkiz6cxYZLMD+jw9UG4TXlaInSKBwsmsqEuUi4uab8gw5NnIkJTsuDT+lWHEJHKGArSz8s0SRIEh5Eym2RwW235qVNOQIgsBhuPvPZNdcAmpdMw0Ad+HpS8vPvfsb4eHrd/qDILjqEcTMTxX9oo6XNp2mLAwf0lVROAwM5yjUvEYTwYIeVq2Hu9DOr87Mrj92NjDd//bBv8u9MNhpsIi9b3UitvoyW3g9e6r2i1oXneY5V1PP6PnFikUb6uBWwleSFeuS35WwbcSObb7a8mluv1IcqOHzoG9NS47F4JwcRWr3i3k+WxMRLNPcVBvpotV47/I4Ra+yylP7Y/14YmKMyTw/Jxsq6O5jtbp4gHPNdQ87ytc03vJNZYh0E0WTmQT0ohbr2ie/1Tfouco2N0MhSwaAaELPUkhGQTsuqryHAZhpLjbmb9YxbYmbH2CqDl3h7x0m7W+77kPg2M2kM1Lo+JMUxB7jyb4rAcDILK4PYvYFALqqI73ZyKpDpIIu4AAA='
+        }
+      }
+    },
+    {
+      name: 'moon',
+      src: '/assets/headers/moon.jpg',
+      size: 1141628,
+      width: 4032,
+      height: 3024,
+      generated: {
+        large: {
+          url: '/generated/headers/moon_large.png',
+          width: 1350,
+          height: 1013,
+          size: 1352581
+        },
+        medium: {
+          url: '/generated/headers/moon_medium.jpeg',
+          width: 675,
+          height: 506,
+          size: 6592
+        },
+        thumb: {
+          url: '/generated/headers/moon_thumb.webp',
+          width: 60,
+          height: 45,
+          size: 198,
+          data: 'data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAAAQBwCdASo8AC0APtFcpE2oJSMiLVM7aQAaCWIA0k2gAONszi8FK4xTUuDOH6HYvUTp4j3RM4i6SXlF90cave0pgAD++JXoSo2+pL+g+Bk+UM6hC29Mif+beQjqM9f+Vdk+dCDD8VmFBuDaErm9jyv7Jr9I2QjQLE4Z3BR3E9yoc/W003CJvunJx/OmwIcmrDmNxgL70Y0nmYFIH+Cy45Ef1zJnxmCNBH4ouwjxSRnAAAAA'
         }
       }
     },
@@ -38,23 +94,275 @@ module.exports = {
       height: 1080,
       generated: {
         large: {
-          url: '/generated/scenic_large.png',
+          url: '/generated/headers/scenic_large.png',
           width: 1350,
           height: 759,
           size: 2717156
         },
         medium: {
-          url: '/generated/scenic_medium.jpeg',
+          url: '/generated/headers/scenic_medium.jpeg',
           width: 675,
           height: 380,
           size: 8592
         },
         thumb: {
-          url: '/generated/scenic_thumb.webp',
+          url: '/generated/headers/scenic_thumb.webp',
           width: 60,
           height: 34,
           size: 206,
           data: 'data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAAAwBwCdASo8ACIAPsVWoUunpSMhtVn4APAYiWUAySH/4DJTP1yNWNQWYXR2TcLb3oUg+PBOn4lAo3Jt1wnZklCOZKwA/pA+p3j7gp8dIqGcj2P6J73LG/ILqk7kuCXq/ktz1vP9adshrhFFW8dVcDpaA31VDANhj3yh2LNHLf1ltYDIKwyPftG1YdmG2DMgC9KuDEHfPtDt+qjadEzx7S5uGnMgQm08vjX34kOua/taAGo1ICSM8A520gA='
+        }
+      }
+    },
+    {
+      name: 'transparent-01',
+      src: '/assets/posts/transparent-winform/transparent-01.png',
+      size: 7082,
+      width: 300,
+      height: 162,
+      generated: {
+        large: {
+          url: '/generated/posts/transparent-winform/transparent-01_large.png',
+          width: 300,
+          height: 162,
+          size: 14371
+        },
+        medium: {
+          url: '/generated/posts/transparent-winform/transparent-01_medium.jpeg',
+          width: 300,
+          height: 162,
+          size: 5146
+        },
+        thumb: {
+          url: '/generated/posts/transparent-winform/transparent-01_thumb.webp',
+          width: 60,
+          height: 32,
+          size: 314,
+          data: 'data:image/webp;base64,UklGRjIBAABXRUJQVlA4ICYBAADwCACdASo8ACAAPtFeqE4oJSQiJAyRABoJYgCpJuIv2dX/5t1bz2peAotali0Ds7CvvtuEu2vZN48qbpI1FQk8gQmpEiUXV09yPF3DhVgbUAD+4KGc1k+F6WIASt/zl95KRsvKDq2YiGWxAAnIMWozxv7n95X96A7g1GGZ5M5u1iGLFt/zBhmqQ+gRg7Egff6AhSCz9CPTeU3OLokL3xa6e/qAqjWwcMsQr3mDggxTjp66WeCCnZs1/mQqUljKbMrHXpBeXwOZm8kxGHE5dEaNr2rIP9sdvhdHK9DNuxnF3z3uGNMNg830msmi6sPxGFIuN5oAFo/VecXx/QPlDnWqqA3/GFfhRe0byS2Ai/WHY/6A/f3jVaoMgrGC0V9iDxNnSp6WgAA='
+        }
+      }
+    },
+    {
+      name: 'transparent-02',
+      src: '/assets/posts/transparent-winform/transparent-02.png',
+      size: 6563,
+      width: 245,
+      height: 225,
+      generated: {
+        large: {
+          url: '/generated/posts/transparent-winform/transparent-02_large.png',
+          width: 245,
+          height: 225,
+          size: 13655
+        },
+        medium: {
+          url: '/generated/posts/transparent-winform/transparent-02_medium.jpeg',
+          width: 245,
+          height: 225,
+          size: 5032
+        },
+        thumb: {
+          url: '/generated/posts/transparent-winform/transparent-02_thumb.webp',
+          width: 60,
+          height: 55,
+          size: 408,
+          data: 'data:image/webp;base64,UklGRpABAABXRUJQVlA4IIQBAAAwCwCdASo8ADcAPsVUnkunpSKhtfRsyPAYiUAZIQvICjf93Z/ACs/lm6VNpgI9DD7s4k1wSCWBqKZRV9F513A3MzH05NG3ELzOCDZonbWzPGS/fEqLtWHUiYdDXqibAoxWAAD+532mD2I1QiynFrHBcqkZ6mH60StKsAhjy+2+AUheI4+Pw0yA426zlW4AB8F7OY8pGk7OmiBey6EUav/86jm+keKVD66xZd7K6tk2ukCFKE6ELhsaIGcUil2LAuo2CmkR8kOSMPF2OoBJQ3uH4LOgI/kKGIRuEpH/wBX1bc35IleWEBhLbMwIhiRgWJCbY3UXp4CANWNFI/Kd1f8I3OTVMKd2fsQwd4EiDHGQksPULbieNA5XM6oe8xj6uvYauB1Axoz1xrf7hTJBZsSlgiXM/zd1sc5cTDq06QiNQ1UJlOsylDbYrTJ0NGCXw+TKdAzOShhTnNLmxslktdJ9MbS1LHeFMkmscNUFKUFquU0Z8IwkoAyBy2+bO5I3mG5rEAAA'
+        }
+      }
+    },
+    {
+      name: 'transparent-03',
+      src: '/assets/posts/transparent-winform/transparent-03.png',
+      size: 13990,
+      width: 245,
+      height: 225,
+      generated: {
+        large: {
+          url: '/generated/posts/transparent-winform/transparent-03_large.png',
+          width: 245,
+          height: 225,
+          size: 26895
+        },
+        medium: {
+          url: '/generated/posts/transparent-winform/transparent-03_medium.jpeg',
+          width: 245,
+          height: 225,
+          size: 6218
+        },
+        thumb: {
+          url: '/generated/posts/transparent-winform/transparent-03_thumb.webp',
+          width: 60,
+          height: 55,
+          size: 622,
+          data: 'data:image/webp;base64,UklGRmYCAABXRUJQVlA4IFoCAAAQDgCdASo8ADcAPtFcp1AoJKMiphVbsQAaCUAZLazPWP8PN+eZnD75ASsBveYM5efQc0p0s8vYf6AADr0tVWc8ncdfZYiuGmq1jI1Gs9jdxi5Wg1+ptwTkaRjrwZ4IckhqWa2ULuI1ECWyruCK4m9qrCEyTkLYzqYAAP7t1uJCgELngd0kX4RW+AQJrr37xf2retE0Dk6z8XUP/0+3Nc3DvUJugoXxsDV+VP1Xdy/twAEQaBBrCxyCxxxV5VHNULqvJXbwP3bPXs+kD6ZAw59F5tASfm34u4hs3LGTEkwYaKrF0yFyLMFlhz21RsS3hRNFRxWMN7EU2qV1AVVzZMIrWSQ3wImx03ipMA32cFH7qQ5QqLQ4qr/0WpRN+kaGkcnkqJuqANtBxZhYMEKpz91RwMLjoBMGmPjrOKtwoJiNGB5olYwWSKXz2Kj4N8tZKrx1+Y85Kh7D1vCviicIprIClioLSBKYKgzW8Iu3RqnBhN7NAI2sReWn5OV4o9uQaqLTFUotHxOShw2K8zzZFcRDKOAZgBcSJ1hpFz2WMup1TFm9qxD9q/sYJIlq1iNCmKCBvlwcB+603JC9YoBH3E8hugRm93Zs27Ce3ehmTus+JJCL7pyQdSI0jKF5IJIHmAxNTAaNoNVwezBXxBMqOXio5dbLCoRZNvn7prN1jkZWsqMVPxLK30WV10Q0OXNJySEN0FDSLzpUTw+D0DB43F3+HHW2zTCIxLnaRxNZw5sxo1/WcDN4Rn/1bTh2V0Z9akggQ/JS5Ej7ssRbn8TXFMe1XPac0JOjzgAAAA=='
+        }
+      }
+    },
+    {
+      name: 'transparent-04',
+      src: '/assets/posts/transparent-winform/transparent-04.png',
+      size: 13577,
+      width: 245,
+      height: 225,
+      generated: {
+        large: {
+          url: '/generated/posts/transparent-winform/transparent-04_large.png',
+          width: 245,
+          height: 225,
+          size: 26109
+        },
+        medium: {
+          url: '/generated/posts/transparent-winform/transparent-04_medium.jpeg',
+          width: 245,
+          height: 225,
+          size: 5958
+        },
+        thumb: {
+          url: '/generated/posts/transparent-winform/transparent-04_thumb.webp',
+          width: 60,
+          height: 55,
+          size: 596,
+          data: 'data:image/webp;base64,UklGRkwCAABXRUJQVlA4IEACAAAQDgCdASo8ADcAPtFSn0yoJCKiMfcbaQAaCUAaRYn/irgP+Xuq7u5UBc9qciK8nBQbFVMgD6E5zjHMM9nxhZrHHgc1p3/3SldwGg3F8kC/tzRROnJfgXK3arCDU+nM6dbFVkD1Yv7pxfIjSRv/NdyroXs4+lOgRevAAP7fijLceBJfPyFPk9f55b5220rgeRlvl2RDxGg0ZNMghO2X7JGkLeYZZ1V74sxfn2BTodMm+dAqWpava1Alw87d3TbC+WQ/xevSk0FF4Qy/PBHu1Ndp4JRK5VbV+CVPWolELL1JhEiE3ztkhBqngl+QBI0YrULUkm4RgBpLjaixM3F4vRbUqdH/0bbSp4Wt2RwHBsbMrPLExnPBvuGtr0V0c9sf+PEx7Guaje0yhBvrzrapPhri4pzNug+DaXUY0eqfTnF3WUqXqvJGswBvSEPQ4eEhgtehQNIi/MbNZYKwCpzhrnRsMWXzZ7Yd/txIK5QDfVeQKt9EpnXMIb1jFyS8u5WMJO+wxZNAt04reZTTpw5wHcW+v0IU5bkU1EJiaKHUpivbyJAG9kMobxuKur+fURHrAWd/9r0O62oJt5OCII/Xmy/LqQzSffPwM7QYMM9MkEH9o+8gwL4OzQUdFOzXviWjKMeFNrqeLKfHPhQ1FcGTgbWraq9w88bB5e6MRLdms07kbdIDk6/wW4Y5Xdy6Ljzxlmoy87xrBke30eXUw/5xv2nLzZtrB7TxAqjmQem5YuFFeP24hz6kQeDEV5ggF3/gAAA='
+        }
+      }
+    },
+    {
+      name: 'transparent-05',
+      src: '/assets/posts/transparent-winform/transparent-05.png',
+      size: 13530,
+      width: 245,
+      height: 225,
+      generated: {
+        large: {
+          url: '/generated/posts/transparent-winform/transparent-05_large.png',
+          width: 245,
+          height: 225,
+          size: 25860
+        },
+        medium: {
+          url: '/generated/posts/transparent-winform/transparent-05_medium.jpeg',
+          width: 245,
+          height: 225,
+          size: 5950
+        },
+        thumb: {
+          url: '/generated/posts/transparent-winform/transparent-05_thumb.webp',
+          width: 60,
+          height: 55,
+          size: 588,
+          data: 'data:image/webp;base64,UklGRkQCAABXRUJQVlA4IDgCAADwDQCdASo8ADcAPtFUoEyoJCKiMBgMAQAaCUAZ+o2O4Li/+nupTdPl6cG9Lu06E/F03hjwTiL546ngGUcp40pRLZhg8MMhDDrainjansl+a0Y3I8e9JoYIZPnImxX2Wzp7nhDCBRRrWruS/CK3pRG+/MYZv5l054AA/t+KI+TbEJu0MNGGkFYLfY0/SuAZQu+SP9n8cDRg2G9eVpNweoMFu7LwToDCLnjcQS6odePkavsge5YX1ZAxA7XSSLNieLgeG6vQ0MyMSXcmAxTVzWCXxAAh3urKOOm9V2ZB2uhiQqMNfis74X0AJWcPFOtLbnB9ELUluRRGwp+bCfT8tc8lIhkmwIPPG/JEsQT3NHVNclOrmR+DafF2haxKEyNbEJ5rtBegxduWgTlmb7X9eC1LE/NzP6bz7vW9NCnEaBZubgfJxz1/Q+HOxwnFYZ2/pAlGOlKqEXj9G4CbfQF7XpJyMa6IE8FbSFWQPh6sfChC74OEt9BSa4tafPPSmwdCevJimukGinBLLXWzdmx7y0gPRhML7EGj4AKQ48JDM7Rz0cD/qIVXLwt7NmLlvxNdVgr0onw4vbjfkDlZHJJmPsMQ+8jT7G4qQ9TQ4GA7ABUHILi9FebRQ2QXS8liA8Wwcpzah6gweO9mf66Yhe9wnHFesUCLiyh52Ma48EX88/mW4Y5aZXVjuZP8/YKpMoUPuSLfbBf+cb9p08zzC6D8R0ZspFMfWwb59FdWr9rg8aICOJ78qiwmK+AA'
+        }
+      }
+    },
+    {
+      name: 'taskbar-01',
+      src: '/assets/posts/winform-hide-to-taskbar/taskbar-01.jpg',
+      size: 20797,
+      width: 266,
+      height: 239,
+      generated: {
+        large: {
+          url: '/generated/posts/winform-hide-to-taskbar/taskbar-01_large.png',
+          width: 266,
+          height: 239,
+          size: 79012
+        },
+        medium: {
+          url: '/generated/posts/winform-hide-to-taskbar/taskbar-01_medium.jpeg',
+          width: 266,
+          height: 239,
+          size: 9038
+        },
+        thumb: {
+          url: '/generated/posts/winform-hide-to-taskbar/taskbar-01_thumb.webp',
+          width: 60,
+          height: 54,
+          size: 484,
+          data: 'data:image/webp;base64,UklGRtwBAABXRUJQVlA4INABAAAQCwCdASo8ADYAPtFapEuoJaOhrBqsyQAaCWcADpm/Cd6dy92jZpqr3vDHaE1DhhGGtyz2+PAih+iUSviACQan24eXRHqfWxGf8/vbtG8I1nRMmhJHn1Nif45Ca1vOiUDAAP7oiBayRgoEx6Mr4ccXO/DpVC7XOfdD7S5+OaxZ69L0rVuAuBiXO0oFr10aEFwPAazEBMxngc9eCD2yORd5yVLAMcGwmP0qu/5VJ7+Ob06SZsWgYv6LHt7x4J1t9cG7vPFx6lEnic4Xx0k2SZzyks2CLCjJO24YxtonHISHPuwLuS+zBGBrl9fcJQ4WllOEjSk0SJye6B29LrrQWU/TJyqXrni6m8Gj4FVIOco2Cw179j1lLjk1t809yq17ndi9Jy47Ss+y9rgarLN4yXjZm7LiC/Af7wX4KRTBVoxYL4sxFAjHEMVeySQjy8Vai/ScFI8e6NCnDLVuS7tSz5MDRWW7TEDu59POBO09svANsSHROXOZgVa/GAAXWORbaY9iv3qjHNDjteJV5YHCSDvKB3PmRMGYWXlz8HopSOW5wjtXflYnmX3aIjKucO0Vg/FYI0ljSOJ+nt7p3JmV4aCP59aiK9SF8zLXFzadCEQAAA=='
+        }
+      }
+    },
+    {
+      name: 'taskbar-02',
+      src: '/assets/posts/winform-hide-to-taskbar/taskbar-02.png',
+      size: 3385,
+      width: 193,
+      height: 156,
+      generated: {
+        large: {
+          url: '/generated/posts/winform-hide-to-taskbar/taskbar-02_large.png',
+          width: 193,
+          height: 156,
+          size: 8323
+        },
+        medium: {
+          url: '/generated/posts/winform-hide-to-taskbar/taskbar-02_medium.jpeg',
+          width: 193,
+          height: 156,
+          size: 3730
+        },
+        thumb: {
+          url: '/generated/posts/winform-hide-to-taskbar/taskbar-02_thumb.webp',
+          width: 60,
+          height: 48,
+          size: 390,
+          data: 'data:image/webp;base64,UklGRn4BAABXRUJQVlA4IHIBAABwCQCdASo8ADAAPtFcplAoJKMiqBVaqQAaCWcAz0kgRCc4jVmd54SINaWrOp5oK0zKl3QghBbbc9adJznWjBEzWAVBSsKhK8NvxCBdyTllCmS3DAAA/q+XMU6NWjRGFysn565+4+zewBh9b2+Ur4oBZYWqp8S/r6icWq3dM7bCqAG3Tjz5Luwt7G/0rcAmnA9irgT1GAJzxHaVYqua2pQ58Q9tqnXUVLThQwSZPnYTUWK8IWbI9isqJPi6lDBMs1qUGaq9Ir56GogwekV/n5OkpPybMfuy8WFmHRlQa89IAEQA2C2+xlpNKdRgQcw7VF+KkbFpN/zTCrCyXXyBtinvdSG3ygX4pMXqPJm/4TQWRoluQ40rIqJ+uca00r5/3iM5P7prSkKWGbZUO8W/hybJJTco12EiyQw+U14h6IlW2SYUoeJTcX2Hdn02kAgt0mSTxECimfR1uYWm0Bob9hq0QMXpSWUerdiEHBTrb248AAAA'
+        }
+      }
+    },
+    {
+      name: 'taskbar-03',
+      src: '/assets/posts/winform-hide-to-taskbar/taskbar-03.png',
+      size: 23776,
+      width: 358,
+      height: 72,
+      generated: {
+        large: {
+          url: '/generated/posts/winform-hide-to-taskbar/taskbar-03_large.png',
+          width: 358,
+          height: 72,
+          size: 32120
+        },
+        medium: {
+          url: '/generated/posts/winform-hide-to-taskbar/taskbar-03_medium.jpeg',
+          width: 358,
+          height: 72,
+          size: 4744
+        },
+        thumb: {
+          url: '/generated/posts/winform-hide-to-taskbar/taskbar-03_thumb.webp',
+          width: 60,
+          height: 12,
+          size: 270,
+          data: 'data:image/webp;base64,UklGRgYBAABXRUJQVlA4IPoAAAAQBgCdASo8AAwAPrVKnEunJKKht+gA4BaJQBUk4Z7fkd5+MCyvJSTw7HH4Qnq9A1sKQvDJ4i/24AAA/u/Vvgw7TcBfhPGU3y8bBI+3rL3P9m17F0OGtuaotjSSgI4ERfRo0FmgU3zJk+COl9Hz8K46kYkX1fpGVtwFq21y+0i8ETPXIEn3kdq7kmfQAItbfGB2jSabkH/TrMUnpW+66JYEhajdo0wl99P9KSPJJeySwAFACAFw/PpOZ4/D7JV+gws93s4fuPjIA/sqnvJqp30xAY6s+uK6X+sCaaSoURW5m3EkZ7T1IJKSFgJ926/AMhCZkSZputKxDBAA'
+        }
+      }
+    },
+    {
+      name: 'taskbar-04',
+      src: '/assets/posts/winform-hide-to-taskbar/taskbar-04.png',
+      size: 16726,
+      width: 219,
+      height: 100,
+      generated: {
+        large: {
+          url: '/generated/posts/winform-hide-to-taskbar/taskbar-04_large.png',
+          width: 219,
+          height: 100,
+          size: 24355
+        },
+        medium: {
+          url: '/generated/posts/winform-hide-to-taskbar/taskbar-04_medium.jpeg',
+          width: 219,
+          height: 100,
+          size: 4604
+        },
+        thumb: {
+          url: '/generated/posts/winform-hide-to-taskbar/taskbar-04_thumb.webp',
+          width: 60,
+          height: 27,
+          size: 504,
+          data: 'data:image/webp;base64,UklGRvABAABXRUJQVlA4IOQBAACQCQCdASo8ABsAPtFWpk4oJCMiKBgNUQAaCUAYR3rij5f2jo0C7t+EK/vQ5YIHdcDYAh6TdxjlAF2QJGfURODIG+1ZSYryOK1wOBHBupXV8dF7SJAAAP7yOHUQEPsgiQMUVCgJi9NqAAhILmb8+3OtuaIV6UmQfRVZ96eUxIhC6dfe5so1tsfSa/sN9oNUYPLda7EThB2Ci65jr12GmzJp0fqRuEwBNGu9dSEpMYjBVZpo3ix4EJHQCb5uJjyNp6G2HAhwMwADneMVJFp7tiYPrG5hBhtvFP+WLfJ+O3gPWMAl/Dp5KE+faOyvbLOiG25nAgbkRs79yRpGj/dbVEUGz5WeRlbYOSvgDXwi/5DgO0Ot8odH2tMtLFA7c98X9XVrwu5nWgJ6M4wbk+/neUmX0cLhyVLHqRO2rH4fdLFYtP3W8RLvoG5PByA7uLybuKTe6hpmLgbcsc5o7mIslT9dfzSq+7Tq+scmcbJ3yJ/949LaNQBsgFTWNiPNB7pQtY1SpJoLzwczk9EvE8nj9Hq2IBn5bk6zGAIrB1AdsFhcF8sEFY4liyGiNFNEsf9zuSLH7cCSEZ0JhxT98w9Mb3Nl09v2U3t8kzPKfzUKSmzq/skNRRKWYD9Piqfh1Ygn5ASAZIAA'
         }
       }
     },
@@ -66,19 +374,19 @@ module.exports = {
       height: 490,
       generated: {
         large: {
-          url: '/generated/xray_large.png',
+          url: '/generated/projects/tower900/xray_large.png',
           width: 1350,
           height: 479,
           size: 1294599
         },
         medium: {
-          url: '/generated/xray_medium.jpeg',
+          url: '/generated/projects/tower900/xray_medium.jpeg',
           width: 675,
           height: 240,
           size: 32366
         },
         thumb: {
-          url: '/generated/xray_thumb.webp',
+          url: '/generated/projects/tower900/xray_thumb.webp',
           width: 60,
           height: 21,
           size: 456,

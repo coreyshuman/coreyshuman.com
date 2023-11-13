@@ -65,10 +65,12 @@ async function execute() {
     try {
       await fs.access(generatedPath);
       log('Deleting generated folder');
-      // await fs.rm(generatedPath, {recursive: true});
+      await fs.rm(generatedPath, { recursive: true });
     } catch {
       // ignore error
     }
+
+    await fs.mkdir(generatedPath);
 
     try {
       await fs.access(atlasFilePath);
@@ -81,6 +83,25 @@ async function execute() {
     log('Fetching images');
     await processImages(assetsPath);
 
+    const uniquePaths = [];
+
+    for (let image of atlas.images) {
+      if (!uniquePaths.includes(image.relativePath)) {
+        uniquePaths.push(image.relativePath);
+      }
+    }
+
+    for (let path of uniquePaths) {
+      // make folders
+      const outputPath = `${generatedPath}/${path}`;
+      try {
+        await fs.access(outputPath);
+      } catch {
+        log('make directory ' + outputPath);
+        await fs.mkdir(outputPath, { recursive: true });
+      }
+    }
+
     log('Processing images');
     const promises = [];
     atlas.images.map((image) => {
@@ -88,11 +109,6 @@ async function execute() {
     });
 
     await Promise.all(promises);
-
-    for (let image of atlas.images) {
-      delete image.relativePath;
-      image.src = image.src.replace(/.\/static/g, '');
-    }
 
     log('Saving atlas file');
     await writeAtlas(atlas, atlasFilePath);
@@ -120,7 +136,7 @@ async function processImages(directoryPath, relativePath = '') {
       } else if (isImageFile(file.name)) {
         atlas.images.push({
           name: file.name.split('.')[0],
-          relativePath: relativePath,
+          relativePath: relativePath.replaceAll('\\', '/'),
           src: `${assetsPath}/${relativeFilePath.replaceAll('\\', '/')}`
         });
       }
@@ -136,7 +152,12 @@ function isImageFile(fileName) {
 
 async function writeAtlas(atlas, filePath) {
   try {
-    const jsonString = JSON.stringify(atlas, null, 2);
+    for (let image of atlas.images) {
+      delete image.relativePath;
+    }
+
+    let jsonString = JSON.stringify(atlas, null, 2);
+    jsonString = jsonString.replace(/\.?\/static/g, '');
     await fs.writeFile(filePath, atlasHeader + jsonString);
   } catch (error) {
     console.error('Error writing Atlas file:', error);
@@ -152,6 +173,8 @@ async function convertImage(image) {
     const metadata = await sharp(image.src).metadata();
     image.width = metadata.width;
     image.height = metadata.height;
+
+    const outputPath = `${generatedPath}/${image.relativePath}`;
 
     image.generated = {};
 
@@ -174,7 +197,7 @@ async function convertImage(image) {
 
       const sharpImage = sharp(image.src).resize(width).toFormat(currentConfig.type, currentFormat);
 
-      image.generated[currentConfig.name].url = `${generatedUrl.substring(1)}/${image.name}_${currentConfig.name}.${
+      image.generated[currentConfig.name].url = `${outputPath.substring(1)}/${image.name}_${currentConfig.name}.${
         currentConfig.type
       }`;
 
@@ -187,11 +210,11 @@ async function convertImage(image) {
         outputImage = `data:image/${currentConfig.type};base64,` + outputImage.toString('base64');
         image.generated[currentConfig.name].data = outputImage;
       } else {
-        const outputPath = `${generatedPath}/${image.name}_${currentConfig.name}.${currentConfig.type}`;
-        await sharpImage.toFile(outputPath);
+        const outputFilePath = `${outputPath}/${image.name}_${currentConfig.name}.${currentConfig.type}`;
+        await sharpImage.toFile(outputFilePath);
 
-        const outputMetadata = await sharp(outputPath).metadata();
-        const outputStats = await fs.stat(outputPath);
+        const outputMetadata = await sharp(outputFilePath).metadata();
+        const outputStats = await fs.stat(outputFilePath);
         image.generated[currentConfig.name].width = outputMetadata.width;
         image.generated[currentConfig.name].height = outputMetadata.height;
         image.generated[currentConfig.name].size = outputStats.size;

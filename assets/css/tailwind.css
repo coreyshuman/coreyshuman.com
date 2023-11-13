@@ -100,6 +100,52 @@
 
     background-color: var(--color-inline-highlight);
   }
+
+  p {
+    @apply mb-6;
+  }
+
+  div.thumbnail + p,
+  div.thumbnail + ul {
+    @apply mt-6;
+  }
+
+  div.positionComponent + p,
+  div.positionComponent + ul,
+  div.positionComponent + div {
+    @apply mt-6;
+  }
+
+  :not(div.positionComponent) div.thumbnail + div {
+    @apply mt-6;
+  }
+
+  .toc-header {
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  .icon.icon-link {
+    content: url('~assets/svg/fas-link.svg');
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: 20px 20px;
+  }
+
+  .footnotes {
+    @apply mt-10;
+  }
+
+  .footnotes::before {
+    @apply block font-semibold text-3xl mt-6 border-steel border-t-1;
+    
+    content: 'Notes';
+  }
+
+  .footnotes hr {
+    display: none;
+  }
 }
 
 .nuxt-content-highlight {

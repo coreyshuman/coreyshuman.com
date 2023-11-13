@@ -97,27 +97,4 @@ export default {
 .nuxt-content {
   color: white;
 }
-
-.nuxt-content p {
-  margin-bottom: 20px;
-}
-
-.nuxt-content h2,
-.toc-header {
-  font-weight: bold;
-  font-size: 24px;
-}
-
-.nuxt-content h3 {
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.icon.icon-link {
-  content: url('~assets/svg/fas-link.svg');
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-size: 20px 20px;
-}
 </style>

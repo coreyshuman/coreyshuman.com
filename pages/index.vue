@@ -10,8 +10,8 @@
     </div>
     <div v-if="articles">
       <div class="flex items-center">
-        <h1 class="flex-1 font-bold text-4xl mb-5">Latest Posts</h1>
-        <span class="flex-1 text-right"
+        <h1 class="flex-grow font-bold text-4xl mb-5">Latest Posts</h1>
+        <span class="flex-grow text-right"
           ><NuxtLink to="/post" class="text-celeste hover:text-red transition duration-300 font-bold"
             >View Archive</NuxtLink
           ></span
@@ -50,7 +50,7 @@ export default {
     const articles = await $content('articles')
       .only(['title', 'description', 'img', 'alt', 'slug'])
       .where({published: {$eq: true}})
-      .sortBy('updated', 'desc')
+      .sortBy('created', 'desc')
       .limit(3)
       .fetch();
     const projects = await $content('projects')
