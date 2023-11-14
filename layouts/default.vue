@@ -1,5 +1,5 @@
 <template>
-  <div class="m-0 sm:mx-2 md:mx-8 xxlmin:m-auto max-w-screen-xxlmin min-h-fullvh">
+  <div class="m-0 sm:mx-2 md:mx-8 xxlmin:m-auto max-w-screen-xxlmin min-h-fullvh whitespace-normal break-words">
     <div
       class="flex flex-col min-h-fullvh firefox:bg-black firefox:bg-opacity-50 min-h-fullvh backdrop-filter backdrop-blur-sm"
     >
