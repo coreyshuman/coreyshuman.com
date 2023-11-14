@@ -4,41 +4,45 @@
 @import '@fortawesome/fontawesome-svg-core/styles.css';
 
 :root {
-  --color-red: oklch(55.86% 0.235 14.4);
-  --color-red-raw: 55.86% 0.235 14.4;
-  --color-green: oklch(80.06% 0.2185 163.81);
-  --color-green-raw: 80.06% 0.2185 163.81;
-  --color-teal: oklch(86.6% 0.1425 207.16);
-  --color-teal-raw: 86.6% 0.1425 207.16;
-  --color-celeste: oklch(91.5% 0.1469 182.73);
-  --color-celeste-raw: 91.5% 0.1469 182.73;
-  --color-purple: oklch(76.76% 0.2666 328.12);
-  --color-purple-raw: 76.76% 0.2666 328.12;
-  --color-steel: oklch(92.76% 0.006 264.53);
-  --color-steel-raw: 92.76% 0.006 264.53;
   --color-gray: oklch(55.1% 0.023 264.36);
   --color-gray-raw: 55.1% 0.023 264.36;
   --color-black: oklch(0% 0 0);
   --color-black-raw: 0% 0 0;
   --color-white: oklch(100% 0 0);
   --color-white-raw: 100% 0 0;
-  --color-darkblue: #0f111a;
+  --color-metal: oklch(38.75% 0.032 227.85);
+  --color-metal-raw: 38.75% 0.032 227.85;
+  --color-silver: oklch(77.43% 0.022 204);
+  --color-silver: 77.43% 0.022 204;
+  --color-steel: oklch(92.76% 0.006 264.53);
+  --color-steel-raw: 92.76% 0.006 264.53;
+  --color-darkblue: oklch(18% 0.019 274.65);
   --color-darkblue-raw: 18% 0.019 274.65;
-  --color-metal: #324852;
-  --color-silver: #a6babc;
-  --color-steel-temp: #cddeff;
-  --color-ocean: #007a82;
-  --color-blue: #0096ff;
-  --color-teal-temp: #49ebff;
-  --color-green-temp: #00df90;
-  --color-darkgreen: #009668;
-  --color-yellow: #f9d884;
-  --color-gold: #ca8f2f;
-  --color-orange: #eb8174;
-  --color-red-temp: #d70049;
-  --color-purple-temp: #d3d;
-  --color-lavender: #a06bff;
-  --color-highlight-background: oklch(18% 0.019 274.65 / 87.84%);
+  --color-ocean: oklch(52.79% 0.1197 202.84);
+  --color-ocean-raw: 52.79% 0.1197 202.84;
+  --color-blue: oklch(66.24% 0.2013 249.84);
+  --color-blue-raw: 66.24% 0.2013 249.84;
+  --color-teal: oklch(86.6% 0.1425 207.16);
+  --color-teal-raw: 86.6% 0.1425 207.16;
+  --color-celeste: oklch(91.5% 0.1469 182.73);
+  --color-celeste-raw: 91.5% 0.1469 182.73;
+  --color-green: oklch(80.06% 0.2185 163.81);
+  --color-green-raw: 80.06% 0.2185 163.81;
+  --color-darkgreen: oklch(59.54% 0.1762 162.87);
+  --color-darkgreen-raw: 59.54% 0.1762 162.87;
+  --color-yellow: oklch(89.22% 0.1477 88.69);
+  --color-yellow-raw: 89.22% 0.1477 88.69;
+  --color-gold: oklch(69.2% 0.1323 75.06);
+  --color-gold-raw: 69.2% 0.1532 75.06;
+  --color-orange: oklch(75% 0.1916 28.13);
+  --color-orange-raw: 75% 0.1916 28.13;
+  --color-red: oklch(65.88% 0.2905 17.65);
+  --color-red-raw: 65.88% 0.2905 17.65;
+  --color-purple: oklch(76.76% 0.2666 328.12);
+  --color-purple-raw: 76.76% 0.2666 328.12;
+  --color-lavender: oklch(65.37% 0.2285 296.63);
+  --color-lavender-raw: 65.37% 0.2285 296.63;
+  --color-highlight-background: oklch(var(--color-darkblue-raw) / 87.84%);
   --color-highlight-foreground: var(--color-steel);
   --color-highlight-string: var(--color-orange);
   --color-highlight-punctuation: var(--color-silver);
@@ -52,10 +56,11 @@
   --color-highlight-keyword: var(--color-blue);
   --color-highlight-operator: var(--color-teal);
   --color-highlight-other: var(--color-red);
-  --color-highlight-storage: var(--color-purple-temp);
+  --color-highlight-storage: var(--color-purple);
   --color-highlight-object: var(--color-gold);
   --color-highlight-control: var(--color-lavender);
-  --color-inline-highlight: oklch(28.34% 0.019 274.65 / 80%);
+  --color-code-inline-highlight: oklch(28.34% 0.019 274.65 / 80%);
+  --color-code-line-highlight: oklch(36.05% 0.019 97.41 / 87.84%);
 }
 
 .nuxt-content {
@@ -99,7 +104,7 @@
   p code {
     @apply inline-block px-1 m-0;
 
-    background-color: var(--color-inline-highlight);
+    background-color: var(--color-code-inline-highlight);
   }
 
   p {

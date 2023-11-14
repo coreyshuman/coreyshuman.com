@@ -1,7 +1,7 @@
 <template>
   <div v-if="toc.length > 1">
     <h2 class="font-bold text-2xl">Table of Contents</h2>
-    <nav class="pb-6 text-purple">
+    <nav class="pb-6 text-red">
       <ul>
         <li
           v-for="link of toc"

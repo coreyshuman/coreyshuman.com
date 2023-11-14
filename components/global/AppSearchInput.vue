@@ -51,7 +51,7 @@ export default {
             continue;
           }
 
-          output += '<span class="font-bold">';
+          output += '<span class="font-bold text-red">';
           let k = 0;
           do {
             output += value[i];

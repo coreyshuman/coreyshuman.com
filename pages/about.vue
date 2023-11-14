@@ -1,5 +1,15 @@
 <template>
-  <div class="text-steel">
+  <div
+    class="
+          relative
+          py-8 px-0
+          xs:py-8 xs:px-2
+          lg:py-16 lg:px-8 
+          w-full
+          h-full
+          text-steel
+        "
+    >
     About
     <ProgressiveImage
       src="/assets/headers/car.png"
@@ -7,8 +17,8 @@
       blur="2px"
       loading-blur="2px"
       size="large"
-      fit="fill"
-    ></ProgressiveImage>
+      fit="fill">
+    </ProgressiveImage>
   </div>
 </template>
 <script>

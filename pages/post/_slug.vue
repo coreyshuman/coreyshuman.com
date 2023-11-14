@@ -66,30 +66,78 @@ export default {
       pointInteractColor: "#dd33dd",
     });
 
-        // update colors in code
-        const tokens = document.querySelectorAll('pre.shiki code span.line span');
+    function hexToRgb(hex) {
+      if(typeof hex !== 'string' || hex.length === 0) {
+        return 'rgb(0, 0, 0)';
+      }
 
-        for(const token of tokens) {
-          const tokenColor = token.style.color;
-          switch(tokenColor) {
-            case 'rgb(0, 0, 1)': token.style.color = 'var(--color-highlight-foreground)'; break;
-            case 'rgb(0, 0, 2)': token.style.color = 'var(--color-highlight-string)'; break;
-            case 'rgb(0, 0, 3)': token.style.color = 'var(--color-highlight-boolean)'; break;
-            case 'rgb(0, 0, 4)': token.style.color = 'var(--color-highlight-punctuation)'; break;
-            case 'rgb(0, 0, 5)': token.style.color = 'var(--color-highlight-number)'; break;
-            case 'rgb(0, 0, 6)': token.style.color = 'var(--color-highlight-function)'; break;
-            case 'rgb(0, 0, 7)': token.style.color = 'var(--color-highlight-attribute)'; break;
-            case 'rgb(0, 0, 8)': token.style.color = 'var(--color-highlight-type)'; break;
-            case 'rgb(0, 0, 9)': token.style.color = 'var(--color-highlight-property)'; break;
-            case 'rgb(0, 0, 10)': token.style.color = 'var(--color-highlight-comment)'; break;
-            case 'rgb(0, 0, 11)': token.style.color = 'var(--color-highlight-keyword)'; break;
-            case 'rgb(0, 0, 12)': token.style.color = 'var(--color-highlight-storage)'; break;
-            case 'rgb(0, 0, 13)': token.style.color = 'var(--color-highlight-operator)'; break;
-            case 'rgb(0, 0, 14)': token.style.color = 'var(--color-highlight-other)'; break;
-            case 'rgb(0, 0, 15)': token.style.color = 'var(--color-highlight-object)'; break;
-            case 'rgb(0, 0, 16)': token.style.color = 'var(--color-highlight-control)'; break;
-          }
-        }
+      if(hex[0] === 'r') {
+        return hex;
+      }
+
+      if(hex[0] !== '#') {
+        console.error(`Invalid color format: ${hex}`);
+        return 'rgb(0, 0, 0)';
+      }
+
+      // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
+      const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+      hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+        return r + r + g + g + b + b;
+      });
+
+      const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+
+      if(!result) {
+        console.error(`Invalid color format: ${hex}`);
+        return 'rgb(0, 0, 0)';
+      }
+
+      return `rgb(${parseInt(result[0])}, ${parseInt(result[1])}, ${parseInt(result[2])})`;
+    }
+    // update colors in code
+    const tokens = document.querySelectorAll('pre.shiki code span.line span');
+
+    for(const token of tokens) {
+      const tokenColor = hexToRgb(token.style.color);
+      switch(tokenColor) {
+        case 'rgb(229, 231, 235)':
+          token.style.color = 'var(--color-highlight-foreground)'; break;
+        case 'rgb(255, 133, 119)':
+          token.style.color = 'var(--color-highlight-string)'; break;
+        case 'rgb(0, 150, 255)':
+          token.style.color = 'var(--color-highlight-boolean)'; break;
+        case 'rgb(166, 186, 188)':
+          token.style.color = 'var(--color-highlight-punctuation)'; break;
+        case 'rgb(0, 223, 159)':
+          token.style.color = 'var(--color-highlight-number)'; break;
+        case 'rgb(255, 215, 109)':
+          token.style.color = 'var(--color-highlight-function)'; break;
+        case 'rgb(255, 215, 108)':
+          token.style.color = 'var(--color-highlight-attribute)'; break;
+        case 'rgb(0, 223, 158)':
+          token.style.color = 'var(--color-highlight-type)'; break;
+        case 'rgb(229, 231, 234)':
+          token.style.color = 'var(--color-highlight-property)'; break;
+        case 'rgb(0, 122, 130)':
+          token.style.color = 'var(--color-highlight-comment)'; break;
+        case 'rgb(0, 150, 254)':
+          token.style.color = 'var(--color-highlight-keyword)'; break;
+        case 'rgb(255, 113, 253)':
+          token.style.color = 'var(--color-highlight-storage)'; break;
+        case 'rgb(73, 235, 255)':
+          token.style.color = 'var(--color-highlight-operator)'; break;
+        case 'rgb(255, 58, 91)':
+          token.style.color = 'var(--color-highlight-other)'; break;
+        case 'rgb(203, 143, 41)':
+          token.style.color = 'var(--color-highlight-object)'; break;
+        case 'rgb(160, 107, 255)':
+          token.style.color = 'var(--color-highlight-control)'; break;
+        default:
+          console.error(`Unknown color: ${tokenColor}`);
+          break;
+      }
+    }
   }
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full">
+  <div class="relative w-full z-10">
     <ProgressiveImage
       v-if="article.img"
       :src="article.img"

@@ -65,7 +65,7 @@ import assets from '../../assets/js/images';
   },
     computed: {
       loaderStyle() {
-        let style = `width:${this.w}; height:${this.h}; background-image:url("${this.thumbnail}"); background-repeat:no-repeat; background-size:${this.backgroundSize};`;
+        let style = `max-width:${this.w}; max-height:${this.h}; background-image:url("${this.thumbnail}"); background-repeat:no-repeat; background-size:${this.backgroundSize};`;
         if(this.loading) {
           style += `filter:blur(${this.loadingBlur});`;
         }
