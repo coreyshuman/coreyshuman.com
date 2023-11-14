@@ -8,9 +8,7 @@
             :href="social.url"
             class="flex-none bg-transparent hover:bg-green font-semibold hover:text-black py-2 px-1 sm:px-4 border border-green hover:border-transparent rounded transition duration-300"
           >
-            <fa-layers class="fa-1x">
-              <fa :icon="['fab', social.icon]" />
-            </fa-layers>
+            <fa :icon="['fab', social.icon]" />
             {{social.name}}
           </a>
         </li>

@@ -62,6 +62,8 @@ export default {
     '@nuxtjs/stylelint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
+    // Doc: https://github.com/nuxt-community/fontawesome-module
+    '@nuxtjs/fontawesome',
     // this works, transpile doesn't :(
     'remark-behead',
     'remark-emoji'
@@ -71,23 +73,7 @@ export default {
    */
   modules: [
     // Doc: https://github.com/nuxt/content
-    '@nuxt/content',
-    [
-      'nuxt-fontawesome',
-      {
-        component: 'fa',
-        imports: [
-          {
-            set: '@fortawesome/free-solid-svg-icons',
-            icons: ['fas']
-          },
-          {
-            set: '@fortawesome/free-brands-svg-icons',
-            icons: ['fab']
-          }
-        ]
-      }
-    ]
+    '@nuxt/content'
   ],
   /*
    ** Content module configuration
@@ -165,6 +151,17 @@ export default {
     },
     nestedProperties: ['author.name']
   },
+
+  fontawesome: {
+    component: 'fa',
+    useLayers: false,
+    useLayersText: false,
+    icons: {
+      solid: ['faArrowAltCircleLeft', 'faArrowAltCircleRight'],
+      brands: ['faTwitter', 'faLinkedin', 'faGithub']
+    }
+  },
+
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/

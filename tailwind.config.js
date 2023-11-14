@@ -67,6 +67,9 @@ module.exports = {
       full: '100%',
       fullvh: '100vh'
     },
+    minWidth: {
+      12: '3rem'
+    },
     extend: {
       opacity: {
         10: '.1',

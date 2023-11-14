@@ -1,6 +1,7 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import '@fortawesome/fontawesome-svg-core/styles.css';
 
 :root {
   --color-red: oklch(55.86% 0.235 14.4);
@@ -139,7 +140,7 @@
 
   .footnotes::before {
     @apply block font-semibold text-3xl mt-6 border-steel border-t-1;
-    
+
     content: 'Notes';
   }
 
