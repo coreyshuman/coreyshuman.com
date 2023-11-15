@@ -9,7 +9,7 @@
           h-full
           text-steel
         "
-    >
+  >
     About
     <ProgressiveImage
       src="/assets/headers/car.png"
@@ -17,7 +17,8 @@
       blur="2px"
       loading-blur="2px"
       size="large"
-      fit="fill">
+      fit="fill"
+    >
     </ProgressiveImage>
   </div>
 </template>

@@ -136,11 +136,11 @@ import assets from '../../assets/js/images';
       image.removeEventListener('error', this.onError);
     },
     methods: {
-      onLoad(e) {
+      onLoad() {
         this.loading = false;
         this.thumbnail = '';
       },
-      onError(e) {
+      onError() {
         if(!this.error) {
           console.error(`Image ${this.imageSrc} not found.`);
           this.imageSrc = '/generated/headers/moon_large.png';

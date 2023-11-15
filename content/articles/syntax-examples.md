@@ -126,6 +126,65 @@ This is a paragraph after an image.
 var code = 'after image';
 ```
 
+<TableStyle>
+
+| Item         | Price | # In stock |
+| ------------ | :---: | ---------: |
+| Juicy Apples | 1.99  |        739 |
+| Bananas      | 1.89  |          6 |
+| Super Pears  | 2.59  |         69 |
+| Kumquat      | 0.92  |       1212 |
+
+</TableStyle>
+
+<position justify="center">
+
+<TableStyle color="red" caption="Centered Table">
+
+| Item         | Price | # In stock |
+| ------------ | :---: | ---------: |
+| Juicy Apples | 1.99  |        739 |
+| Bananas      | 1.89  |          6 |
+| Super Pears  | 2.59  |         69 |
+| Kumquat      | 0.92  |       1212 |
+
+</TableStyle>
+
+</position>
+
+<TableStyle color="lavender" caption="Fixed Widths Table" :column-widths="['w-2/4', 'w-1/4', 'w-1/4']">
+
+| Item         | Price | # In stock |
+| ------------ | :---: | ---------: |
+| Juicy Apples | 1.99  |        739 |
+| Bananas      | 1.89  |          6 |
+| Super Pears  | 2.59  |         69 |
+| Kumquat      | 0.92  |       1212 |
+
+</TableStyle>
+
+<TableStyle color="ocean" width='100px' caption="Small Table">
+
+| Item                     | Price | # In stock |
+| ------------------------ | :---: | ---------: |
+| Juicy Apples             | 1.99  |        739 |
+| Bananas                  | 1.89  |          6 |
+| Super Pears              | 2.59  |         69 |
+| Whathappenswithalongword | 0.92  |       1212 |
+
+</TableStyle>
+
+<TableStyle color="silver" caption="No Alternating" :alternating="false">
+
+| Item         | Price | # In stock |
+| ------------ | :---: | ---------: |
+| Juicy Apples | 1.99  |        739 |
+| Bananas      | 1.89  |          6 |
+| Super Pears  | 2.59  |         69 |
+| Kumquat      | 0.92  |       1212 |
+
+</TableStyle>
+
 [^1]: This is the first footnote.
 [^bignote]: Here's one with multiple paragraphs and code.
 

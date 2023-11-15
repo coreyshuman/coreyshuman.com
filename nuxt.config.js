@@ -82,7 +82,7 @@ export default {
   content: {
     liveEdit: false,
     markdown: {
-      tocDepth: 3,
+      tocDepth: 4,
       remarkPlugins: [
         ['remark-behead', { minDepth: 2 }],
         // https://github.com/muan/emojilib/blob/main/dist/emoji-en-US.json
@@ -121,7 +121,7 @@ export default {
                   node.properties.class += ' highlight';
                 }
               },
-              token(node, line, col) {
+              token(node, line /* , col */) {
                 if (tokens !== null) {
                   try {
                     if (node.children[0].value !== tokens[line - 1][tokenIdx].content) {
@@ -129,9 +129,11 @@ export default {
                         tokenIdx++;
                       } else {
                         console.error('no match: ---------');
+                        /* eslint-disable no-console */
                         console.log(node.children[0].value);
                         console.log(tokens[line - 1][tokenIdx].content);
                         console.log(`line:${line - 1} idx:${tokenIdx}`);
+                        /* eslint-enable no-console */
                       }
                     }
                     node.properties['data-explanation'] = JSON.stringify(
@@ -168,6 +170,7 @@ export default {
    */
   build: {
     babel: {
+      // eslint-disable-next-line no-unused-vars
       presets(env, [preset, options]) {
         const envTargets = {
           client: { browsers: ['last 2 versions, not dead, > 0.2%'] },

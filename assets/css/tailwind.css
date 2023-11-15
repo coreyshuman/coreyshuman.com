@@ -4,16 +4,16 @@
 @import '@fortawesome/fontawesome-svg-core/styles.css';
 
 :root {
-  --color-gray: oklch(55.1% 0.023 264.36);
-  --color-gray-raw: 55.1% 0.023 264.36;
   --color-black: oklch(0% 0 0);
   --color-black-raw: 0% 0 0;
+  --color-gray: oklch(55.1% 0.023 264.36);
+  --color-gray-raw: 55.1% 0.023 264.36;
   --color-white: oklch(100% 0 0);
   --color-white-raw: 100% 0 0;
   --color-metal: oklch(38.75% 0.032 227.85);
   --color-metal-raw: 38.75% 0.032 227.85;
   --color-silver: oklch(77.43% 0.022 204);
-  --color-silver: 77.43% 0.022 204;
+  --color-silver-raw: 77.43% 0.022 204;
   --color-steel: oklch(92.76% 0.006 264.53);
   --color-steel-raw: 92.76% 0.006 264.53;
   --color-darkblue: oklch(18% 0.019 274.65);
@@ -107,28 +107,28 @@
     background-color: var(--color-code-inline-highlight);
   }
 
-  p {
-    @apply mb-6;
+  p,
+  ul,
+  div {
+    @apply mb-6 mt-6;
   }
 
-  div.thumbnail + p,
-  div.thumbnail + ul {
-    @apply mt-6;
+  h2 + p,
+  h3 + p,
+  h4 + p,
+  h5 + p,
+  h6 + p {
+    @apply mt-2;
   }
 
-  div.positionComponent + p,
-  div.positionComponent + ul,
-  div.positionComponent + div {
-    @apply mt-6;
+  div.positonComponent {
+    @apply mb-3;
   }
 
-  :not(div.positionComponent) div.thumbnail + div {
-    @apply mt-6;
-  }
-
-  .toc-header {
-    font-weight: bold;
-    font-size: 24px;
+  div.positionComponent > p,
+  div.positionComponent > ul,
+  div.positionComponent > div {
+    @apply mt-0 mb-3;
   }
 
   .icon.icon-link {
@@ -184,12 +184,12 @@
 
     content: counter(linecount) '. ';
   }
-}
 
-.nuxt-content-highlight-header {
-  @apply text-gray text-right pr-2 border-gray border-b-1;
-
-  background-color: var(--color-highlight-background);
+  .nuxt-content-highlight-header {
+    @apply mb-0 text-gray text-right pr-2 border-gray border-b-1;
+  
+    background-color: var(--color-highlight-background);
+  }
 }
 
 .nuxt-content-editor {
