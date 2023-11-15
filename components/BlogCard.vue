@@ -11,7 +11,7 @@
       width="calc(100% - 2px)"
       size="medium"
       fit="cover"
-      class="rounded-t-lg m-px"
+      class="rounded-t-lg h-48 m-px"
       image-class="rounded-t-lg"
     />
 
@@ -64,12 +64,13 @@ export default {
     if(this.canvasSupportsDisplayP3() && this.canvasSupportsWideGamutCSSColors()) {
       this.settings.radialColor = 'oklch(91.47% 0.1479 182.73)';
     }
+    window.addEventListener('resize', this.handleResize);
   },
   mounted() {
     document.addEventListener('mousemove', this.updateMousePosition);
     document.addEventListener('touchstart', this.updateMousePosition);
     document.addEventListener('touchmove', this.updateMousePosition);
-    window.addEventListener('resize', this.handleResize);
+
     this.updateMousePosition(this.lastLocation);
   },
   beforeDestroy() {
