@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nuxt",
     "build": "yarn build:images && nuxt build",
-    "build:images": "node image-build.mjs",
+    "build:images": "node image-build.mjs && prettier ./assets/js/images.js --write",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "clean": "nuxt clean",
