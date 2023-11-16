@@ -5,7 +5,8 @@ export const util = {
         return '';
       }
 
-      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      console.log(date)
+      const options = { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' };
       return new Date(date).toLocaleDateString('en', options);
     },
 

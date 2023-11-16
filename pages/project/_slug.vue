@@ -12,7 +12,7 @@
         "
     >
       <em>{{ project.description }}</em>
-      <p class="pb-4">Post last updated: {{ formatDate(project.updatedAt) }}</p>
+      <p class="pb-4">Post last updated: {{ formatDate(project.updated) }}</p>
       <TableOfContents :toc="project.toc"></TableOfContents>
       <nuxt-content :document="project" />
     </div>

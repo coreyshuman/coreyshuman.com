@@ -109,6 +109,7 @@
 
   p,
   ul,
+  ol,
   div {
     @apply mb-6 mt-6;
   }
@@ -119,6 +120,16 @@
   h5 + p,
   h6 + p {
     @apply mt-2;
+  }
+
+  p + ul,
+  p + ol {
+    @apply mt-2;
+  }
+
+  p:has(+ ul),
+  p:has(+ ol) {
+    @apply mb-2;
   }
 
   div.positonComponent {

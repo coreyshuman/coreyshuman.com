@@ -21,13 +21,12 @@ const atlas = {
 const configs = [
   {
     name: 'large',
-    type: 'png',
+    type: 'webp',
     width: 1350,
     format: {
-      quality: 90,
-      progressive: true,
-      adaptiveFiltering: true,
-      compressionLevel: 9
+      quality: 75,
+      smartSubsample: true,
+      effort: 6
     }
   },
   {
@@ -45,7 +44,8 @@ const configs = [
     width: 60,
     format: {
       quality: 50,
-      smartSubsample: true
+      smartSubsample: true,
+      effort: 5
     }
   }
 ];
