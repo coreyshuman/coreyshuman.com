@@ -198,7 +198,7 @@
 
   .nuxt-content-highlight-header {
     @apply mb-0 text-gray text-right pr-2 border-gray border-b-1;
-  
+
     background-color: var(--color-highlight-background);
   }
 }

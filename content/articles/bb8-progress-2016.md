@@ -77,4 +77,3 @@ The primary microprocessor controlling BB-8's body is a Microchip PIC32 MCU. The
 </position>
 
 For audio, I quickly discovered that sound doesn't escape the plastic sphere very wheel. As a result, I'm using surface transducer "speakers" that will turn the entire platform and sphere into a speaker through vibrations. I also have an OLED display as shown above for general diagnostic purposes.
-

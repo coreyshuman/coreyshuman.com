@@ -1,22 +1,36 @@
 <template>
   <div class="text-steel text-body">
-    <h1 class="text-title font-bold text-4xl mb-3">Articles</h1>
-    <ul class="flex flex-wrap">
-      <li v-for="article of articles" :key="article.slug" class="xs:w-full md:w-1/2 px-2 xs:mb-6 md:mb-12 article-card">
-        <BlogCard :type="'post'" :article="article" />
-      </li>
-    </ul>
-    <h1 class="text-title font-bold text-4xl mb-3">Topics</h1>
-    <ul class="flex flex-wrap mb-4 text-center">
-      <li v-for="tag of tags" :key="tag.slug" class="xs:w-full md:w-1/3 lg:flex-1 px-2 text-center">
-        <NuxtLink
-          :to="`/post/tag/${tag.slug}`"
-          class="text-celeste font-bold hover:text-red transition duration-300 uppercase tracking-wider"
+    <div class="grid grid-cols-1">
+      <div class="order-first lg:order-last">
+        <h1 class="text-title font-bold text-4xl mb-3">Articles</h1>
+        <ul :class="[{showLess: hideItems}, 'flex flex-wrap']">
+          <li
+            v-for="article of articles"
+            :key="article.slug"
+            class="xs:w-full md:w-1/2 px-2 xs:mb-6 md:mb-12 article-card"
+          >
+            <BlogCard :type="'post'" :article="article" />
+          </li>
+        </ul>
+        <div v-if="hideItems===true" class="flex justify-center mb-8">
+          <button
+            class="text-steel font-bold border-steel border-2 rounded-md px-4 py-2 hover:text-black hover:border-green hover:bg-green transition duration-300"
+            @click="hideItems=false"
+          >
+            Show More
+          </button>
+        </div>
+      </div>
+      <div class="order-1">
+        <h1 class="text-title font-bold text-4xl mb-3">Topics</h1>
+        <div
+          v-if="tags"
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 justify-items-stretch gap-y-2 gap-x-3 mb-8"
         >
-          {{ tag.name }}
-        </NuxtLink>
-      </li>
-    </ul>
+          <CategoryPill v-for="(tag, id) in tags" :key="id" :tag="tag"></CategoryPill>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -42,6 +56,16 @@ export default {
       articles,
       tags
     };
+  },
+  data() {
+    return {
+      hideItems: false
+    }
+  },
+  watch: {
+    hideItems() {
+      // todo - emit event to refresh blog cards
+    }
   },
   mounted() {
     const setting = {
@@ -72,6 +96,10 @@ export default {
     }
 
     this.$root.$emit('updateConstellation', setting);
+
+    if(document.body.clientWidth < 768) {
+      this.hideItems = true;
+    }
   }
 };
 </script>
@@ -83,5 +111,9 @@ export default {
 
 .article-card img div {
   border-radius: 8px 0 0 8px;
+}
+
+ul.showLess li:nth-child(n+7) {
+  display: none;
 }
 </style>

@@ -30,6 +30,3 @@ I’ve added an OLED display to BB-8 to assist me in configuring and testing the
   <progressive-image src="/assets/posts/bb8-oled/oled-02.jpg" width="650px" alt="a small screen showing 8 progress bars which correspond to input data, and 3 numbers cooresponding to pitch, roll, and yaw" size="large" >
   </progressive-image>
 </position>
-
-
-

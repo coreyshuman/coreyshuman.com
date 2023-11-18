@@ -41,7 +41,6 @@ My attempt to create a fully function BB-8 robot aftering seeing the physical ro
 - Streams wav files from an SD card
 - Controlled via UART commands
 
-
 **Development Environment**
 
 - MPLABX IDE v1.95 or greater

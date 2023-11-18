@@ -1,9 +1,8 @@
 <template>
-  <NuxtLink :to="`/post/tag/${tag.slug}`">
-    <span
-      class="
+  <NuxtLink
+    :to="`/post/tag/${tag.slug}`"
+    class="
         flex
-        flex-shrink
         min-w-12
         truncate
         uppercase
@@ -23,9 +22,8 @@
         hover:border-green
         duration-300
       "
-    >
-      {{ tag.name }}
-    </span>
+  >
+    {{ tag.name }}
   </NuxtLink>
 </template>
 
