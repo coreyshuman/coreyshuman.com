@@ -32,7 +32,18 @@ module.exports = {
     },
     fontFamily: {
       title: ['Quicksand', 'Helvetica Neue', 'sans-serif'],
-      body: ['Montserrat', 'Arial', 'sans-serif']
+      body: ['Montserrat', 'Arial', 'sans-serif'],
+      mono: [
+        'Monaspace Neon',
+        'ui-monospace',
+        'SFMono-Regular',
+        'Menlo',
+        'Monaco',
+        'Consolas',
+        'Liberation Mono',
+        'Courier New',
+        'monospace'
+      ]
     },
     colors: {
       transparent: 'transparent',

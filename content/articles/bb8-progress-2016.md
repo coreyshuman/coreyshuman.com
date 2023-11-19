@@ -53,7 +53,7 @@ My BB-8 is a 'hamster' design meaning there is a robotic platform that drives al
 </youtube>
 </position>
 
-The primary microprocessor controlling BB-8's body is a Microchip PIC32 MCU. The PIC32 processes orientation data from a 9 dof MCU and controls the driver motors and gimbal servos. The PIC32 connects to two other microcontrollers: a PIC24 for audio playback, and an Arduio Uno "Top Board" to control the internal LEDs as well as to store configuration data. Control data is sent to the PIC32 via an XBEE wireless radio.
+The primary microprocessor controlling BB-8's body is a Microchip PIC32 MCU. The PIC32 processes orientation data from a 9 degrees-of-freedom MCU and controls the driver motors and gimbal servos. The PIC32 connects to two other microcontrollers: a PIC24 for audio playback, and an Arduino Uno "Top Board" to control the internal LEDs as well as to store configuration data. Control data is sent to the PIC32 via an XBEE wireless radio.
 
 **BB-8 Primary MCU: PIC32**
 

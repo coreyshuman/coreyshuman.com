@@ -3,6 +3,13 @@
 @import 'tailwindcss/utilities';
 @import '@fortawesome/fontawesome-svg-core/styles.css';
 
+@layer base {
+  @font-face {
+    font-family: Monaspace Neon;
+    src: url(~assets/font/MonaspaceNeon.woff2) format('woff2');
+  }
+}
+
 :root {
   --color-black: oklch(0% 0 0);
   --color-black-raw: 0% 0 0;
@@ -61,6 +68,13 @@
   --color-highlight-control: var(--color-lavender);
   --color-code-inline-highlight: oklch(28.34% 0.019 274.65 / 80%);
   --color-code-line-highlight: oklch(36.05% 0.019 97.41 / 87.84%);
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-variant-ligatures: discretionary-ligatures;
 }
 
 .nuxt-content {

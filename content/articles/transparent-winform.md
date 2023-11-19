@@ -80,7 +80,7 @@ This property definition has a handful of decorators applied to it:
 `Description()` sets the description of the property in the Designer.
 `DefaultValue()` sets the default value of the property.
 `Category()` sets the category that the property will appear under in the Designer` 
-`Browsable()`sets whether or not the property should be displayed in the Properties box.`TypeConverter()` offers an easy way to convert the double value into a proper 0-100% value for the Desiger.
+`Browsable()`sets whether or not the property should be displayed in the Properties box.`TypeConverter()` offers an easy way to convert the double value into a proper 0-100% value for the Designer.
 
 What this method does is return the value of the private opacity property if you're getting the value, and sets the private opacity property if you're setting it. It also runs the method `InvalidateEx()` when you set, which I will define here:
 
@@ -166,7 +166,7 @@ public partial class TransparentLabel : Label {
 }
 ```
 
-Finaly, here is a picture with the properly transparent panel and labels:
+Finally, here is a picture with the properly transparent panel and labels:
 
 <position justify="center">
   <progressive-image src="/assets/posts/transparent-winform/transparent-05.png" alt="a scenic desert" size="large" radius="7px" >
