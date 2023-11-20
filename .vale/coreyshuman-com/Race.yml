@@ -1,0 +1,29 @@
+---
+extends: substitution
+message: Consider using '%s' instead of '%s'.
+ignorecase: true
+level: warning
+action:
+  name: replace
+swap:
+  animal spirit: favorite|inspiration|personal interest|personality type
+  black list: blocklist|wronglist|banlist|deny list
+  blacklist: blocklist|wronglist|banlist|deny list
+  blacklisted: blocklisted|wronglisted|banlisted|deny-listed
+  blacklisting: blocklisting|wronglisting|banlisting|deny-listing
+  grandfather clause: legacy policy|legacy clause|deprecation policy
+  grandfather policy: legacy policy|legacy clause|deprecation policy
+  master: primary|hub|reference
+  masters: primaries|hubs|references
+  on the warpath: defend
+  pow wow: conference|gathering|meeting
+  powwow: conference|gathering|meeting
+  primitive: simple|indigenous|hunter-gatherer
+  sophisticated culture: complex culture
+  sophisticated technology: complex technology
+  spirit animal: favorite|inspiration|personal interest|personality type
+  stone age: simple|indigenous|hunter-gatherer
+  white list: passlist|safelist|allow list
+  whitelist: passlist|safelist|allow list
+  whitelisted: passlisted|safelisted|allow-listed
+  whitelisting: passlisting|safelisting|allow-listing

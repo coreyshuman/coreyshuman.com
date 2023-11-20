@@ -1,0 +1,20 @@
+extends: substitution
+message: "Capitalize the unit '%s'."
+link: https://en.wikipedia.org/wiki/Data-rate_units
+level: error
+action:
+  name: replace
+swap:
+  eb: EB
+  gb: GB
+  gbps: Gbps
+  kb: KB
+  kbps: Kbps
+  mb: MB
+  mbps: Mbps
+  pb: PB
+  pbps: Pbps
+  tb: TB
+  tbps: Tbps
+  zb: ZB
+  zbps: Zbps
