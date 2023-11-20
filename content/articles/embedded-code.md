@@ -14,7 +14,7 @@ tags:
 
 # Custom Embed Code
 
-This demo uses a custom MDAST directive to wrap markdown code sections in a Vue component which provides syntax highlighting and a live demo of the code.
+This demo uses a custom [Markdown Abstract Syntax Tree (MDAST)](https://github.com/syntax-tree/mdast) directive to wrap markdown code sections in a Vue component which provides syntax highlighting and a live demo of the code.
 
 ::embed-code
 ::template #html
@@ -88,7 +88,7 @@ This demo uses a custom MDAST directive to wrap markdown code sections in a Vue 
 
 <info-box>
   <template #info-box>
-    This is a vue component inside markdown using slots
+    This is a Vue component inside markdown using slots
   </template>
 </info-box>
 

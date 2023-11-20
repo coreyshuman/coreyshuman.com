@@ -15,9 +15,9 @@ projects:
   - custom-bb8
 ---
 
-I've made a lot of progress and changes to BB-8 over the last few months that haven't been documented here so I figured this would be a good time to snapshot where I'm at with the project.
+I've made significant progress and changes to BB-8 over the last few months that haven't been documented here so I figured this would be a good time to snapshot where I'm at with the project.
 
-My BB-8 is a 'hamster' design meaning there is a robotic platform that drives along the inside of the body sphere to create motion. The drive platform is 3-wheeled using omniwheels which gives me full range of motion, including strafing. This also allows the craft to sit more sturdily inside the sphere with all three wheels always making contact and applying drive to the sphere. There is a boom-style gimbal lifting from the top of the platform to control BB-8's head motion. The coupling between the gimbal and the head is magnetic. Following is an image of the platform and gimbal mocked-up inside the sphere, as well as a video of the platform operating.
+My BB-8 is a "hamster" design meaning there is a robotic platform that drives along the inside of the body sphere to create motion. The drive platform is 3-wheeled using omni-directional wheels which gives me full range of motion, including strafing. This also allows the craft to sit more sturdily inside the sphere with all three wheels always making contact and applying drive to the sphere. There is a boom-style gimbal lifting from the top of the platform to control BB-8's head motion. The coupling between the gimbal and the head is magnetic. Following is an image of the platform and gimbal mocked-up inside the sphere, as well as a video of the platform operating.
 
 **BB-8 drive platform mocked up inside the body sphere**
 
@@ -33,7 +33,7 @@ My BB-8 is a 'hamster' design meaning there is a robotic platform that drives al
   </progressive-image>
 </position>
 
-**Quick test video of all of the moving components**
+**Quick test video of all the moving components**
 
 <position justify="center">
 <youtube 
@@ -53,7 +53,7 @@ My BB-8 is a 'hamster' design meaning there is a robotic platform that drives al
 </youtube>
 </position>
 
-The primary microprocessor controlling BB-8's body is a Microchip PIC32 MCU. The PIC32 processes orientation data from a 9 degrees-of-freedom MCU and controls the driver motors and gimbal servos. The PIC32 connects to two other microcontrollers: a PIC24 for audio playback, and an Arduino Uno "Top Board" to control the internal LEDs as well as to store configuration data. Control data is sent to the PIC32 via an XBEE wireless radio.
+The primary microprocessor controlling BB-8's body is a Microchip PIC32 Motion Control Unit (MCU). The PIC32 processes orientation data from a 9 degrees-of-freedom MCU and controls the driver motors and gimbal servos. The PIC32 connects to two other microcontrollers: a PIC24 for audio playback, and an Arduino Uno "Top Board" to control the internal LEDs as well as to store configuration data. Control data is sent to the PIC32 via an XBEE wireless radio.
 
 **BB-8 Primary MCU: PIC32**
 

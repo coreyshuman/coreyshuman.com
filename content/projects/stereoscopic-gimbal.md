@@ -15,7 +15,7 @@ tags:
   - opencv
 ---
 
-Here is a short demonstration of the stereoscopic camera gimbal I built. The 3-axis gimbal’s motion is synced to an Oculus Rift. For more details, view the related posts below.
+Here is a short demonstration of the stereoscopic camera gimbal I built. The 3-axis gimbal’s motion is synchronized to an Oculus Rift. For more details, view the related posts below.
 
 <youtube 
     src='https://www.youtube.com/embed/CPxq4g-SNAc?si=MywA-GjbnuZO8VZf' 

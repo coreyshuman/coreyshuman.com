@@ -27,7 +27,7 @@ This is some more info :beer: :coffee: :tada:
 
 <info-box>
   <template #info-box>
-    This is a vue component inside markdown using slots
+    This is a Vue component inside markdown using slots
   </template>
 </info-box>
 
@@ -54,7 +54,7 @@ test
 <p>code styling is easy</p>
 ```
 
-Here's a simple footnote,[^1] and here's a longer one.[^bignote]
+Here's a basic footnote,[^1] and here's a longer one.[^bignote]
 
 ## This is a sub heading h2
 
@@ -109,7 +109,7 @@ This is a paragraph after an image.
 
 </position>
 
-- List after an image here, list list list
+- List after an image here
 - After
 - Image
 

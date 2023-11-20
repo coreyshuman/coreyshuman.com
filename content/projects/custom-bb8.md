@@ -12,7 +12,7 @@ tags:
   - electronics
 ---
 
-My attempt to create a fully function BB-8 robot aftering seeing the physical robot demoed at Star Wars Celebration.
+My attempt to create a fully function BB-8 robot after seeing the physical robot demoed at Star Wars Celebration.
 
 [BB-8 Code on GitHub](https://github.com/coreyshuman/BB-8)
 
@@ -37,8 +37,8 @@ My attempt to create a fully function BB-8 robot aftering seeing the physical ro
 **Audio**
 
 - Built on XGS 16-bit PIC development board
-- Custom wav audio trigger board software
-- Streams wav files from an SD card
+- Custom WAVE audio trigger board software
+- Streams WAVE files from an SD card
 - Controlled via UART commands
 
 **Development Environment**

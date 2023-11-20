@@ -22,7 +22,7 @@ projects:
   </progressive-image>
 </position>
 
-I’ve added an OLED display to BB-8 to assist me in configuring and testing the little robot. Above is the splash screen shown on load. Below is the current diagnostic screen. The numbers on the left, labeled P, R, and Y represent the pitch, roll, and yaw of the robot platform. The series of dots on the right are 8 slider bars which correlate to the input from the remote controller. This information will help me a lot as I build out the stabilization and automation features in the software. The code related to displayed data can be seen in the file [diagnostic.c](https://github.com/coreyshuman/BB-8/blob/master/BB-8.X/diagnostic.c).
+I’ve added an OLED display to BB-8 to assist me in configuring and testing the little robot. Above is the splash screen shown on load. Below is the current diagnostic screen. The numbers on the left, labeled P, R, and Y represent the pitch, roll, and yaw of the robot platform. The series of dots on the right are 8 slider bars which correlate to the input from the remote controller. This information will be incredibly helpful as I build out the stabilization and automation features in the software. The code related to displayed data is in the file [diagnostic.c](https://github.com/coreyshuman/BB-8/blob/master/BB-8.X/diagnostic.c).
 
 **BB-8 OLED Diagnostic Screen**
 

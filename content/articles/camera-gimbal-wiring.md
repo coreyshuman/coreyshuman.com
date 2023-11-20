@@ -22,14 +22,14 @@ This post details how I connected 3 servos to a Raspberry Pi for my [Stereoscopi
 
 In the previous demo videos of the gimbal, I was using a separate platform (PIC32) to operate the servos. To consolidate resources and simplify the design, I wanted to transfer the servo operation to one of the Raspberry Pis already on the gimbal.
 
-A few months ago, I experimented with using the Raspberry Pi's IO pins to run servos. The code I put together for that can be seen on [GitHub](https://github.com/coreyshuman/stereo_raspi). I’m using IO pins 4, 17, and 18 to operate the X, Y, and Z axis servos, respectively. I used protoboard to create a simple breakout board between the Raspberry Pi and the servos. External power was used for the servos. Here is the initial design sketch I put together:
+A few months ago, I experimented with using the Raspberry Pi's IO pins to run servos. The code I put together for that is on [GitHub](https://github.com/coreyshuman/stereo_raspi). I’m using IO pins 4, 17, and 18 to operate the X, Y, and Z axis servos, respectively. I used protoboard to create a basic breakout board between the Raspberry Pi and the servos. External power was used for the servos. Here is the initial design sketch I put together:
 
 <position justify="center">
   <progressive-image src="/assets/posts/camera-gimbal-wiring/gimbal-01.png" alt="a protoboard with drawing over it showing how power and data pins will connext to 3 servos" size="large" >
   </progressive-image>
 </position>
 
-In the final design, I decided to add a power LED and status LEDs for each of the servo channels. I also flipped the servo connectors as compared to the above sketch. Here is the finished board with everything connected:
+In the final design, I decided to add a power LED and status LEDs for each of the servo channels. I also flipped the servo connectors as compared to the preceding sketch. Here is the finished board with everything connected:
 
 <position justify="center">
   <progressive-image src="/assets/posts/camera-gimbal-wiring/gimbal-02.jpg" alt="a scenic desert" size="large" >

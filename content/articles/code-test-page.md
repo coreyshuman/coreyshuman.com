@@ -18,7 +18,7 @@ projects:
 
 Look at these great language examples :tada:
 
-## This section will print the texmate scope explanations
+## This section will print the Textmate scope explanations
 
 ```cs[print-explanation.code]
 private double opacity;

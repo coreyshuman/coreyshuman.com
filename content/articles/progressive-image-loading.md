@@ -1,6 +1,6 @@
 ---
 title: Progressive Image Loading for a Positive Low Bandwidth Experience
-description: I demonstrate how to use progressive jpegs and tiny blurred placeholder images to provide a positive low-bandwidth experience when using high quality or large images on a website.
+description: I demonstrate how to use progressive JPEG and tiny blurred placeholder images to provide a positive low-bandwidth experience when using high quality or large images on a website.
 img: /assets/headers/scenic.png
 alt: a scenic view of the California desert
 published: true
@@ -21,7 +21,7 @@ tags:
 
 # What is a progressive image
 
-- show progressive jpeg loading versus regular
+- show progressive JPEG loading versus regular
 
 <video playsinline controls>
     <source src="/assets/posts/progressive-loading-demo/default-behavior.mp4" type="video/mp4">
@@ -30,8 +30,8 @@ tags:
 # Creating our blurry thumbnail
 
 - low pixel, low quality image
-- show how much we can get away with using css blur
-- do css blur so that image can be as small as possible
+- show how much we can get away with using CSS blur
+- do CSS blur so that image can be as small as possible
 
 # Using thumbnail blur with progressive loading
 

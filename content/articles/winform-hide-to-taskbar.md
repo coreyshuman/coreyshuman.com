@@ -14,7 +14,7 @@ tags:
   - c#
 ---
 
-_This article was originally posted on Jan 16, 2011 using .NET Framework 4.0 and Visual Studio 2010._
+_This article was originally posted on January 16, 2011 using .NET Framework 4.0 and Visual Studio 2010._
 
 Most programs you interact with daily operate in a window, but sometimes it is more convenient for your program to run in the background. Virus scan software is a perfect example of this. The easiest way to interact with a program running in the background is to add it to the Windows taskbar. In this article we are going to learn how to add an icon to Windows taskbar. I will demonstrate how you can minimize your program to the taskbar, add a context menu strip to the taskbar icon, and even create information bubbles in the taskbar.
 
@@ -32,7 +32,7 @@ Next, we want to find the `ContextMenuStrip` component in our toolbox, and drag 
   </progressive-image>
 </position>
 
-Now double-click on the word `Restore` that you added to the `ContextMenuStrip`, and an event handler will be added to your main code. Add the following lines of code to this event handler to allow the `Restore` menu selection to restore your program to a visible state:
+Now double-click the word `Restore` that you added to the `ContextMenuStrip`, and an event handler will be added to your main code. Add the following lines of code to this event handler to allow the `Restore` menu selection to restore your program to a visible state:
 
 ```cs
 private void restoreToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ private void restoreToolStripMenuItem_Click(object sender, EventArgs e)
 }
 ```
 
-You can also double-click on `notifyIcon1` and add the same code to allow for double-click restores on the taskbar icon:
+You can also double-click `notifyIcon1` and add the same code to allow for double-click restores on the taskbar icon:
 
 ```cs
 private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -52,7 +52,7 @@ private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
 }
 ```
 
-Next, double-click on the `Close Application` menu choice and add a `Close()` function to the generated event handler:
+Next, double-click the `Close Application` menu choice and add a `Close()` function to the generated event handler:
 
 ```cs
 private void closeApplicationToolStripMenuItem_Click(object sender, EventArgs e)
@@ -63,7 +63,7 @@ private void closeApplicationToolStripMenuItem_Click(object sender, EventArgs e)
 
 Now that we have created the events for our context menu, we need to bind it to our `NotifyIcon` in the taskbar. Go to the properties menu for our `notifyIcon1` and look for `ContextMenuStrip` under `Behavior`. In the drop-down menu, you should be able to select the `contextMenuStrip1` that was added to the project.
 
-At this point you should be able to run your application and see the icon you chose in the taskbar. If you right-click on this icon, our context menu should appear. Click on `Close Application` to make sure it functions properly.
+At this point you should be able to run your application and see the icon you chose in the taskbar. If you right-click this icon, our context menu should appear. Click `Close Application` to make sure it functions properly.
 
 Now that we have our taskbar icon, we want to hide our app from the Windows taskbar list of running apps when minimized. Add the following function to your main form code:
 
@@ -83,7 +83,7 @@ You need to link this function as the event handle for a resize event. Add the f
 this.Resize += new System.EventHandler(this.Form1_Resize);
 ```
 
-Now any time a minimize resize event occurs, the program will be put into a hidden state. Only the taskbar icon will be visible. The program can be restored by right-clicking the icon and selecting `Restore`.
+Now any time a minimize resize event occurs, the program will enter a hidden state. Only the taskbar icon will be visible. The program can be restored by right-clicking the icon and selecting `Restore`.
 
 <position justify="center">
   <progressive-image src="/assets/posts/winform-hide-to-taskbar/taskbar-03.png" alt="a scenic desert" size="large" >
@@ -103,7 +103,7 @@ private void button1_Click(object sender, EventArgs e)
 }
 ```
 
-As you can see above, `notifyIcon1` has two properties and a function we can call. `BalloonTipTitle` will be the string used as the title for our notification ballon. `BalloonTipText` will be the string written as the content for the bubble. Finally, `ShowBalloonTip(int timeout)` will be the length of time in milleseconds to display the ballon tip. Any time you press the button on the main form, the balloon tip will display for 5 seconds.
+As you can see above, `notifyIcon1` has two properties and a function we can call. `BalloonTipTitle` will be the string used as the title for our notification ballon. `BalloonTipText` will be the string written as the content for the bubble. Finally, `ShowBalloonTip(int timeout)` will be the length of time in milliseconds to display the ballon tip. Any time you press the button on the main form, the balloon tip will display for 5 seconds.
 
 <position justify="center">
   <progressive-image src="/assets/posts/winform-hide-to-taskbar/taskbar-04.png" alt="a scenic desert" size="large" >

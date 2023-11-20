@@ -18,7 +18,7 @@ projects:
   - stereoscopic-gimbal
 ---
 
-Here is a demonstration of the Stereoscopic camera gimbal I built. The 3-axis gimbal’s motion is synced to an Oculus Rift. The gimbal hardware was built primarily with with Actobotics parts and Hitec Servos from [ServoCity.com](https://servocity.com).
+Here is a demonstration of the Stereoscopic camera gimbal I built. The 3-axis gimbal’s motion is synchronized to an Oculus Rift. I constructed the gimbal hardware with Actobotics parts and Hitec Servos from [ServoCity.com](https://servocity.com).
 
 <youtube 
     src='https://www.youtube.com/embed/CPxq4g-SNAc?si=MywA-GjbnuZO8VZf' 

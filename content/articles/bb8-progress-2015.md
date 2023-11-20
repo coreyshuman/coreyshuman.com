@@ -15,14 +15,14 @@ projects:
   - custom-bb8
 ---
 
-I’ve been working on a lot of different things over the last month so I though I’d do an update. First, I’ve been working on the audio module. I’m using an old XGS PIC-16 development board I had lying around plus some custom firmware to play wav files from an SD card. I’m also trying my hand at building a home-made class D amplifier (basically just an h-bridge) to take advantage of parts I have lying around plus the chance to learn.
+I’ve been working on many different things over the last month so I though I’d do an update. First, I’ve been working on the audio module. I’m using an old XGS PIC-16 development board I had lying around plus some custom firmware to play WAVE files from an SD card. I’m also trying my hand at building a home-made class D amplifier (basically just an h-bridge) to take advantage of parts I have lying around plus the chance to learn.
 
 <position justify="center">
   <progressive-image src="/assets/posts/bb8-progress-2015/bb8-01.jpg" width="650px" alt="a" size="large" >
   </progressive-image>
 </position>
 
-I cut a higher quality roller/magnet board from ABS which will be used on on the gimbal and on the bottom of the head. Here is one of those boards:
+I cut a higher quality roller/magnet board from ABS which will be used on the gimbal and on the bottom of the head. Here is one of those boards:
 
 <position justify="center">
   <progressive-image src="/assets/posts/bb8-progress-2015/bb8-02.jpg" width="650px" alt="a" size="large" >

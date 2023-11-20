@@ -22,7 +22,7 @@ I’ve received a few requests for this, so I have compiled a detailed parts lis
 
 # Parts List
 
-_Edit 11/14/2023 - Links removed because ServoCity changed their routing and broke all of the links. Many of these parts are now discontinued._
+_Edit November 14, 2023 - Links removed because ServoCity changed their routing and broke all the links. Many of these parts are now discontinued._
 
 <position justify="center">
 
@@ -91,7 +91,7 @@ Here are my detailed build photos along with some commentary (click for larger).
 
 ## Horizontal Channel
 
-Note servo is removed.
+Note - servo is removed in this photo.
 
 <position justify="center">
   <progressive-image src="/assets/posts/camera-gimbal-parts/gimbal-03.jpg" width="650px" alt="a" size="large" >
