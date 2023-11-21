@@ -1,7 +1,7 @@
 ---
 title: Stereoscopic Camera Gimbal
 description: A 3-axis camera gimbal controlled by the orientation of a VR headset.
-img: /assets/posts/camera-gimbal-parts/gimbal-07.jpg
+img: /assets/posts/camera-gimbal-parts/gimbal-07.webp
 alt: nice image
 created: 2016-01-08
 updated: 2023-11-14

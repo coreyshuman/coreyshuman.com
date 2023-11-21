@@ -34,7 +34,7 @@ swap:
   'top(?:-)?right': upper left|upper right|upper-left|upper-right
   a number of: several
   abort: cancel|stop
-  'above (?:section|example)': preceding
+  'above (?:section|example|sketch|snippet|code)': preceding
   account name: username
   action bar: app bar
   admin: administrator

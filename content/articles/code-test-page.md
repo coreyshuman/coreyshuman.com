@@ -1,7 +1,7 @@
 ---
 title: Code Highlight Test Page
 description: This is a test page to validate code highlighting and theme colors.
-img: /assets/headers/car.png
+img: /assets/headers/car.webp
 alt: Hello i'm article 9
 created: 2021-01-01
 updated: 2021-01-02

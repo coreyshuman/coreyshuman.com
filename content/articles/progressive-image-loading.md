@@ -1,7 +1,7 @@
 ---
 title: Progressive Image Loading for a Positive Low Bandwidth Experience
 description: I demonstrate how to use progressive JPEG and tiny blurred placeholder images to provide a positive low-bandwidth experience when using high quality or large images on a website.
-img: /assets/headers/scenic.png
+img: /assets/headers/scenic.webp
 alt: a scenic view of the California desert
 published: true
 created: 2022-01-01
@@ -50,5 +50,5 @@ tags:
 Image reference
 https://unsplash.com/photos/IEWoxRpew-0
 
-<progressive-image src="/assets/headers/car.png" alt="a scenic desert" size="large" width="100%" >
+<progressive-image src="/assets/headers/car.webp" alt="a scenic desert" size="large" width="100%" >
 </progresive-imge>

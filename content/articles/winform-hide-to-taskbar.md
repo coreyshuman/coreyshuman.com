@@ -1,7 +1,7 @@
 ---
 title: Minimizing a WinForms App to Taskbar
 description: This is a programming guide on how to minimize a Windows Forms Application to the Taskbar, as well as show Taskbar notifications.
-img: /assets/headers/clouds.jpg
+img: /assets/headers/clouds.webp
 alt: my third blog post
 published: true
 created: 2011-01-16
@@ -21,14 +21,14 @@ Most programs you interact with daily operate in a window, but sometimes it is m
 Begin by creating a new C# project. Once you've created your project, find the `NotifyIcon` component in the toolbox and drag it onto your main form. `NotifyIcon1` should be added to the bottom of your form design window. Next you will want to select the icon to represent your program in the taskbar. This can be done in the properties window for the `notifyIcon` object. Add an image of your choice as the icon.
 
 <position justify="center">
-  <progressive-image src="/assets/posts/winform-hide-to-taskbar/taskbar-01.jpg" alt="a scenic desert" size="large" >
+  <progressive-image src="/assets/posts/winform-hide-to-taskbar/taskbar-01.webp" alt="a scenic desert" size="large" >
   </progressive-image>
 </position>
 
 Next, we want to find the `ContextMenuStrip` component in our toolbox, and drag that onto our form. You will see `contextMenuStrip1` added to the bottom of the design window, and the `ContextMenuStrip` will appear on our form. In this article we are going to add two selections to the context menu: `Restore` and `Close Application`. Go ahead and type those in now.
 
 <position justify="center">
-  <progressive-image src="/assets/posts/winform-hide-to-taskbar/taskbar-02.png" alt="a scenic desert" size="large" >
+  <progressive-image src="/assets/posts/winform-hide-to-taskbar/taskbar-02.webp" alt="a scenic desert" size="large" >
   </progressive-image>
 </position>
 
@@ -86,7 +86,7 @@ this.Resize += new System.EventHandler(this.Form1_Resize);
 Now any time a minimize resize event occurs, the program will enter a hidden state. Only the taskbar icon will be visible. The program can be restored by right-clicking the icon and selecting `Restore`.
 
 <position justify="center">
-  <progressive-image src="/assets/posts/winform-hide-to-taskbar/taskbar-03.png" alt="a scenic desert" size="large" >
+  <progressive-image src="/assets/posts/winform-hide-to-taskbar/taskbar-03.webp" alt="a scenic desert" size="large" >
   </progressive-image>
 </position>
 
@@ -106,7 +106,7 @@ private void button1_Click(object sender, EventArgs e)
 As you can see above, `notifyIcon1` has two properties and a function we can call. `BalloonTipTitle` will be the string used as the title for our notification ballon. `BalloonTipText` will be the string written as the content for the bubble. Finally, `ShowBalloonTip(int timeout)` will be the length of time in milliseconds to display the ballon tip. Any time you press the button on the main form, the balloon tip will display for 5 seconds.
 
 <position justify="center">
-  <progressive-image src="/assets/posts/winform-hide-to-taskbar/taskbar-04.png" alt="a scenic desert" size="large" >
+  <progressive-image src="/assets/posts/winform-hide-to-taskbar/taskbar-04.webp" alt="a scenic desert" size="large" >
   </progressive-image>
 </position>
 

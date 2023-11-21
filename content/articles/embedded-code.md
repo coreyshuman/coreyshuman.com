@@ -1,7 +1,7 @@
 ---
 title: Embedding Code into a Post
 description: Custom code-runner component for demonstrating examples.
-img: /assets/headers/car.png
+img: /assets/headers/car.webp
 alt: my second blog post
 publish: false
 created: 2023-11-09

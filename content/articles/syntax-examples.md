@@ -1,7 +1,7 @@
 ---
 title: Syntax Examples
 description: Learning how to use @nuxt/content to create a blog
-img: /assets/headers/car.png
+img: /assets/headers/car.webp
 alt: my first blog post
 published: false
 created: 2020-01-01
@@ -71,7 +71,7 @@ This is some more info
 ##### This is another sub heading h5
 
 <ProgressiveImage
-  src="/assets/headers/car.png"
+  src="/assets/headers/car.webp"
   alt="a car in a desert"
   blur="2px"
   loading-blur="2px"
@@ -84,7 +84,7 @@ This is a paragraph after an image.
 <position justify="center">
 
 <ProgressiveImage
-  src="/assets/headers/car.png"
+  src="/assets/headers/car.webp"
   alt="a car in a desert"
   width="250px"
   height="100%"
@@ -96,7 +96,7 @@ This is a paragraph after an image.
 </ProgressiveImage>
 
 <ProgressiveImage
-  src="/assets/headers/car.png"
+  src="/assets/headers/car.webp"
   alt="a car in a desert"
   width="250px"
   height="100%"
@@ -114,7 +114,7 @@ This is a paragraph after an image.
 - Image
 
 <ProgressiveImage
-  src="/assets/headers/car.png"
+  src="/assets/headers/car.webp"
   alt="a car in a desert"
   blur="2px"
   loading-blur="2px"

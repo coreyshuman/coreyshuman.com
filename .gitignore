@@ -90,3 +90,6 @@ sw.*
 *.swp
 
 .vscode
+
+# temporary
+temp/

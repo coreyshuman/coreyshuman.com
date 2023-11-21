@@ -22,14 +22,14 @@ My BB-8 is a "hamster" design meaning there is a robotic platform that drives al
 **BB-8 drive platform mocked up inside the body sphere**
 
 <position justify="center">
-  <progressive-image src="/assets/posts/bb8-progress-2016/bb8-01.jpg" width="650px" alt="a" size="large" >
+  <progressive-image src="/assets/posts/bb8-progress-2016/bb8-01.webp" width="650px" alt="a" size="large" >
   </progressive-image>
 </position>
 
 **BB-8 drive platform 3D model**
 
 <position justify="center">
-  <progressive-image src="/assets/posts/bb8-progress-2016/bb8-02.png" width="650px" alt="a" size="large" >
+  <progressive-image src="/assets/posts/bb8-progress-2016/bb8-02.webp" width="650px" alt="a" size="large" >
   </progressive-image>
 </position>
 
@@ -58,21 +58,21 @@ The primary microprocessor controlling BB-8's body is a Microchip PIC32 Motion C
 **BB-8 Primary MCU: PIC32**
 
 <position justify="center">
-  <progressive-image src="/assets/posts/bb8-progress-2016/bb8-03.jpg" width="650px" alt="a" size="large" >
+  <progressive-image src="/assets/posts/bb8-progress-2016/bb8-03.webp" width="650px" alt="a" size="large" >
   </progressive-image>
 </position>
 
 **Daughter board with XBEE radio, OLED display, and Neopixel LEDs**
 
 <position justify="center">
-  <progressive-image src="/assets/posts/bb8-progress-2016/bb8-04.jpg" width="650px" alt="a" size="large" >
+  <progressive-image src="/assets/posts/bb8-progress-2016/bb8-04.webp" width="650px" alt="a" size="large" >
   </progressive-image>
 </position>
 
 **BB-8 Audio: PIC24 MCU, MAX9744 Amp, and transducer "speakers"**
 
 <position justify="center">
-  <progressive-image src="/assets/posts/bb8-progress-2016/bb8-05.jpg" width="650px" alt="a" size="large" >
+  <progressive-image src="/assets/posts/bb8-progress-2016/bb8-05.webp" width="650px" alt="a" size="large" >
   </progressive-image>
 </position>
 

@@ -1,7 +1,7 @@
 ---
 title: Stereoscopic Camera Gimbal Demo
 description: Demo of my 3-axis camera gimbal controlled by the orientation of a VR headset.
-img: /assets/posts/camera-gimbal-parts/gimbal-07.jpg
+img: /assets/posts/camera-gimbal-parts/gimbal-07.webp
 alt: my third blog post
 published: true
 created: 2015-08-31

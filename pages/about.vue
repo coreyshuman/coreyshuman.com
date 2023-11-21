@@ -12,7 +12,7 @@
   >
     About
     <ProgressiveImage
-      src="/assets/headers/car.png"
+      src="/assets/headers/car.webp"
       alt="a car in a desert"
       blur="2px"
       loading-blur="2px"

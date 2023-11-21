@@ -60,17 +60,26 @@ import assets from '../../assets/js/images';
         thumbnail: '',
         imageSrc: '',
         w: '100%',
-        h: '100%'
+        h: '100%',
+        ratio: 0,
       };
   },
     computed: {
       loaderStyle() {
-        let style = `max-width:${this.w}; max-height:${this.h}; background-image:url("${this.thumbnail}"); background-repeat:no-repeat; background-size:${this.backgroundSize};`;
+        let style = `width:100%; min-height:100px; max-width:${this.w}; max-height:${this.h}; background-repeat:no-repeat; background-size:${this.backgroundSize};`;
         if(this.loading) {
           style += `filter:blur(${this.loadingBlur});`;
         }
         if(this.radius !== '') {
-          style += `border-radius:${this.radius}`;
+          style += `border-radius:${this.radius};`;
+        }
+        if(this.thumbnail) {
+          style += `background-image:url("${this.thumbnail}");`;
+        } else {
+          style += `background:linear-gradient(186deg, rgba(43,43,43,1) 0%, rgba(0,0,0,1) 54%, rgba(59,59,59,1) 100%);`;
+        }
+        if(this.ratio) {
+          style += `aspect-ratio:${this.ratio};`;
         }
         return style;
       },
@@ -137,19 +146,24 @@ import assets from '../../assets/js/images';
     },
     methods: {
       onLoad() {
+        console.log('onload')
         this.loading = false;
         this.thumbnail = '';
       },
       onError() {
-        if(!this.error) {
-          console.error(`Image ${this.imageSrc} not found.`);
-          this.imageSrc = '/generated/headers/moon_large.png';
+        if(!this.error && this.ready) {
+          console.error(`Image '${this.imageSrc}' not found.`);
+
+          this.thumbnail = '';
+          this.ready = false;
+          this.loading = false;
+          this.error = true;
         }
-        this.error = true;
       },
       loadImageFromAssets(src) {
         const images = assets.images;
         const image = images.find(img => img.src === src);
+        console.log(image);
         let size = 'medium';
         switch(this.size) {
           case 'large':
@@ -168,18 +182,33 @@ import assets from '../../assets/js/images';
 
         this.loading = true;
 
+        if(this.width) {
+          this.w = this.width;
+        }
+        
+        if(this.height) {
+          this.h = this.height;
+        }
+
+
         if(image) {
           const sizedImage = image.generated[size];
           this.thumbnail = image.generated.thumb.data;
+          this.ratio = sizedImage.width / sizedImage.height;
           this.imageSrc = sizedImage.url;
-          this.w = this.width;
-          this.h = this.height;
-
-          if(this.w === '') {
+          
+          if(this.width === '') {
             this.w = sizedImage.width + 'px';
           }
-          if(this.h === '') {
+          if(this.height === '') {
             this.h = sizedImage.height + 'px';
+          }
+        } else {
+          if(this.width === '') {
+            this.w = '300px';
+          }
+          if(this.h === '100%' || this.h === '') {
+            this.ratio = 1.2;
           }
         }
       }
@@ -198,8 +227,8 @@ div.thumbnail {
 }
 
 div.loading div.loader {
-  border: 0.3em solid rgba(255, 255, 255, 0.8);
-  border-top: 0.3em solid rgba(255, 255, 255, 0.2);
+  border: 0.3em solid rgba(255, 255, 255, 1);
+  border-top: 0.3em solid rgba(255, 255, 255, 0.4);
   border-radius: 50%;
   width: 4em;
   height: 4em;
