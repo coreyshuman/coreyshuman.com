@@ -159,7 +159,7 @@ export default {
     useLayers: false,
     useLayersText: false,
     icons: {
-      solid: ['faArrowAltCircleLeft', 'faArrowAltCircleRight'],
+      solid: ['faArrowAltCircleLeft', 'faArrowAltCircleRight', 'faTimesCircle'],
       brands: ['faTwitter', 'faLinkedin', 'faGithub']
     }
   },

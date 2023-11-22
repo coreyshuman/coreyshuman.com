@@ -1,6 +1,6 @@
 <template>
   <div :class="loaderClass" :style="loaderStyle">
-    <img v-show="ready" :src="imageSrc" :alt="alt" :class="calcImageClass" :style="imageStyle" loading="lazy" />
+    <img v-show="ready" @click="clickImage" :src="imageSrc" :alt="alt" :class="calcImageClass" :style="imageStyle" loading="lazy" />
     <div class="loader"></div>
   </div>
 </template>
@@ -54,6 +54,7 @@ import assets from '../../assets/js/images';
     },
     data() {
       return {
+        image: null,
         loading: false,
         ready: false,
         error: false,
@@ -133,20 +134,19 @@ import assets from '../../assets/js/images';
       this.loadImageFromAssets(this.src);
     },
     mounted() {
-      const image = this.$el.querySelector('img');
-      image.addEventListener('load', this.onLoad);
-      image.addEventListener('error', this.onError);
+      const imageEl = this.$el.querySelector('img');
+      imageEl.addEventListener('load', this.onLoad);
+      imageEl.addEventListener('error', this.onError);
       this.ready = true;
 
     },
     beforeDestroy() {
-      const image = this.$el.querySelector('img');
-      image.removeEventListener('load', this.onLoad);
-      image.removeEventListener('error', this.onError);
+      const imageEl = this.$el.querySelector('img');
+      imageEl.removeEventListener('load', this.onLoad);
+      imageEl.removeEventListener('error', this.onError);
     },
     methods: {
       onLoad() {
-        console.log('onload')
         this.loading = false;
         this.thumbnail = '';
       },
@@ -162,8 +162,8 @@ import assets from '../../assets/js/images';
       },
       loadImageFromAssets(src) {
         const images = assets.images;
-        const image = images.find(img => img.src === src);
-        console.log(image);
+        this.image = images.find(img => img.src === src);
+
         let size = 'medium';
         switch(this.size) {
           case 'large':
@@ -191,9 +191,9 @@ import assets from '../../assets/js/images';
         }
 
 
-        if(image) {
-          const sizedImage = image.generated[size];
-          this.thumbnail = image.generated.thumb.data;
+        if(this.image) {
+          const sizedImage = this.image.generated[size];
+          this.thumbnail = this.image.generated.thumb.data;
           this.ratio = sizedImage.width / sizedImage.height;
           this.imageSrc = sizedImage.url;
           
@@ -210,6 +210,17 @@ import assets from '../../assets/js/images';
           if(this.h === '100%' || this.h === '') {
             this.ratio = 1.2;
           }
+        }
+      },
+      clickImage() {
+        const imageEl = this.$el.querySelector('img');
+        if(this.image && imageEl) {
+          const location = imageEl.getBoundingClientRect();
+          this.$root.$emit('lightboxLoad', [{
+            image: this.image,
+            alt: this.alt,
+            location
+          }]);
         }
       }
     }

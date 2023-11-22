@@ -121,16 +121,10 @@ module.exports = {
       },
       animation: {
         'button-hover': 'transition all .3s ease-in-out'
+      },
+      dropShadow: {
+        'dark': '0 4px 3px rgba(0, 0, 0, 0.9)',
       }
-    },
-    inset: {
-      0: 0,
-      16: '16px',
-      32: '32px',
-      64: '64px',
-      '1rem': '1rem',
-      '2rem': '2rem',
-      '3rem': '3rem'
     }
   },
   variants: {},

@@ -7,6 +7,7 @@
       <Nuxt />
       <TheFooter />
     </div>
+    <Lightbox />
     <ConstellationBackground :config="constellationConfig" />
   </div>
 </template>
