@@ -14,4 +14,3 @@ tags:
 ---
 
 From cardboard prototype to fully detailed prop, here is a photo collection chronicling the development of a wearable Arc Reactor.
-

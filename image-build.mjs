@@ -58,7 +58,7 @@ async function execute() {
   log('Starting');
   if (args.length > 2) {
     // parse commands
-    if(args[2].toLowerCase() === '--strip-exif') {
+    if (args[2].toLowerCase() === '--strip-exif') {
       log('Strip EXIF from SRC files.');
       stripExif();
     }
@@ -260,13 +260,12 @@ async function createExifFreeImage(image) {
     const fileName = `${image.name}.webp`;
 
     const format = {
-        quality: 90,
-        smartSubsample: true,
-        effort: 6
+      quality: 90,
+      smartSubsample: true,
+      effort: 6
     };
 
     await sharp(image.src).toFormat('webp', format).toFile(`${outputPath}/${fileName}`);
-
   } catch (ex) {
     console.error('FAILED TO CONVERT IMAGE');
     console.error(ex);

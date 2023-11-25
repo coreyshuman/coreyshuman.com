@@ -123,7 +123,7 @@ module.exports = {
         'button-hover': 'transition all .3s ease-in-out'
       },
       dropShadow: {
-        'dark': '0 4px 3px rgba(0, 0, 0, 0.9)',
+        dark: '0 4px 3px rgba(0, 0, 0, 0.9)'
       }
     }
   },
