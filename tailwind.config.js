@@ -124,6 +124,9 @@ module.exports = {
       },
       dropShadow: {
         dark: '0 4px 3px rgba(0, 0, 0, 0.9)'
+      },
+      transitionProperty: {
+        lightbox: 'width, height, top, bottom, left, right'
       }
     }
   },

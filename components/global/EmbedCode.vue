@@ -13,7 +13,7 @@
       </div>
       <template v-for="lang in supportedLanguages">
         <Transition :key="lang" :name="swipeAnimation">
-          <div v-show="activeTab === lang" :id="lang" :key="lang" class="absolute w-full -mt-8">
+          <div v-show="activeTab === lang" :id="lang" :key="lang" class="codePanel absolute w-full">
             <slot :name="lang"></slot>
           </div>
         </Transition>
@@ -174,6 +174,14 @@ export default {
 }
 </script>
 <style scoped>
+div#embed-code div {
+  margin: 0 !important;
+}
+
+div#embed-code div.codePanel {
+  @apply -mt-8 !important;
+}
+
 .animatedBorder::before {
   --border-width: 3px;
   --windowposition-width: calc(100% - 2 * var(--border-width));

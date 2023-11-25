@@ -9,11 +9,31 @@
     @mousemove="mouseMoveEvent"
     class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 text-steel"
   >
+    <div v-if="imageCount > 1" class="absolute z-40 text-silver top-10 left-12 font-bold filter drop-shadow-dark">
+      {{ imageIndex + 1 }} / {{ imageCount }}
+    </div>
+
     <div
       @click="close"
       class="absolute z-50 text-3xl text-silver top-10 right-12 opacity-70 hover:opacity-100 hover:text-red transition duration-300"
     >
       <fa class="filter drop-shadow-dark" :icon="['fa', 'times-circle']" />
+    </div>
+
+    <div
+      v-if="imageCount > 1"
+      @click.prevent="prev"
+      class="absolute flex flex-wrap justify-center content-center z-40 text-5xl text-silver w-36 top-0 bottom-0 left-0 opacity-70 hover:opacity-100 hover:text-green transition duration-300"
+    >
+      <fa class="filter drop-shadow-dark" :icon="['fa', 'arrow-alt-circle-left']" />
+    </div>
+
+    <div
+      v-if="imageCount > 1"
+      @click.prevent="next"
+      class="absolute flex flex-wrap justify-center content-center z-40 text-5xl text-silver w-36 top-0 bottom-0 right-0 opacity-70 hover:opacity-100 hover:text-green transition duration-300"
+    >
+      <fa class="filter drop-shadow-dark" :icon="['fa', 'arrow-alt-circle-right']" />
     </div>
 
     <div
@@ -39,12 +59,6 @@
 import Vue from 'vue';
 
 export default {
-  props: {
-    author: {
-      type: Object,
-      required: false
-    }
-  },
   data() {
     return {
       containerStyle: {
@@ -66,6 +80,9 @@ export default {
         transform: 'scale(1)'
       },
       containerClass: [],
+      imageAssets: [],
+      imageCount: 0,
+      imageIndex: 0,
       showLightbox: false,
       loading: false,
       ready: false,
@@ -84,9 +101,12 @@ export default {
     }
   },
   created() {
-    this.$root.$on('lightboxLoad', (images) => {
-      if(images && images[0]) {
-        this.show(images[0]);
+    this.$root.$on('lightboxLoad', ({images, index, location}) => {
+      if(images && images[index]) {
+        this.imageAssets = images;
+        this.imageCount = images.length;
+        this.imageIndex = index;
+        this.show(images[index], location);
       }
     });
   },
@@ -108,19 +128,19 @@ export default {
     }
   },
   methods: {
-    show(image) {
+    show(image, location) {
       this.translate.lastX = this.translate.x = 0;
       this.translate.lastY = this.translate.y = 0;
       this.zoom = 1000;
 
       // set image to location
       // this.containerStyle.inset = '';
-      this.containerStyle.left = `${image.location.left}px`;
-      this.containerStyle.top = `${image.location.top}px`;
-      this.containerStyle.right = `${image.location.right}px`;
-      this.containerStyle.bottom = `${image.location.bottom}px`;
-      this.containerStyle.width = `${image.location.width}px`;
-      this.containerStyle.height = `${image.location.height}px`;
+      this.containerStyle.left = `${location.left}px`;
+      this.containerStyle.top = `${location.top}px`;
+      this.containerStyle.right = `${location.right}px`;
+      this.containerStyle.bottom = `${location.bottom}px`;
+      this.containerStyle.width = `${location.width}px`;
+      this.containerStyle.height = `${location.height}px`;
       this.containerStyle.opacity = 0.2;
       this.showLightbox = true;
 
@@ -147,7 +167,7 @@ export default {
         this.$root.$emit('stopConstellation');
 
         // set image dimensions and opacity
-        this.containerClass.push('transition-all duration-500');
+        this.containerClass.push('transition-lightbox duration-500');
         this.containerStyle.left = '0';
         this.containerStyle.top = '0';
         this.containerStyle.right = '0';
@@ -163,6 +183,41 @@ export default {
         }, 500);
       }, 2);
 
+    },
+    next() {
+      if(this.imageCount < 2) {
+        return;
+      }
+
+      if(++this.imageIndex >= this.imageCount) {
+        this.imageIndex = 0;
+      }
+
+      this.updateImage();
+    },
+    prev() {
+      if(this.imageCount < 2) {
+        return;
+      }
+
+      if(--this.imageIndex < 0) {
+        this.imageIndex = this.imageCount - 1;
+      }
+
+      this.updateImage();
+    },
+    updateImage() {
+      this.translate.lastX = this.translate.x = 0;
+      this.translate.lastY = this.translate.y = 0;
+      this.zoom = 1000;
+
+      const image = this.imageAssets[this.imageIndex];
+      this.loading = true;
+      this.imageSrc = image.image.src;
+      this.alt = image.alt;
+      this.imageStyle.maxWidth = `${image.image.width}px`;
+      this.imageStyle.maxHeight = `${image.image.height}px`;
+      this.ready = true;
     },
     close() {
       this.showLightbox = false;
@@ -182,11 +237,11 @@ export default {
       }
     },
     wheelEvent(e) {
-      if(e.deltaY > 0 && this.zoom < 5000) {
-        this.zoom += e.deltaY;
+      if(e.deltaY < 0 && this.zoom < 5000) {
+        this.zoom -= e.deltaY;
       }
-      if(e.deltaY < 0 && this.zoom > 1000) {
-        this.zoom += e.deltaY;
+      else if(e.deltaY > 0 && this.zoom > 1000) {
+        this.zoom -= e.deltaY;
         if(this.zoom < 1000) {
           this.zoom = 1000;
         }
@@ -207,17 +262,17 @@ export default {
         const x = e.screenX - this.translate.startX;
         const y = e.screenY - this.translate.startY;
 
-        if(x > 0 && this.translate.x < 1000) {
+        if(x > 0 && this.translate.x < 2000) {
           this.translate.x = x + this.translate.lastX;
         }
-        if(x < 0 && this.translate.x > -1000) {
+        else if(x < 0 && this.translate.x > -2000) {
           this.translate.x = x + this.translate.lastX;
         }
 
-        if(y > 0 && this.translate.y < 1000) {
+        if(y > 0 && this.translate.y < 2000) {
           this.translate.y = y + this.translate.lastY;
         }
-        if(y < 0 && this.translate.y > -1000) {
+        else if(y < 0 && this.translate.y > -2000) {
           this.translate.y = y + this.translate.lastY;
         }
       }
@@ -228,5 +283,8 @@ export default {
 <style scoped>
 #imageContainer {
   background: transparent;
+}
+.temp {
+  @apply transition-lightbox;
 }
 </style>

@@ -1,5 +1,10 @@
 <template>
-  <div class="bg-blue-500 text-white p-4 mb-4">
-    <p><slot name="info-box">default</slot></p>
+  <div class="bg-ocean bg-opacity-50 p-4">
+    <p><slot>default</slot></p>
   </div>
 </template>
+<style scoped>
+div > p {
+  margin: 0 !important;
+}
+</style>

@@ -221,10 +221,11 @@ samp {
   @apply bg-black bg-opacity-60;
 }
 
+/* These need to be global to apply to injected code components */
 #embed-code {
   .nuxt-content-highlight {
     margin: 0 !important;
-    margin-top: 0.5rem !important;
+    margin-top: -1rem !important;
   }
   .nuxt-content-highlight pre {
     @apply h-88 overflow-y-auto;

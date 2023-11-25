@@ -21,14 +21,12 @@ Welcome to my first blog post using content module
 
 This is some more info :beer: :coffee: :tada:
 
-<div class="bg-purple text-steel p-4 mb-4">
+<div class="bg-purple text-steel p-2">
   This is HTML inside markdown that has some classes
 </div>
 
 <info-box>
-  <template #info-box>
-    This is a Vue component inside markdown using slots
-  </template>
+    This is an info box using slots.
 </info-box>
 
 ```js {1,3-5}[nuxt.config.js]

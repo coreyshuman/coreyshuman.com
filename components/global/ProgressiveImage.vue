@@ -58,7 +58,11 @@ import assets from '../../assets/js/images';
       radius: {
         type: String,
         default: ''
-      }
+      },
+      mosaic: {
+        type: Boolean,
+        default: false
+      },
     },
     data() {
       return {
@@ -75,7 +79,7 @@ import assets from '../../assets/js/images';
   },
     computed: {
       loaderStyle() {
-        let style = `width:100%; min-height:100px; max-width:${this.w}; max-height:${this.h}; background-repeat:no-repeat; background-size:${this.backgroundSize};`;
+        let style = `width:${this.mosaic ? 'auto': '100%'}; min-height:${this.mosaic ? this.h: '100px'}; max-width:${this.w}; max-height:${this.h}; background-repeat:no-repeat; background-size:${this.backgroundSize};`;
         if(this.loading) {
           style += `filter:blur(${this.loadingBlur});`;
         }
@@ -224,11 +228,14 @@ import assets from '../../assets/js/images';
         const imageEl = this.$el.querySelector('img');
         if(this.image && imageEl) {
           const location = imageEl.getBoundingClientRect();
-          this.$root.$emit('lightboxLoad', [{
-            image: this.image,
-            alt: this.alt,
+          this.$root.$emit('lightboxLoad', {
+            images: [{
+              image: this.image,
+              alt: this.alt
+            }],
+            index: 0,
             location
-          }]);
+          });
         }
       }
     }
