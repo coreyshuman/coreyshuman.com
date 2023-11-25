@@ -8,24 +8,13 @@
       <TheFooter />
     </div>
     <Lightbox />
-    <ConstellationBackground :config="constellationConfig" />
+    <ConstellationBackground />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App',
-  data() {
-    return {
-      constellationConfig: {
-      }
-    }
-  },
-  created() {
-    this.$root.$on('updateConstellation', (config) => {
-      this.constellationConfig = {...config}
-    })
-  }
+  name: 'App'
 };
 </script>
 

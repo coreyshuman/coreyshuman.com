@@ -1,6 +1,14 @@
 <template>
   <div :class="loaderClass" :style="loaderStyle">
-    <img v-show="ready" @click="clickImage" :src="imageSrc" :alt="alt" :class="calcImageClass" :style="imageStyle" loading="lazy" />
+    <img
+      v-show="ready"
+      @click="clickImage"
+      :src="imageSrc"
+      :alt="alt"
+      :class="calcImageClass"
+      :style="imageStyle"
+      loading="lazy"
+    />
     <div class="loader"></div>
   </div>
 </template>
@@ -185,7 +193,7 @@ import assets from '../../assets/js/images';
         if(this.width) {
           this.w = this.width;
         }
-        
+
         if(this.height) {
           this.h = this.height;
         }
@@ -196,7 +204,7 @@ import assets from '../../assets/js/images';
           this.thumbnail = this.image.generated.thumb.data;
           this.ratio = sizedImage.width / sizedImage.height;
           this.imageSrc = sizedImage.url;
-          
+
           if(this.width === '') {
             this.w = sizedImage.width + 'px';
           }

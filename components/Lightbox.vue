@@ -23,7 +23,14 @@
       :class="containerClass"
       :style="containerStyle"
     >
-      <img v-show="ready" @mousedown.prevent="mouseDownEvent" @load="loadEvent" :src="imageSrc" :style="imageStyle" :alt="alt" />
+      <img
+        v-show="ready"
+        @mousedown.prevent="mouseDownEvent"
+        @load="loadEvent"
+        :src="imageSrc"
+        :style="imageStyle"
+        :alt="alt"
+      />
     </div>
   </div>
 </template>
@@ -137,6 +144,8 @@ export default {
       // onUpdated() isn't available in Vue 2
 
       setTimeout(() => {
+        this.$root.$emit('stopConstellation');
+
         // set image dimensions and opacity
         this.containerClass.push('transition-all duration-500');
         this.containerStyle.left = '0';
@@ -150,6 +159,7 @@ export default {
         setTimeout(() => {
           // animation done
           this.containerClass.pop();
+          this.$root.$emit('startConstellation');
         }, 500);
       }, 2);
 
