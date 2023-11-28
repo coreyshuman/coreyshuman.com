@@ -1,13 +1,13 @@
 <template>
-  <div :class="loaderClass" :style="loaderStyle">
+  <div :class="loaderClass" style="cursor:pointer" :style="loaderStyle">
     <img
       v-show="ready"
-      @click="clickImage"
       :src="imageSrc"
       :alt="alt"
       :class="calcImageClass"
-      :style="imageStyle"
+      :style="imageStyle"   
       loading="lazy"
+      @click="clickImage"
     />
     <div class="loader"></div>
   </div>

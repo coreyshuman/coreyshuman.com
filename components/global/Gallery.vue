@@ -1,5 +1,9 @@
 <template>
-  <div @click.capture.stop="onClick" id="gallery" class="flex flex-wrap gap-1.5">
+  <div 
+    id="gallery"
+     class="flex flex-wrap gap-1.5"
+     @click.capture.stop="onClick"
+  >
     <ProgressiveImage
       v-for="(image, index) of images"
       :key="index"
@@ -8,7 +12,7 @@
       class="flex-grow rounded-md"
       width="100%"
       height="300px"
-      v-bind:mosaic="true"
+      :mosaic="true"
       :data-id="index"
     />
   </div>
@@ -40,7 +44,6 @@ export default {
     },
     methods: {
       onClick(ev) {
-        console.log(ev, ev.target.parentElement.dataset.id);
         const location = ev.target.getBoundingClientRect();
         this.$root.$emit('lightboxLoad', {
           images: this.imageAssets,
