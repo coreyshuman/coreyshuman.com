@@ -1,12 +1,12 @@
 {
   "name": "coreyshuman-com",
-  "version": "1.0.0",
+  "version": "3.1.1+71",
   "private": true,
   "scripts": {
     "dev": "nuxt",
     "build": "yarn build:images && nuxt build",
-    "build:images": "node image-build.mjs && prettier ./assets/js/images.js --write",
-    "build:images:strip": "node image-build.mjs --strip-exif",
+    "build:images": "node image-build && prettier ./assets/js/images.js --write",
+    "build:images:strip": "node image-build --strip-exif",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "clean": "nuxt clean",
@@ -23,7 +23,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "node version-update.mjs && git add package.json && lint-staged"
     }
   },
   "browserlists": "last 2 versions, not dead, > 0.2%",

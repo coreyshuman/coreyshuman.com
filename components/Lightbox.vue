@@ -152,18 +152,18 @@ export default {
         this.imageAssets = images;
         this.imageCount = images.length;
         this.imageIndex = index;
-        this.show(images[index], location);
+        this.show(location);
       }
     });
   },
   mounted() {
-    document.addEventListener('keydown', this.keyDownEvent);
+    document.addEventListener('keydown', this.onKeyDown);
   },
   beforeDestroy() {
-    document.removeEventListener('keydown', this.keyDownEvent);
+    document.removeEventListener('keydown', this.onKeyDown);
   },
   methods: {
-    show(image, location) {
+    show(location) {
       this.translate.lastX = this.translate.x = 0;
       this.translate.lastY = this.translate.y = 0;
       this.zoom = 1000;
@@ -315,9 +315,11 @@ export default {
       }
     },
     onKeyDown(ev) {
-      if(ev.keyCode === 27) {
-        if(this.showLightbox) {
-          this.close();
+      if(this.showLightbox) {
+        switch(ev.keyCode) {
+          case 27: this.close(); break;
+          case 37: this.prev(); break;
+          case 39: this.next(); break;
         }
       }
     },

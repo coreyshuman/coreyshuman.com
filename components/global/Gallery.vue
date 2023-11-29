@@ -1,9 +1,5 @@
 <template>
-  <div 
-    id="gallery"
-     class="flex flex-wrap gap-1.5"
-     @click.capture.stop="onClick"
-  >
+  <div id="gallery" class="flex flex-wrap gap-1.5" @click.capture.stop="onClick">
     <ProgressiveImage
       v-for="(image, index) of images"
       :key="index"
@@ -36,8 +32,14 @@ export default {
     },
     mounted() {
       this.imageAssets = this.images.map(image => {
+        let tempSrc = image.src;
+
+        // remove leading / from image asset name
+        if(tempSrc && tempSrc[0] === '/') {
+          tempSrc = tempSrc.substring(1);
+        }
         return {
-          image: assets.images.find(asset => asset.src === image.src),
+          image: assets.images.find(asset => asset.src === tempSrc),
           alt: image.alt
         }
       });

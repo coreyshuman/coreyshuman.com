@@ -1,4 +1,6 @@
+import fs from 'fs';
 import * as shiki from 'shikiji';
+import ver from './version.json';
 
 export default {
   /*
@@ -6,6 +8,9 @@ export default {
    ** See https://nuxtjs.org/api/configuration-target
    */
   target: 'static',
+  router: {
+    base: '/'
+  },
   /*
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
@@ -87,8 +92,9 @@ export default {
         ['remark-behead', { minDepth: 2 }],
         // https://github.com/muan/emojilib/blob/main/dist/emoji-en-US.json
         ['remark-emoji', { accessible: true, emoticon: false }],
-        ['~/remark/remarkEmbedCodeDirective.js']
+        ['~/remark-rehype/remarkEmbedCodeDirective.js']
       ],
+      rehypePlugins: [['~/remark-rehype/rehypeAnchorToNuxtLink.js']],
       async highlighter() {
         const highlighter = await shiki.getHighlighter({
           // Complete themes: https://github.com/shikijs/shiki/tree/main/packages/shiki/themes
@@ -205,6 +211,19 @@ export default {
   server: {
     host: '0.0.0.0',
     port: '3000'
+  },
+  hooks: {
+    'build:done': () => {
+      const version = ver.version.split('.');
+      let build = Number.parseInt(version[3]);
+      build++;
+      version[3] = `${build}`;
+      ver.version = version.join('.');
+      fs.writeFileSync('./version.json', JSON.stringify(ver, null, 2));
+    }
+  },
+  publicRuntimeConfig: {
+    clientVersion: ver.version
   }
 };
 

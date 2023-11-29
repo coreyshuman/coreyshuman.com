@@ -13,7 +13,8 @@
           </a>
         </li>
       </ul>
-      <p class="flex-1 m-4 justify-center text-center text-lg">Copyright © coreyshuman.com {{dateRange}}</p>
+      <p class="flex-1 text-center text-lg">Copyright © coreyshuman.com {{dateRange}}</p>
+      <p class="flex-1 text-center text-xs text-gray">Version: {{ $config.clientVersion }}</p>
     </div>
   </footer>
 </template>

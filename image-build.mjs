@@ -2,7 +2,7 @@ import sharp from 'sharp';
 import path from 'path';
 import fs from 'fs/promises';
 
-const buildVersion = '0.0.2';
+const buildVersion = '0.0.3';
 const appname = 'IMAGE-BUILD';
 const assetsPath = './static/assets';
 const generatedPath = './static/generated';
@@ -126,7 +126,7 @@ async function stripExif() {
 }
 
 function log(str) {
-  // eslint-ignore no-comment
+  // eslint-disable-next-line no-comment
   console.log(`${appname}: ${str}`);
 }
 
@@ -183,7 +183,8 @@ async function writeAtlas(atlas, filePath) {
     }
 
     let jsonString = JSON.stringify(atlas, null, 2);
-    jsonString = jsonString.replace(/\.?\/static/g, '');
+    // remove ./static/ from the beginning of image paths
+    jsonString = jsonString.replace(/\.?\/static\//g, '');
     await fs.writeFile(filePath, atlasHeader + jsonString);
   } catch (error) {
     console.error('Error writing Atlas file:', error);
@@ -223,9 +224,9 @@ async function convertImage(image) {
 
       const sharpImage = sharp(image.src).resize(width).toFormat(currentConfig.type, currentFormat);
 
-      image.generated[currentConfig.name].url = `${outputPath.substring(1)}/${image.name}_${currentConfig.name}.${
-        currentConfig.type
-      }`;
+      image.generated[
+        currentConfig.name
+      ].url = `${outputPath}/${image.name}_${currentConfig.name}.${currentConfig.type}`;
 
       if (currentConfig.name === 'thumb') {
         let outputImage = await sharpImage.toBuffer();

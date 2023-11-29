@@ -5,7 +5,7 @@
       :src="imageSrc"
       :alt="alt"
       :class="calcImageClass"
-      :style="imageStyle"   
+      :style="imageStyle"
       loading="lazy"
       @click="clickImage"
     />
@@ -174,7 +174,13 @@ import assets from '../../assets/js/images';
       },
       loadImageFromAssets(src) {
         const images = assets.images;
-        this.image = images.find(img => img.src === src);
+        let tempSrc = src;
+
+        // remove leading / from image asset name
+        if(src && src[0] === '/') {
+          tempSrc = src.substring(1);
+        }
+        this.image = images.find(img => img.src === tempSrc);
 
         let size = 'medium';
         switch(this.size) {
