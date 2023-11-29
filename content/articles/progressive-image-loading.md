@@ -1,7 +1,7 @@
 ---
 title: Progressive Image Loading for a Positive Low Bandwidth Experience
 description: I demonstrate how to use progressive JPEG and tiny blurred placeholder images to provide a positive low-bandwidth experience when using high quality or large images on a website.
-img: /assets/headers/scenic.webp
+img: assets/headers/scenic.webp
 alt: a scenic view of the California desert
 published: true
 created: 2022-01-01
@@ -24,7 +24,7 @@ tags:
 - show progressive JPEG loading versus regular
 
 <video playsinline controls>
-    <source src="/assets/posts/progressive-loading-demo/default-behavior.mp4" type="video/mp4">
+    <source src="assets/posts/progressive-loading-demo/default-behavior.mp4" type="video/mp4">
 </video>
 
 # Creating our blurry thumbnail
@@ -36,7 +36,7 @@ tags:
 # Using thumbnail blur with progressive loading
 
 <video playsinline controls>
-    <source src="/assets/posts/progressive-loading-demo/with-background-thumbnail.mp4" type="video/mp4">
+    <source src="assets/posts/progressive-loading-demo/with-background-thumbnail.mp4" type="video/mp4">
 </video>
 
 # Add a loading indicator
@@ -44,11 +44,11 @@ tags:
 # Wrap up, compare original with full experience
 
 <video playsinline controls>
-    <source src="/assets/posts/progressive-loading-demo/with-loading.mp4" type="video/mp4">
+    <source src="assets/posts/progressive-loading-demo/with-loading.mp4" type="video/mp4">
 </video>
 
 Image reference
 https://unsplash.com/photos/IEWoxRpew-0
 
-<progressive-image src="/assets/headers/car.webp" alt="a scenic desert" size="large" width="100%" >
+<progressive-image src="assets/headers/car.webp" alt="a scenic desert" size="large" width="100%" >
 </progresive-imge>
