@@ -71,10 +71,7 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Checkout Node Modules Monkey Patches
-        uses: actions/checkout@v4
-        with:
-          filter: node_modules/**
-          clean: false # merge changes with existing checkout
+        run: /usr/bin/git checkout node_modules/**
       - name: Static HTML export with Nuxt
         run: ${{ steps.detect-package-manager.outputs.manager }} run generate
       - name: Upload artifact
