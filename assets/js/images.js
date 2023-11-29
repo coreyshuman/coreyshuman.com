@@ -4,25 +4,25 @@ module.exports = {
   images: [
     {
       name: 'bb-blue-01',
-      src: '/assets/headers/bb-blue-01.webp',
+      src: 'assets/headers/bb-blue-01.webp',
       size: 199892,
       width: 1024,
       height: 1024,
       generated: {
         large: {
-          url: '/generated/headers/bb-blue-01_large.webp',
+          url: 'generated/headers/bb-blue-01_large.webp',
           width: 1024,
           height: 1024,
           size: 101996
         },
         medium: {
-          url: '/generated/headers/bb-blue-01_medium.webp',
+          url: 'generated/headers/bb-blue-01_medium.webp',
           width: 675,
           height: 675,
           size: 43782
         },
         thumb: {
-          url: '/generated/headers/bb-blue-01_thumb.webp',
+          url: 'generated/headers/bb-blue-01_thumb.webp',
           width: 60,
           height: 60,
           size: 1324,
@@ -32,25 +32,25 @@ module.exports = {
     },
     {
       name: 'bb-blue-02',
-      src: '/assets/headers/bb-blue-02.webp',
+      src: 'assets/headers/bb-blue-02.webp',
       size: 368000,
       width: 1792,
       height: 1024,
       generated: {
         large: {
-          url: '/generated/headers/bb-blue-02_large.webp',
+          url: 'generated/headers/bb-blue-02_large.webp',
           width: 1350,
           height: 771,
           size: 79770
         },
         medium: {
-          url: '/generated/headers/bb-blue-02_medium.webp',
+          url: 'generated/headers/bb-blue-02_medium.webp',
           width: 675,
           height: 386,
           size: 24722
         },
         thumb: {
-          url: '/generated/headers/bb-blue-02_thumb.webp',
+          url: 'generated/headers/bb-blue-02_thumb.webp',
           width: 60,
           height: 34,
           size: 860,
@@ -88,25 +88,25 @@ module.exports = {
     },
     {
       name: 'car',
-      src: '/assets/headers/car.webp',
+      src: 'assets/headers/car.webp',
       size: 232624,
       width: 1920,
       height: 1080,
       generated: {
         large: {
-          url: '/generated/headers/car_large.webp',
+          url: 'generated/headers/car_large.webp',
           width: 1350,
           height: 759,
           size: 46106
         },
         medium: {
-          url: '/generated/headers/car_medium.webp',
+          url: 'generated/headers/car_medium.webp',
           width: 675,
           height: 380,
           size: 11858
         },
         thumb: {
-          url: '/generated/headers/car_thumb.webp',
+          url: 'generated/headers/car_thumb.webp',
           width: 60,
           height: 34,
           size: 280,
