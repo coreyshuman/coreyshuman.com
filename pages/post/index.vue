@@ -15,6 +15,7 @@
         <div v-if="hideItems===true" class="flex justify-center mb-8">
           <button
             class="text-steel font-bold border-steel border-2 rounded-md px-4 py-2 hover:text-black hover:border-green hover:bg-green transition duration-300"
+            aria-label="show more articles"
             @click="hideItems=false"
           >
             Show More
@@ -26,8 +27,9 @@
         <div
           v-if="tags"
           class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 justify-items-stretch gap-y-2 gap-x-3 mb-8"
+          role="list"
         >
-          <CategoryPill v-for="(tag, id) in tags" :key="id" :tag="tag"></CategoryPill>
+          <CategoryPill v-for="(tag, id) in tags" :key="id" :tag="tag" role="listitem"></CategoryPill>
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@
     <!-- todo: extract out list section to reuse on tag and pages index -->
     <ul :class="[{showLess: hideItems}, 'flex flex-wrap']">
       <li v-for="article of articles" :key="article.slug" class="xs:w-full md:w-1/2 px-2 xs:mb-6 md:mb-12 article-card">
-        <BlogCard :type="'post'" :article="article" />
+        <BlogCard :type="article.type" :article="article" />
       </li>
     </ul>
     <h1 class="text-title font-bold text-4xl mb-3">Topics</h1>
@@ -37,16 +37,18 @@ export default {
       .sortBy('name', 'asc')
       .fetch();
     const articles = await $content('articles')
-      .only(['title', 'description', 'img', 'slug', 'author', 'created', 'updated'])
+      .only(['title', 'description', 'img', 'alt', 'slug', 'author', 'created', 'updated'])
       .where({ tags: { $contains: tag.name } })
       .sortBy('updated', 'desc')
       .fetch();
     const projects = await $content('projects')
-      .only(['title', 'description', 'img', 'slug', 'author', 'created', 'updated'])
+      .only(['title', 'description', 'img', 'alt', 'slug', 'author', 'created', 'updated'])
       .where({ tags: { $contains: tag.name } })
       .sortBy('updated', 'asc')
       .fetch();
 
+    articles.forEach((item) => {item.type = 'post'});
+    projects.forEach((item) => {item.type = 'project'});
     articles.push(...projects);
     articles.sort((a, b) => (new Date(b.updated)) - (new Date(a.updated)));
     return {

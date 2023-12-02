@@ -18,8 +18,11 @@
         border-white
         transition-colors
         hover:text-black
+        focus:text-black
         hover:bg-green
+        focus:bg-green
         hover:border-green
+        focus:border-green
         duration-300
       "
   >

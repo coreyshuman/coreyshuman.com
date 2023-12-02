@@ -1,8 +1,12 @@
 <template>
-  <div
+  <section
     v-if="showLightbox"
     class="fixed top-0 left-0 w-full h-full text-steel"
     :style="backgroundStyle"
+    role="region"
+    aria-modal="true"
+    aria-roledescription="carousel"
+    :aria-label="imageCount > 1 ? 'one slide' : imageCount + ' slides'"
     @wheel.prevent="onWheel"
     @scroll.prevent
     @mousedown.prevent="onPointerDown"
@@ -13,56 +17,83 @@
     @touchend="onPointerUp"
     @touchcancel="onPointerCancel"
   >
-    <div v-if="isGallery" class="absolute z-40 text-silver top-10 left-12 font-bold filter drop-shadow-dark">
+    <div
+      v-if="isGallery"
+      class="absolute z-40 text-silver top-10 left-12 font-bold filter drop-shadow-dark"
+      aria-hidden="true"
+    >
       {{ imageIndex + 1 }} / {{ imageCount }}
     </div>
 
-    <div
-      class="absolute z-50 text-3xl text-silver top-10 right-4 md:right-12 opacity-70 hover:opacity-100 hover:text-red transition duration-300"
-      @click="close"
-    >
-      <fa class="filter drop-shadow-dark" :icon="['fa', 'times-circle']" />
+    <div class="controls">
+      <button
+        id="button-close"
+        ref="close"
+        class="absolute z-50 text-3xl text-silver top-10 right-4 md:right-12 opacity-70 hover:opacity-100 hover:text-red focus:text-red transition duration-300"
+        :tabindex="1"
+        aria-label="exit carousel"
+        @click="close"
+      >
+        <fa class="filter drop-shadow-dark" :icon="['fa', 'times-circle']" />
+      </button>
+
+      <button
+        v-if="isGallery"
+        v-show="!hideUI"
+        id="button-prev"
+        ref="prev"
+        class="absolute flex flex-wrap justify-center content-center z-40 text-5xl text-silver w-20 md:w-36 top-0 bottom-0 left-0 opacity-70 hover:opacity-100 hover:text-green focus:text-green transition duration-300"
+        :tabindex="2"
+        aria-controls="carousel-items"
+        aria-label="previous slide"
+        @pointerup="onPrev"
+      >
+        <fa class="filter drop-shadow-dark" :icon="['fa', 'arrow-alt-circle-left']" />
+      </button>
+
+      <button
+        v-if="isGallery"
+        v-show="!hideUI"
+        id="button-next"
+        ref="next"
+        class="absolute flex flex-wrap justify-center content-center z-40 text-5xl text-silver w-20 md:w-36 top-0 bottom-0 right-0 opacity-70 hover:opacity-100 hover:text-green focus:text-green transition duration-300"
+        :tabindex="0"
+        aria-controls="carousel-items"
+        aria-label="next slide"
+        @pointerup="onNext"
+      >
+        <fa class="filter drop-shadow-dark" :icon="['fa', 'arrow-alt-circle-right']" />
+      </button>
     </div>
 
-    <div
-      v-if="isGallery"
-      v-show="!hideUI"
-      class="absolute flex flex-wrap justify-center content-center z-40 text-5xl text-silver w-20 md:w-36 top-0 bottom-0 left-0 opacity-70 hover:opacity-100 hover:text-green transition duration-300"
-      @pointerup="onPrev"
-    >
-      <fa class="filter drop-shadow-dark" :icon="['fa', 'arrow-alt-circle-left']" />
+    <div id="carousel-items" class="w-full h-full" aria-live="polite">
+      <div
+        id="imageContainer"
+        class="flex flex-wrap justify-center content-center"
+        :class="containerClass"
+        :style="containerStyle"
+        role="group"
+        aria-roledescription="slide"
+        :aria-label="(imageIndex + 1) + ' of ' + imageCount"
+        @click.self="close"
+      >
+        <img
+          v-show="isReady"
+          :src="imageSrc"
+          :style="imageStyle"
+          :alt="alt"
+          @load="onLoad"
+          @touchstart.prevent="onPointerDown"
+        />
+        <div class="loader"></div>
+      </div>
     </div>
-
-    <div
-      v-if="isGallery"
-      v-show="!hideUI"
-      class="absolute flex flex-wrap justify-center content-center z-40 text-5xl text-silver w-20 md:w-36 top-0 bottom-0 right-0 opacity-70 hover:opacity-100 hover:text-green transition duration-300"
-      @pointerup="onNext"
-    >
-      <fa class="filter drop-shadow-dark" :icon="['fa', 'arrow-alt-circle-right']" />
-    </div>
-
-    <div
-      id="imageContainer"
-      class="flex flex-wrap justify-center content-center"
-      :class="containerClass"
-      :style="containerStyle"
-      @click.self="close"
-    >
-      <img
-        v-show="isReady"
-        :src="imageSrc"
-        :style="imageStyle"
-        :alt="alt"
-        @load="onLoad"
-        @touchstart.prevent="onPointerDown"
-      />
-      <div class="loader"></div>
-    </div>
-  </div>
+  </section>
 </template>
 
 <script>
+import { Keycode } from '~/util/constant.mjs';
+
 export default {
   data() {
     return {
@@ -121,6 +152,12 @@ export default {
       isSwipePrev: false
     }
   },
+  props: {
+    mainContent: {
+      type: Object,
+      required: false
+    }
+  },
   computed: {
     hideUI() {
       return this.isZoomed || this.isSwipeX || this.isSwipeY;
@@ -157,10 +194,12 @@ export default {
     });
   },
   mounted() {
-    document.addEventListener('keydown', this.onKeyDown);
+    document.addEventListener('keydown', this.onKeyDown, {capture: true});
+    window.addEventListener('popstate', this.onNavigate);
   },
   beforeDestroy() {
-    document.removeEventListener('keydown', this.onKeyDown);
+    document.removeEventListener('keydown', this.onKeyDown, {capture: true});
+    window.removeEventListener('popstate', this.onNavigate);
   },
   methods: {
     show(location) {
@@ -199,6 +238,9 @@ export default {
         this.containerStyle.width = '100%';
         this.containerStyle.height = '100%';
         this.containerStyle.opacity = 1;
+
+        this.$el.focus();
+        this.$emit('show', true);
 
         setTimeout(() => {
           // animation done
@@ -306,6 +348,12 @@ export default {
     close() {
       this.showLightbox = false;
       this.isReady = false;
+      // return focus to original image in content
+      this.$emit('show', false);
+      this.imageAssets[this.imageIndex].ref.focus();
+    },
+    onNavigate() {
+      this.close();
     },
     onLoad(ev) {
       if(this.isLoading) {
@@ -317,9 +365,58 @@ export default {
     onKeyDown(ev) {
       if(this.showLightbox) {
         switch(ev.keyCode) {
-          case 27: this.close(); break;
-          case 37: this.prev(); break;
-          case 39: this.next(); break;
+          case Keycode.escape: this.close(); break;
+          case Keycode.arrowLeft: this.prev(); break;
+          case Keycode.arrowRight: this.next(); break;
+        }
+
+        this.onKeyDownButton(ev);
+      }
+    },
+    onKeyDownButton(ev) {
+      if(ev.keyCode === Keycode.enter || ev.keyCode === Keycode.space) {
+        ev.preventDefault();
+        ev.stopPropagation();
+
+        const id = ev.target.id;
+        switch(id) {
+          case 'button-close':
+            this.close();
+            break;
+          case 'button-next' :
+            this.next();
+            break;
+          case 'button-prev':
+            this.prev();
+            break;
+          default:
+            // if not focusing a button, cycle through images and exit after last
+            if(this.imageIndex < this.imageAssets.length - 1) {
+              this.next();
+            } else {
+              this.close();
+            }
+        }
+      } else if(ev.keyCode === Keycode.tab) {
+        ev.preventDefault();
+        if(this.imageCount < 2) {
+          this.$refs.close.focus();
+        } else {
+          const id = ev.target.id;
+          switch(id) {
+            case 'button-next':
+              this.$refs.prev.focus();
+              break;
+            case 'button-prev':
+              this.$refs.close.focus();
+              break;
+            case 'button-close':
+              this.$refs.next.focus();
+              break;
+            default:
+              this.$refs.close.focus();
+              break;
+          }
         }
       }
     },

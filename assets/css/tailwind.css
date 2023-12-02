@@ -205,7 +205,7 @@ samp {
   }
 
   code span.line::before {
-    @apply inline-block w-10 text-gray text-right m-0 p-0;
+    @apply hidden md:inline-block w-11 text-gray text-right m-0 p-0;
 
     content: counter(linecount) '. ';
   }
@@ -234,4 +234,8 @@ samp {
   .nuxt-content-highlight pre.shiki {
     background-color: transparent !important;
   }
+}
+
+:focus-visible {
+  @apply outline-white;
 }

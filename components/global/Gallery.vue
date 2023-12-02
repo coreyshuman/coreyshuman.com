@@ -1,7 +1,8 @@
 <template>
-  <div id="gallery" class="flex flex-wrap gap-1.5" @click.capture.stop="onClick">
+  <div id="gallery" class="flex flex-wrap gap-1.5" @click.capture.stop="onClick" @keydown.capture="onKeyDown">
     <ProgressiveImage
       v-for="(image, index) of images"
+      ref="imageRefs"
       :key="index"
       :src="image.src"
       :alt="image.alt"
@@ -16,6 +17,7 @@
 
 <script>
 import assets from '../../assets/js/images';
+import { Keycode } from '~/util/constant.mjs';
 
 export default {
     props: {
@@ -31,7 +33,7 @@ export default {
       }
     },
     mounted() {
-      this.imageAssets = this.images.map(image => {
+      this.imageAssets = this.images.map((image, index) => {
         let tempSrc = image.src;
 
         // remove leading / from image asset name
@@ -40,7 +42,8 @@ export default {
         }
         return {
           image: assets.images.find(asset => asset.src === tempSrc),
-          alt: image.alt
+          alt: image.alt,
+          ref: this.$refs.imageRefs[index].$refs.img
         }
       });
     },
@@ -52,6 +55,12 @@ export default {
           index: Number.parseInt(ev.target.parentElement.dataset.id),
           location
       });
+      },
+      onKeyDown(ev) {
+        if(ev.keyCode === Keycode.enter || ev.keyCode === Keycode.space) {
+          ev.preventDefault();
+          this.onClick(ev);
+        }
       }
     }
 };

@@ -1,20 +1,32 @@
 <template>
   <div class="m-0 sm:mx-2 md:mx-8 xxlmin:m-auto max-w-screen-xxlmin min-h-fullvh whitespace-normal break-words">
     <div
+      ref="mainContent"
       class="flex flex-col min-h-fullvh firefox:bg-black firefox:bg-opacity-50 min-h-fullvh backdrop-filter backdrop-blur-sm"
+      :aria-hidden="ariaHidden"
     >
       <Header class="font-title font-medium text-steel" />
       <Nuxt />
       <TheFooter />
     </div>
-    <Lightbox />
+    <Lightbox @show="lightboxShow" />
     <ConstellationBackground />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data() {
+    return {
+      ariaHidden: false
+    }
+  },
+  methods: {
+    lightboxShow(show) {
+      this.ariaHidden = show;
+    }
+  }
 };
 </script>
 

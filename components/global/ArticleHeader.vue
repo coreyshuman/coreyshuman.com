@@ -4,6 +4,8 @@
       v-if="article.img"
       :src="article.img"
       :alt="article.alt"
+      :tabindex="-1"
+      aria-hidden="true"
       width="100%"
       height="100%"
       size="large"
@@ -29,11 +31,11 @@
           <p>{{ article.author.name }}</p>
         </div>
         <h1 class="xs:text-3xl md:text-4xl lg:text-5xl font-bold mb-2">{{ article.title }}</h1>
-        <div v-if="tags" class="flex flex-wrap">
-          <span v-for="(tag, id) in tags" :key="id">
+        <ul v-if="tags" class="flex flex-wrap">
+          <li v-for="(tag, id) in tags" :key="id">
             <CategoryPill :tag="tag"></CategoryPill>
-          </span>
-        </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

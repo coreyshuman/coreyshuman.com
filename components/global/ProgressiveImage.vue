@@ -2,12 +2,16 @@
   <div :class="loaderClass" style="cursor:pointer" :style="loaderStyle">
     <img
       v-show="ready"
+      ref="img"
       :src="imageSrc"
       :alt="alt"
       :class="calcImageClass"
       :style="imageStyle"
       loading="lazy"
+      role="button"
+      :tabindex="tabindex"
       @click="clickImage"
+      @keypress="onKeyPress"
     />
     <div class="loader"></div>
   </div>
@@ -15,6 +19,7 @@
 
 <script>
 import assets from '../../assets/js/images';
+import {Keycode} from '../../util/constant';
 
   export default {
     props: {
@@ -63,6 +68,10 @@ import assets from '../../assets/js/images';
         type: Boolean,
         default: false
       },
+      tabindex: {
+        type: Number,
+        default: 0
+      }
     },
     data() {
       return {
@@ -150,7 +159,6 @@ import assets from '../../assets/js/images';
       imageEl.addEventListener('load', this.onLoad);
       imageEl.addEventListener('error', this.onError);
       this.ready = true;
-
     },
     beforeDestroy() {
       const imageEl = this.$el.querySelector('img');
@@ -170,6 +178,13 @@ import assets from '../../assets/js/images';
           this.ready = false;
           this.loading = false;
           this.error = true;
+        }
+      },
+      onKeyPress(ev) {
+        if(ev.keyCode === Keycode.enter || ev.keyCode === Keycode.space) {
+          ev.preventDefault();
+          ev.target.blur();
+          this.clickImage();
         }
       },
       loadImageFromAssets(src) {
@@ -237,7 +252,8 @@ import assets from '../../assets/js/images';
           this.$root.$emit('lightboxLoad', {
             images: [{
               image: this.image,
-              alt: this.alt
+              alt: this.alt,
+              ref: this.$refs.img
             }],
             index: 0,
             location

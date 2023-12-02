@@ -1,27 +1,46 @@
 <template>
   <div id="embed-code" class="animatedBorder relative grid grid-cols-1 lg:grid-cols-2 bg-darkblue bg-opacity-87">
     <div class="relative border-gray lg:border-r-2 border-b-2 lg:border-b-0">
-      <div class="bg-darkblue h-8">
+      <div class="bg-darkblue h-8" role="tablist" tabindex="-1">
         <button
           v-for="lang in enabledLanguages"
+          :id="'tab-'+lang"
           :key="lang"
           :class="activeTab === lang ? 'bg-red' : 'bg-green'"
+          role="tab"
+          :aria-selected="activeTab === lang"
+          :aria-controls="lang"
           @click="nextActiveTab = lang"
         >
           {{ lang.toUpperCase() }}
         </button>
       </div>
-      <template v-for="lang in supportedLanguages">
-        <Transition :key="lang" :name="swipeAnimation">
-          <div v-show="activeTab === lang" :id="lang" :key="lang" class="codePanel absolute w-full">
-            <slot :name="lang"></slot>
-          </div>
-        </Transition>
-      </template>
+      <div class="w-full h-88">
+        <template v-for="lang in supportedLanguages">
+          <Transition :key="lang" :name="swipeAnimation">
+            <div
+              v-show="activeTab === lang"
+              :id="lang"
+              :key="lang"
+              role="tabpanel"
+              :aria-labelledby="'tab-'+lang"
+              class="codePanel absolute w-full"
+            >
+              <slot :name="lang"></slot>
+            </div>
+          </Transition>
+        </template>
+      </div>
     </div>
     <div class="bg-darkblue">
       <div class="bg-darkblue text-green h-8 p-2 mt-px border-gray border-b-1">{{ previewPanelTitle }}</div>
-      <iframe :id="iframeId" :srcdoc="srcdoc" class="h-88 w-full pointer-events-auto"></iframe>
+      <iframe
+        ref="frameRef"
+        :id="iframeId"
+        :srcdoc="srcdoc"
+        class="h-88 w-full pointer-events-auto"
+        tabindex="0"
+      ></iframe>
     </div>
   </div>
 </template>

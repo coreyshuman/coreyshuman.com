@@ -1,7 +1,16 @@
 <template>
   <NuxtLink
     :to="{ name: `${type}-slug`, params: { slug: article.slug } }"
-    class="group relative flex transition-shadow duration-150 ease-in-out shadow-sm hover:shadow-md flex-col bg-black-transparent text-white rounded-lg h-full"
+    class="
+      group
+      relative
+      flex
+      flex-col
+      bg-black
+      bg-opacity-60
+      rounded-lg
+      h-full
+"
   >
     <ProgressiveImage
       v-if="article.img"
@@ -13,12 +22,16 @@
       fit="cover"
       class="rounded-t-lg h-48 m-px"
       image-class="rounded-t-lg"
+      :tabindex="-1"
+      aria-hidden="true"
     />
+
+    <div class="absolute w-full h-48 bg-black bg-opacity-40 group-hover:bg-opacity-10 transition-bg duration-300"></div>
 
     <div class="p-6 flex flex-col justify-between w-full">
       <div class="flex flex-col lg:flex-row">
         <h2
-          class="flex-1 flex-grow w-full font-bold text-lg text-body text-green group-hover:text-red transition duration-300"
+          class="flex-1 flex-grow w-full font-bold text-lg text-body text-green group-hover:text-red group-focus:text-red transition duration-300"
         >
           {{ article.title }}
         </h2>

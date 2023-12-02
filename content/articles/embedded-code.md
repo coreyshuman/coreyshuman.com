@@ -20,42 +20,42 @@ This demo uses a custom [Markdown Abstract Syntax Tree (MDAST)](https://github.c
 ::template #html
 
 ```html[index.html]
-  <h1 style="text-align:center;">Hello World</h1>
-  <p>Here is some content</p>
-  <p>Counter: <span id="count"></span></p>
-  <button>Reset</button>
+<h1 style="text-align:center;">Hello World</h1>
+<p>Here is some content</p>
+<p>Counter: <span id="count"></span></p>
+<button>Reset</button>
 ```
 
 ::
 ::template #css
 
 ```css[style.css]
-  body {
-    background: radial-gradient(#e66465, #9198e5);
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-    height: 90vh;
-  }
-  button {
-    background: radial-gradient(#387989, #6dd5ed);
-    background-repeat: no-repeat;
-  }
+body {
+  background: radial-gradient(#e66465, #9198e5);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  height: 90vh;
+}
+button {
+  background: radial-gradient(#387989, #6dd5ed);
+  background-repeat: no-repeat;
+}
 ```
 
 ::
 ::template #js
 
 ```js[script.js]
-  let count = 0;
-  let el = document.getElementById('count');
-  setInterval(() => {
-    el.innerText = count ++;
-  }, 200);
-  document.querySelector('button').addEventListener('click', () => {
-    count = 0;
-    el.innerText = 0;
-  });
+let count = 0;
+let el = document.getElementById('count');
+setInterval(() => {
+  el.innerText = count ++;
+}, 200);
+document.querySelector('button').addEventListener('click', () => {
+  count = 0;
+  el.innerText = 0;
+});
 
 ```
 
@@ -73,10 +73,10 @@ This demo uses a custom MDAST directive to wrap markdown code sections in a Vue 
 ::template #js
 
 ```js[script.js]
-  for(let num = 0; num < 20; num++) {
-    console.log(num);
-  }
-  console.error('this is an error');
+for(let num = 0; num < 20; num++) {
+  console.log(num);
+}
+console.error('this is an error');
 ```
 
 ::

@@ -6,7 +6,25 @@
         <li v-for="social of socials" :key="social.name" class="m-0 ml-1 sm:m-2">
           <a
             :href="social.url"
-            class="flex-none bg-transparent hover:bg-green font-semibold hover:text-black py-2 px-1 sm:px-4 border border-green hover:border-transparent rounded transition duration-300"
+            class="
+              flex-none
+              bg-transparent
+              font-semibold
+              py-2
+              px-1
+              sm:px-4
+              border
+              border-green
+              hover:border-transparent
+              focus:border-transparent
+              hover:bg-green
+              focus:bg-green
+              hover:text-black
+              focus:text-black
+              rounded
+              transition
+              duration-300
+            "
           >
             <fa :icon="['fab', social.icon]" />
             {{social.name}}

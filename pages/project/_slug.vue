@@ -42,7 +42,7 @@ export default {
   async asyncData({ $content, params }) {
     const project = await $content('projects', params.slug).fetch();
     const articles = await $content('articles')
-      .only(['title', 'description', 'img', 'slug'])
+      .only(['title', 'description', 'img', 'alt', 'slug'])
       .where({ projects: { $containsAny: project.slug } })
       .sortBy('createdAt', 'desc')
       .fetch();
