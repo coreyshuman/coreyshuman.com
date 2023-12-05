@@ -346,13 +346,17 @@ export default {
       }
     },
     close() {
+      if(!this.showLightbox) {
+        return;
+      }
+
       this.showLightbox = false;
       this.isReady = false;
       // return focus to original image in content
       this.$emit('show', false);
       this.imageAssets[this.imageIndex].ref.focus();
     },
-    onNavigate() {
+    onNavigate(e) {
       this.close();
     },
     onLoad(ev) {

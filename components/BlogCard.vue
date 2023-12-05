@@ -63,14 +63,15 @@ export default {
   },
   data() {
     return {
-      lastLocation: {clientX: 0, clientY: 0},
+      location: {clientX: 0, clientY: 0},
       settings: {
         radialColor: '#6dffeb',
         radialSize: 300,
         borderColor: '#666',
         borderWidth: 3,
         borderRadius: 8
-      }
+      },
+      animationEnabled: true
     }
   },
   beforeMount() {
@@ -86,26 +87,18 @@ export default {
     document.addEventListener('touchstart', this.updateMousePosition);
     document.addEventListener('touchmove', this.updateMousePosition);
 
-    this.updateMousePosition(this.lastLocation);
+    this.updateMousePosition(this.location);
+    requestAnimationFrame(this.drawFrame);
   },
   beforeDestroy() {
     document.removeEventListener('mousemove', this.updateMousePosition);
     document.removeEventListener('touchstart', this.updateMousePosition);
     document.removeEventListener('touchmove', this.updateMousePosition);
     window.removeEventListener('resize', this.handleResize);
+    this.animationEnabled = false;
   },
   methods: {
     updateMousePosition(e) {
-      const { x, y } = this.$el.getBoundingClientRect();
-      const canvas = this.$refs.canvas;
-      let ctx;
-      if (this.displaySupportsP3Color() && this.canvasSupportsDisplayP3()) {
-        ctx = canvas.getContext('2d', { colorSpace: 'display-p3' });
-      } else {
-        ctx = canvas.getContext('2d');
-      }
-      canvas.width = Math.ceil(this.$el.clientWidth);
-      canvas.height = Math.ceil(this.$el.clientHeight);
       let clientX = 0;
       let clientY = 0;
       if(e.changedTouches) {
@@ -115,6 +108,26 @@ export default {
         clientX = e.clientX;
         clientY = e.clientY;
       }
+
+      this.location.clientX = clientX;
+      this.location.clientY = clientY;
+    },
+    drawFrame() {
+      if(!this.animationEnabled) {
+        return;
+      }
+
+      const { x, y } = this.$el.getBoundingClientRect();
+      const { clientX, clientY } = this.location;
+      const canvas = this.$refs.canvas;
+      let ctx;
+      if (this.displaySupportsP3Color() && this.canvasSupportsDisplayP3()) {
+        ctx = canvas.getContext('2d', { colorSpace: 'display-p3' });
+      } else {
+        ctx = canvas.getContext('2d');
+      }
+      canvas.width = Math.ceil(this.$el.clientWidth);
+      canvas.height = Math.ceil(this.$el.clientHeight);
 
       const grd = ctx.createRadialGradient(clientX - x, clientY - y, 5, clientX - x, clientY - y, this.settings.radialSize);
       grd.addColorStop(0, this.settings.radialColor);
@@ -136,9 +149,11 @@ export default {
       ctx.moveTo(canvas.width, canvas.height - this.settings.borderRadius);
       ctx.arc(canvas.width - this.settings.borderRadius - (this.settings.borderWidth / 2.2 + .25), canvas.height - this.settings.borderRadius - (this.settings.borderWidth / 2.2 + .25), this.settings.borderRadius, 0, 1/2 * Math.PI); // bottom right
       ctx.stroke();
+
+      requestAnimationFrame(this.drawFrame);
     },
     handleResize() {
-      this.updateMousePosition(this.lastLocation);
+      this.updateMousePosition(this.location);
     }
   }
 
