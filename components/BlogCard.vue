@@ -74,8 +74,10 @@ export default {
     }
   },
   beforeMount() {
-    if(this.canvasSupportsDisplayP3() && this.canvasSupportsWideGamutCSSColors()) {
+    if(this.canvasSupportsDisplayP3() && this.canvasSupportsOklchColors()) {
       this.settings.radialColor = 'oklch(91.47% 0.1479 182.73)';
+    } else if(this.canvasSupportsDisplayP3() && this.canvasSupportsWideGamutCSSColors()) {
+      this.settings.radialColor = 'color(display-p3 0.526 0.9998 0.9242)';
     }
     window.addEventListener('resize', this.handleResize);
   },

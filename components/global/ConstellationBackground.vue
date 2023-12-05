@@ -59,7 +59,6 @@ export default {
       this.constellation.stop();
     });
 
-    this.constellation.init();
     this.constellation.start();
 
     Statistics.initStats();
@@ -70,20 +69,28 @@ export default {
       if(!newConfig) {
         newConfig = {};
       }
+
+      // oklch conversion - old Safari workaround
+      if(!this.canvasSupportsOklchColors()) {
+        for (const prop in newConfig) {
+          if (Object.prototype.hasOwnProperty.call(newConfig, prop)) {
+            const value = newConfig[prop];
+
+            if(this.isOklchColor(value)) {
+              newConfig[prop] = this.oklchToP3(value);
+            }
+          }
+        }
+      }
+
       this.workingConfig = {...this.configDefaults, ...newConfig};
 
       if(this.constellation) {
         this.constellation.stop();
         this.constellation.defaultSettings();
-        for (const prop in newConfig) {
-          if (Object.prototype.hasOwnProperty.call(newConfig, prop)) {
-            let value = newConfig[prop];
-            // oklch conversion Safari workaround
-            if(this.isOklchColor(value) && !this.canvasSupportsOklchColors()) {
-              value = this.oklchToP3(value);
-            }
-
-            this.constellation.updateSetting(prop, value);
+        for (const prop in this.workingConfig) {
+          if (Object.prototype.hasOwnProperty.call(this.workingConfig, prop)) {
+            this.constellation.updateSetting(prop, this.workingConfig[prop]);
           }
         }
         this.constellation.start();

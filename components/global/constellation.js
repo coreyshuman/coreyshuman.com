@@ -334,11 +334,17 @@ class Constellation {
     };
 
     if (userSettings) {
-      for (const prop in userSettings) {
-        if (Object.prototype.hasOwnProperty.call(this.settings, prop)) {
-          // todo - use updateSetting here to get value checks
-          this.settings[prop] = userSettings[prop];
-        }
+      if (userSettings.canvasContainer) {
+        this.settings.canvasContainer = userSettings.canvasContainer;
+        delete userSettings.canvasContainer;
+      }
+      if (userSettings.canvasWidth) {
+        this.settings.canvasWidth = userSettings.canvasWidth;
+        delete userSettings.canvasWidth;
+      }
+      if (userSettings.canvasHeight) {
+        this.settings.canvasHeight = userSettings.canvasHeight;
+        delete userSettings.canvasHeight;
       }
     }
 
@@ -361,6 +367,17 @@ class Constellation {
     this.cursor = new Point();
     // store touch positions on mobile
     this.touches = [];
+
+    this.init();
+
+    this.defaultSettings();
+    if (userSettings) {
+      for (const prop in userSettings) {
+        if (Object.prototype.hasOwnProperty.call(this.settings, prop)) {
+          this.updateSetting(prop, userSettings[prop]);
+        }
+      }
+    }
 
     requestAnimationFrame(this.run.bind(this));
   }

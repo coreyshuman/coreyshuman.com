@@ -79,7 +79,26 @@ export const util = {
       const [L, C, H] = this.parseOklch(color);
       const [Loklab, a, b] = this.oklchToOklab(L, C, H);
       const [X, Y, Z] = this.oklabToXYZ(Loklab, a, b);
-      const [pR, pG, pB] = this.xyzToP3(X, Y, Z);
+      const p3 = this.xyzToP3(X, Y, Z);
+
+      // low-tech gamma correction, done by hand / eye
+      // not meant to be perfect, just makes actively used colors 'good enough'
+      // for what is effectively an edge case anyways
+      p3.forEach((val, idx) => {
+        if (val < 0.01) {
+          p3[idx] = val * [20, 15, 30][idx];
+        } else if (val < 0.05) {
+          p3[idx] = val * [7, 5, 8.5][idx];
+        } else if (val < 0.1) {
+          p3[idx] = val * [2, 2, 2][idx];
+        } else if (val < 0.6) {
+          p3[idx] = val * [1.3, 1.2, 1.1][idx];
+        } else if (val < 0.99) {
+          p3[idx] = val * [1, 0.95, 0.9][idx];
+        }
+      });
+
+      const [pR, pG, pB] = p3;
       return `color(display-p3 ${pR} ${pG} ${pB})`;
     },
 
