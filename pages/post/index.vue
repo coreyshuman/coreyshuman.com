@@ -3,24 +3,7 @@
     <div class="grid grid-cols-1">
       <div class="order-first lg:order-last">
         <h1 class="text-title font-bold text-4xl mb-3">Articles</h1>
-        <ul :class="[{showLess: hideItems}, 'flex flex-wrap']">
-          <li
-            v-for="article of articles"
-            :key="article.slug"
-            class="xs:w-full md:w-1/2 px-2 xs:mb-6 md:mb-12 article-card"
-          >
-            <BlogCard :type="'post'" :article="article" />
-          </li>
-        </ul>
-        <div v-if="hideItems===true" class="flex justify-center mb-8">
-          <button
-            class="text-steel font-bold border-steel border-2 rounded-md px-4 py-2 hover:text-black hover:border-green hover:bg-green transition duration-300"
-            aria-label="show more articles"
-            @click="hideItems=false"
-          >
-            Show More
-          </button>
-        </div>
+        <BlogCardList :articles="articles" />
       </div>
       <div class="order-1">
         <h1 class="text-title font-bold text-4xl mb-3">Topics</h1>
@@ -106,15 +89,7 @@ export default {
 };
 </script>
 
-<style class="postcss">
-.article-card {
-  border-radius: 8px;
-}
-
-.article-card img div {
-  border-radius: 8px 0 0 8px;
-}
-
+<style>
 ul.showLess li:nth-child(n+7) {
   display: none;
 }

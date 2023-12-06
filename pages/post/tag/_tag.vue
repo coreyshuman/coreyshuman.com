@@ -7,12 +7,7 @@
       Articles and Projects tagged <span class="text-purple uppercase">{{ tag.name }}</span
       >:
     </h1>
-    <!-- todo: extract out list section to reuse on tag and pages index -->
-    <ul :class="[{showLess: hideItems}, 'flex flex-wrap']">
-      <li v-for="article of articles" :key="article.slug" class="xs:w-full md:w-1/2 px-2 xs:mb-6 md:mb-12 article-card">
-        <BlogCard :type="article.type" :article="article" />
-      </li>
-    </ul>
+    <BlogCardList :articles="articles" />
     <h1 class="text-title font-bold text-4xl mb-3">Topics</h1>
     <div
       v-if="tags"
@@ -47,6 +42,7 @@ export default {
       .sortBy('updated', 'asc')
       .fetch();
 
+    // merge projects with articles and sort
     articles.forEach((item) => {item.type = 'post'});
     projects.forEach((item) => {item.type = 'project'});
     articles.push(...projects);

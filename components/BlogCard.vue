@@ -10,7 +10,9 @@
       bg-opacity-60
       rounded-lg
       h-full
+      border-gray
 "
+    :class="{'border-2': !mounted}"
   >
     <ProgressiveImage
       v-if="article.img"
@@ -26,7 +28,9 @@
       aria-hidden="true"
     />
 
-    <div class="absolute w-full h-48 bg-black bg-opacity-40 group-hover:bg-opacity-10 transition-bg duration-300"></div>
+    <div
+      class="absolute w-full h-48 bg-black bg-opacity-40 rounded-t-lg group-hover:bg-opacity-10 transition-bg duration-300"
+    ></div>
 
     <div class="p-6 flex flex-col justify-between w-full">
       <div class="flex flex-col lg:flex-row">
@@ -71,7 +75,8 @@ export default {
         borderWidth: 3,
         borderRadius: 8
       },
-      animationEnabled: true
+      animationEnabled: true,
+      mounted: false
     }
   },
   beforeMount() {
@@ -89,6 +94,7 @@ export default {
 
     this.updateMousePosition(this.location);
     requestAnimationFrame(this.drawFrame);
+    this.mounted = true;
   },
   beforeDestroy() {
     document.removeEventListener('mousemove', this.updateMousePosition);

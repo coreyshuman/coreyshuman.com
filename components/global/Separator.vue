@@ -1,15 +1,20 @@
 <template>
-  <div class="block w-full h-3px separatorBackground"></div>
+  <div class="block w-full h-3px border-gray separatorBackground" :class="{'border-b-2': !mounted}"></div>
 </template>
 
 <script>
 export default {
-  props: {},
+  data() {
+    return {
+      mounted: false,
+    }
+  },
   mounted() {
     document.addEventListener('mousemove', this.updateMousePosition);
     document.addEventListener('touchstart', this.updateMousePosition);
     document.addEventListener('touchmove', this.updateMousePosition);
     this.updateMousePosition({clientX: 0, clientY: 0});
+    this.mounted = true;
   },
   beforeDestroy() {
     document.removeEventListener('mousemove', this.updateMousePosition);
