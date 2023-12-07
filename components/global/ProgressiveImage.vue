@@ -2,6 +2,7 @@
   <div :class="loaderClass" style="cursor:pointer" :style="loaderStyle">
     <img
       v-show="ready"
+      :id="id"
       ref="img"
       :src="imageSrc"
       :alt="alt"
@@ -20,8 +21,10 @@
 <script>
 import assets from '../../assets/js/images';
 import {Keycode} from '../../util/constant';
+import { util } from '~/util/util';
 
   export default {
+    mixins:[util],
     props: {
       src: {
         type: String,
@@ -75,6 +78,7 @@ import {Keycode} from '../../util/constant';
     },
     data() {
       return {
+        id: 0,
         image: null,
         loading: false,
         ready: false,
@@ -153,6 +157,7 @@ import {Keycode} from '../../util/constant';
     },
     beforeMount() {
       this.loadImageFromAssets(this.src);
+      this.id = this.calculateHashString(this.src, this.size, this.tabindex);
     },
     mounted() {
       const imageEl = this.$el.querySelector('img');
@@ -252,6 +257,7 @@ import {Keycode} from '../../util/constant';
           this.$root.$emit('lightboxLoad', {
             images: [{
               image: this.image,
+              id: this.id,
               alt: this.alt,
               ref: this.$refs.img
             }],
@@ -261,7 +267,6 @@ import {Keycode} from '../../util/constant';
         }
       }
     }
-
   };
 </script>
 <style scoped>

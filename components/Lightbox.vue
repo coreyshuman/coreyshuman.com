@@ -152,12 +152,6 @@ export default {
       isSwipePrev: false
     }
   },
-  props: {
-    mainContent: {
-      type: Object,
-      required: false
-    }
-  },
   computed: {
     hideUI() {
       return this.isZoomed || this.isSwipeX || this.isSwipeY;
@@ -177,7 +171,7 @@ export default {
       this.imageStyle.transform = `scale(${zoomVal / 1000}) translate(${this.translate.x / (zoomVal / 1000)}px, ${this.translate.y / (zoomVal / 1000)}px)`;
     },
     translate: {
-      handler(translateVal, oldVal) {
+      handler(translateVal) {
         this.imageStyle.transform = `scale(${this.zoom / 1000}) translate(${translateVal.x / (this.zoom / 1000)}px, ${translateVal.y / (this.zoom / 1000)}px)`;
       },
       deep: true
@@ -196,6 +190,7 @@ export default {
   mounted() {
     document.addEventListener('keydown', this.onKeyDown, {capture: true});
     window.addEventListener('popstate', this.onNavigate);
+    this.checkUrlAndOpenLightbox();
   },
   beforeDestroy() {
     document.removeEventListener('keydown', this.onKeyDown, {capture: true});
@@ -217,6 +212,8 @@ export default {
       this.containerStyle.height = `${location.height}px`;
       this.containerStyle.opacity = 0.2;
       this.showLightbox = true;
+
+      this.updateUrl();
 
       // set image
       this.updateImage();
@@ -261,6 +258,7 @@ export default {
         this.imageIndex = 0;
       }
 
+      this.updateUrl(true);
       this.updateImage();
     },
     prev() {
@@ -272,6 +270,7 @@ export default {
         this.imageIndex = this.imageCount - 1;
       }
 
+      this.updateUrl(true);
       this.updateImage();
     },
     updateImage() {
@@ -355,11 +354,39 @@ export default {
       // return focus to original image in content
       this.$emit('show', false);
       this.imageAssets[this.imageIndex].ref.focus();
+      this.updateUrl(true);
     },
-    onNavigate(e) {
+    updateUrl(replace) {
+      const url = new URL(location);
+      if(this.showLightbox) {
+        url.searchParams.set('image', this.imageAssets[this.imageIndex].id);
+      } else {
+        url.searchParams.delete('image');
+      }
+      if(replace) {
+        history.replaceState({}, '', url);
+      } else {
+        history.pushState({}, '', url);
+      }
+    },
+    checkUrlAndOpenLightbox() {
+      const url = new URL(location);
+      const imageId = url.searchParams.get('image');
+      if(!imageId) {
+        return;
+      }
+
+      const imageEl = document.getElementById(imageId);
+      if(!imageEl) {
+        return;
+      }
+
+      imageEl.click();
+    },
+    onNavigate() {
       this.close();
     },
-    onLoad(ev) {
+    onLoad() {
       if(this.isLoading) {
         this.isLoading = false;
         this.containerStyle.backgroundImage = '';
@@ -528,7 +555,7 @@ export default {
 
       this.isSwipeClose = this.isSwipeNext = this.isSwipePrev = false;
     },
-    onPointerCancel(ev) {
+    onPointerCancel() {
       this.isDragging = false;
       this.isSwipeX = this.isSwipeY = false;
       this.isSwipeClose = this.isSwipeNext = this.isSwipePrev = false;

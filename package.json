@@ -1,6 +1,6 @@
 {
   "name": "coreyshuman-com",
-  "version": "3.1.1+187",
+  "version": "3.1.1+199",
   "private": true,
   "scripts": {
     "dev": "nuxt",

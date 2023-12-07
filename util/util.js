@@ -8,7 +8,44 @@ export const util = {
       const options = { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' };
       return new Date(date).toLocaleDateString('en', options);
     },
+    calculateHash() {
+      let hash = 0xfac3d4de;
+      for (let i = 0; i < arguments.length; i++) {
+        const arg = arguments[i];
+        if (typeof arg === 'number') {
+          hash = Math.imul(hash ^ arg, 0xc2b2ae35);
+        } else if (typeof arg === 'string') {
+          for (const c of arg) {
+            hash = Math.imul(hash ^ c.charCodeAt(0), 0xc2b2ae35);
+          }
+        } else if (typeof arg === 'boolean') {
+          hash = Math.imul(hash ^ ((arg + 0xfac3d4de) >>> 5), 0xc2b2ae35);
+        } else if (typeof arg === 'symbol' || typeof arg === 'bigint') {
+          hash = this.calculateHash(hash, arg.toString());
+        } else if (typeof arg === 'object') {
+          if (Array.isArray(arg)) {
+            for (const val of arg) {
+              hash = this.calculateHash(hash, val);
+            }
+          } else {
+            for (const param of arg) {
+              if (Object.prototype.hasOwnProperty.call(arg, param)) {
+                hash = this.calculateHash(hash, param);
+                hash = this.calculateHash(hash, arg[param]);
+              }
+            }
+          }
+        } else if (typeof arg === 'function') {
+          hash = this.calculateHash(hash, arg.call());
+        }
+      }
 
+      return hash ^ (hash >>> 13);
+    },
+    calculateHashString() {
+      const hash = this.calculateHash(...arguments);
+      return Math.abs(hash).toString(16).padEnd(8, '0');
+    },
     displaySupportsP3Color() {
       return matchMedia('(color-gamut: p3)').matches;
     },

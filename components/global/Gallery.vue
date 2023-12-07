@@ -41,9 +41,10 @@ export default {
           tempSrc = tempSrc.substring(1);
         }
         return {
+          ...image,
           image: assets.images.find(asset => asset.src === tempSrc),
-          alt: image.alt,
-          ref: this.$refs.imageRefs[index].$refs.img
+          ref: this.$refs.imageRefs[index].$refs.img,
+          id: this.$refs.imageRefs[index].$refs.img.id
         }
       });
     },

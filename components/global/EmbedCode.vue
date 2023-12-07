@@ -35,8 +35,8 @@
     <div class="bg-darkblue">
       <div class="bg-darkblue text-green h-8 p-2 mt-px border-gray border-b-1">{{ previewPanelTitle }}</div>
       <iframe
-        ref="frameRef"
         :id="iframeId"
+        ref="frameRef"
         :srcdoc="srcdoc"
         class="h-88 w-full pointer-events-auto"
         tabindex="0"
