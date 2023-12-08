@@ -143,6 +143,7 @@ export default {
         x: 0,
         y: 0
       },
+      swipeXDebounce: 0,
       isDragging: false,
       isZoomed: false,
       isSwipeX: false,
@@ -316,6 +317,13 @@ export default {
         maxTranslationY = containerLocation.height / 2;
       }
 
+      if(maxTranslationX < 0) {
+        maxTranslationX = 0;
+      }
+      if(maxTranslationY < 0) {
+        maxTranslationY = 0;
+      }
+
       if(this.translate.x < -maxTranslationX) {
         this.translate.x = -maxTranslationX;
       } else if(this.translate.x > maxTranslationX) {
@@ -468,15 +476,26 @@ export default {
     onWheel(ev) {
       const maxZoom = 5000;
       const minZoom = 1000;
+      const swipeXTriggerAmount = 60;
+      const swipeXDebounceTime = 200;
 
       if(this.isSwipeX || this.isSwipeY) {
         return;
       }
 
-      if(ev.deltaX < 0) {
+      // large deltaX to work with mousewheel but avoid touchpad changes
+      if(ev.deltaX < -swipeXTriggerAmount) {
+        if(Date.now() - this.swipeXDebounce < swipeXDebounceTime) {
+          return;
+        }
+        this.swipeXDebounce = Date.now();
         this.prev();
-      } else if(ev.deltaX > 0) {
-        this.next()
+      } else if(ev.deltaX > swipeXTriggerAmount) {
+        if(Date.now() - this.swipeXDebounce < swipeXDebounceTime) {
+          return;
+        }
+        this.swipeXDebounce = Date.now();
+        this.next();
       } else if(ev.deltaY < 0 && this.zoom < maxZoom) {
         this.zoom -= ev.deltaY;
       } else if(ev.deltaY > 0 && this.zoom > minZoom) {

@@ -1,17 +1,18 @@
 <template>
   <div class="relative w-full z-10">
-    <ProgressiveImage
-      v-if="article.img"
-      :src="article.img"
-      :alt="article.alt"
-      :tabindex="-1"
-      aria-hidden="true"
-      width="100%"
-      height="100%"
-      size="large"
-      fit="cover"
-      class="absolute h-full w-full"
-    />
+    <div class="absolute h-full w-full">
+      <ProgressiveImage
+        v-if="article.img"
+        :src="article.img"
+        :alt="article.alt"
+        :tabindex="-1"
+        aria-hidden="true"
+        width="100%"
+        height="100%"
+        size="large"
+        fit="cover"
+      />
+    </div>
     <div class="w-full min-h-60 py-4 px-2 sm:px-8 lg:px-16 bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm">
       <div class="flex justify-end">
         <NuxtLink

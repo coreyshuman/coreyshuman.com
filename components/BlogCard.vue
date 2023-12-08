@@ -14,20 +14,21 @@
 "
     :class="{'border-2': !mounted}"
   >
-    <ProgressiveImage
-      v-if="article.img"
-      :src="article.img"
-      :alt="article.alt"
-      height="12rem"
-      width="calc(100% - 2px)"
-      size="medium"
-      fit="cover"
-      class="rounded-t-lg h-48 m-px"
-      image-class="rounded-t-lg"
-      :tabindex="-1"
-      aria-hidden="true"
-    />
-
+    <div class="w-full h-48">
+      <ProgressiveImage
+        v-if="article.img"
+        :src="article.img"
+        :alt="article.alt"
+        height="100%"
+        width="calc(100% - 2px)"
+        size="medium"
+        fit="cover"
+        class="rounded-t-lg m-px"
+        image-class="rounded-t-lg"
+        :tabindex="-1"
+        aria-hidden="true"
+      />
+    </div>
     <div
       class="absolute w-full h-48 bg-black bg-opacity-40 rounded-t-lg group-hover:bg-opacity-10 transition-bg duration-300"
     ></div>

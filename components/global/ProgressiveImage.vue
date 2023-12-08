@@ -14,7 +14,7 @@
       @click="clickImage"
       @keypress="onKeyPress"
     />
-    <div class="loader"></div>
+    <div v-show="loading" class="loader"></div>
   </div>
 </template>
 
@@ -80,7 +80,7 @@ import { util } from '~/util/util';
       return {
         id: 0,
         image: null,
-        loading: false,
+        loading: true,
         ready: false,
         error: false,
         thumbnail: '',
@@ -92,7 +92,7 @@ import { util } from '~/util/util';
   },
     computed: {
       loaderStyle() {
-        let style = `width:${this.mosaic ? 'auto': '100%'}; min-height:${this.mosaic ? this.h: '100px'}; max-width:${this.w}; max-height:${this.h}; background-repeat:no-repeat; background-size:${this.backgroundSize};`;
+        let style = `width:${this.mosaic ? 'auto': '100%'}; height:100%; min-height:${this.mosaic ? this.h: '100px'}; max-width:${this.w}; max-height:${this.h}; background-position:center; background-repeat:no-repeat; background-size:${this.backgroundSize};`;
         if(this.loading) {
           style += `filter:blur(${this.loadingBlur});`;
         }
@@ -273,10 +273,6 @@ import { util } from '~/util/util';
 img {
   width: 100%;
   height: 100%;
-}
-
-div.thumbnail {
-  background-position: center;
 }
 
 div.loading div.loader {
