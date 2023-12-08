@@ -2,6 +2,12 @@
   <article class="flex w-full flex-col text-white">
     <ArticleHeader :article="article" :tags="tags"></ArticleHeader>
     <div
+      v-if="!article.published"
+      class="w-full mt-4 p-4 bg-orange text-center text-2xl font-bold text-black uppercase"
+    >
+      This article is a draft
+    </div>
+    <div
       class="
         relative
         py-8 px-0
@@ -32,11 +38,22 @@ export default {
       .only(['name', 'slug'])
       .where({ name: { $containsAny: article.tags } })
       .fetch();
-    const [prev, next] = await $content('articles')
+    let prev, next;
+    if(process.env.NODE_ENV === 'production') {
+      [prev, next] = await $content('articles')
+      .only(['title', 'slug'])
+      .sortBy('created', 'asc')
+      .where({published: {$eq: true}})
+      .surround(params.slug)
+      .fetch();
+    } else {
+      [prev, next] = await $content('articles')
       .only(['title', 'slug'])
       .sortBy('created', 'asc')
       .surround(params.slug)
       .fetch();
+    }
+
     return {
       article,
       tags,
