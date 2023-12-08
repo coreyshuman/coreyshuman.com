@@ -198,30 +198,83 @@ const coreyTheme = {
     { name: 'HTML tag attribute', scope: 'entity.other.attribute-name', settings: { foreground: colorAttribute } },
     { name: 'HTML entities', scope: 'punctuation.definition.entity.html', settings: { foreground: colorText } },
     { name: 'HTML svg', scope: 'meta.element.structure.svg entity.name.tag', settings: { foreground: colorType } },
-    { name: 'Markdown heading', scope: 'markup.heading', settings: { foreground: colorPunctuation } },
+    {
+      name: 'Markdown heading',
+      scope: 'markup.heading, punctuation.definition.heading.markdown',
+      settings: { foreground: colorType }
+    },
+    {
+      name: 'Markdown heading text',
+      scope: 'markup.heading.markdown, entity.name.section.markdown',
+      settings: { foreground: colorType }
+    },
+    {
+      name: 'Markdown reference text',
+      scope: 'meta.link.reference.markdown string.other.link.title.markdown',
+      settings: { foreground: colorComment }
+    },
+    {
+      name: 'Markdown image text',
+      scope: 'meta.image.inline.markdown, meta.image.inline.markdown string',
+      settings: { foreground: colorControl }
+    },
     {
       name: 'Markdown link text',
-      scope: 'text.html.markdown meta.link.inline, meta.link.reference',
-      settings: { foreground: colorProperty }
+      scope:
+        'text.html.markdown meta.link.inline string.other.link.title.markdown, meta.link.reference string.other.link.title.markdown',
+      settings: { foreground: colorObject }
     },
     {
       name: 'Markdown list item',
-      scope: 'text.html.markdown beginning.punctuation.definition.list',
-      settings: { foreground: colorPunctuation }
+      scope: 'text.html.markdown beginning.punctuation.definition.list, text.html.markdown punctuation.definition.list',
+      settings: { foreground: colorFunction }
     },
-    { name: 'Markdown italic', scope: 'markup.italic', settings: { foreground: colorProperty, fontStyle: 'italic' } },
-    { name: 'Markdown bold', scope: 'markup.bold', settings: { foreground: colorProperty, fontStyle: 'bold' } },
+    {
+      name: 'Markdown list text',
+      scope: 'text.html.markdown markup.list',
+      settings: { foreground: colorFunction }
+    },
+    {
+      name: 'Markdown italic',
+      scope: 'markup.italic, markup.italic punctuation.definition.italic.markdown',
+      settings: { foreground: colorOperator, fontStyle: 'italic' }
+    },
+    {
+      name: 'Markdown bold',
+      scope: 'markup.bold, markup.bold punctuation.definition.bold.markdown',
+      settings: { foreground: colorOperator, fontStyle: 'bold' }
+    },
     {
       name: 'Markdown bold italic',
       scope: 'markup.bold markup.italic, markup.italic markup.bold',
-      settings: { foreground: colorProperty, fontStyle: 'italic bold' }
+      settings: { foreground: colorOperator, fontStyle: 'italic bold' }
     },
     {
       name: 'Markdown code block',
       scope: 'markup.fenced_code.block.markdown punctuation.definition.markdown',
+      settings: { foreground: colorAttribute }
+    },
+    {
+      name: 'Markdown inline code',
+      scope: 'markup.inline.raw.string.markdown, markup.inline.raw.string.markdown punctuation.definition.raw.markdown',
       settings: { foreground: colorString }
     },
-    { name: 'Markdown inline code', scope: 'markup.inline.raw.string.markdown', settings: { foreground: colorString } },
+    {
+      name: 'Markdown - Blockquote',
+      scope: ['markup.quote'],
+      settings: { fontStyle: 'italic', foreground: colorStorage }
+    },
+    { name: 'Markdown - Fenced Language', scope: ['markup.fenced_code.block'], settings: { foreground: colorText } },
+    {
+      name: 'Markdown - Blockquote Punctuation',
+      scope: ['punctuation.definition.quote'],
+      settings: { foreground: colorStorage }
+    },
+    {
+      name: 'Markdown Underline',
+      scope: 'text.html.markdown markup.underline',
+      settings: { foreground: colorKeyword, fontStyle: 'underline' }
+    },
     { name: 'INI property name', scope: 'keyword.other.definition.ini', settings: { foreground: colorProperty } },
     {
       name: 'INI section title',
@@ -306,17 +359,6 @@ const coreyTheme = {
       name: 'Python - Format Placeholder',
       scope: ['constant.character.format.placeholder.other.python'],
       settings: { foreground: colorNumber }
-    },
-    {
-      name: 'Markdown - Blockquote',
-      scope: ['markup.quote'],
-      settings: { fontStyle: 'italic', foreground: colorPunctuation }
-    },
-    { name: 'Markdown - Fenced Language', scope: ['markup.fenced_code.block'], settings: { foreground: colorText } },
-    {
-      name: 'Markdown - Blockquote Punctuation',
-      scope: ['punctuation.definition.quote'],
-      settings: { foreground: colorBoolean }
     },
     {
       name: 'JSON Key - Level 0',

@@ -20,25 +20,31 @@ Look at these great language examples :tada:
 
 ## This section will print the Textmate scope explanations
 
-```cs[print-explanation.code]
-private double opacity;
+````md[print-explanation.code]
+# Hello
 
-[Description("Opacity of the control"),
-DefaultValue(1),
-Category("Appearance"),
-Browsable(true),
-TypeConverter(typeof(OpacityConverter))]
-public double Opacity
-{
-    get { return opacity; }
-    set
-    {
-        opacity = value;
-        InvalidateEx();
-    }
-}
+## World
 
-```
+Paragraph for testing.[1]
+
+[link](/to/fun)
+
+- item 1
+- item 2
+
+This is a `code phrase` and this is *italic* and this is **bold** wow this is ***bold italic!***.
+
+> here is a block quote
+
+![Tux, the Linux mascot](/assets/images/tux.png)
+
+    ```
+    let full = 'code block';
+    ```
+
+[1]: reference here
+
+````
 
 ## C#
 

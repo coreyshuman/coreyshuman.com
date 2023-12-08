@@ -17,7 +17,7 @@ tags:
 - Install rustup
 - Install OpenOCD, windows binaries on GitHub https://github.com/openocd-org/openocd/releases
 
-```
+```md
 - Download the binary zip file for Windows.
 - Extract into the C:\openocd-0.10.0 folder.
 - Add the path: C:\openocd-0.10.0\bin to your Windows User Path environment variable. Note: You must add bin to the path.
@@ -25,7 +25,7 @@ tags:
 Note: You must start a new MinGW terminal to inherit the new Path values.
 ```
 
-```
+```bash
 $ which openocd
 /c/openocd-0.10.0/bin/openocd
 $ openocd -v
@@ -57,7 +57,7 @@ cts note: i used powershell, `which` doesn't work but `openocd -v` does
 - plug in USB of stm32f4-discovery board
 - flash: `cargo xtask flash app/demo-stm32f4-discovery/app.toml`
 
-```
+```bash
 Finished release [optimized + debuginfo] target(s) in 3.15s
 target\demo-stm32f4-discovery\dist\kernel (unchanged)
 flash = 0x08000000..0x08040000
@@ -72,7 +72,7 @@ humility: flashing done
 
 - run humility debugger to view running tasks: `cargo xtask humility app/demo-stm32f4-discovery/app.toml -- tasks`
 
-```
+```bash
 PS D:\Devel\Rust\hubris> cargo xtask humility app/demo-stm32f4-discovery/app.toml -- tasks
     Finished dev [optimized + debuginfo] target(s) in 3.43s
      Running `target\debug\xtask.exe humility app/demo-stm32f4-discovery/app.toml -- tasks`
@@ -92,7 +92,7 @@ ID TASK                 GEN PRI STATE
 - run hubris kernel tests: `cargo xtask test test/tests-stm32fx/app.toml`
   - in my case a test was failing
 
-```
+```bash
     Finished release [optimized + debuginfo] target(s) in 3.12s
 target\tests-stm32fx\dist\kernel (unchanged)
 flash = 0x08000000..0x08040000
@@ -167,7 +167,7 @@ Error: humility failed
 
 - check openocd can connect to device: `openocd.exe -f interface/stlink.cfg -f target/stm32f4x.cfg`
 
-```
+```bash
 PS D:\Devel\Rust\hubris> openocd.exe -f interface/stlink.cfg -f target/stm32f4x.cfg
 Open On-Chip Debugger 0.12.0-rc1 (2022-09-18-17:56)
 Licensed under GNU GPL v2
@@ -188,7 +188,7 @@ Info : Listening on port 3333 for gdb connections
 
 - firmware out of date
 
-```
+```bash
 humility: attaching with chip set to "STM32F407VGTx"
 humility flash failed: The firmware on the probe is outdated
 Error: humility failed
