@@ -143,6 +143,7 @@ export default {
         x: 0,
         y: 0
       },
+      swipeXDebounce: 0,
       isDragging: false,
       isZoomed: false,
       isSwipeX: false,
@@ -169,6 +170,7 @@ export default {
   watch: {
     zoom(zoomVal) {
       this.imageStyle.transform = `scale(${zoomVal / 1000}) translate(${this.translate.x / (zoomVal / 1000)}px, ${this.translate.y / (zoomVal / 1000)}px)`;
+      console.log(this.imageStyle.transform)
     },
     translate: {
       handler(translateVal) {
@@ -315,6 +317,15 @@ export default {
         maxTranslationX = containerLocation.width / 2;
         maxTranslationY = containerLocation.height / 2;
       }
+
+      if(maxTranslationX < 0) {
+        maxTranslationX = 0;
+      }
+      if(maxTranslationY < 0) {
+        maxTranslationY = 0;
+      }
+
+      console.log('maxX', maxTranslationX);
 
       if(this.translate.x < -maxTranslationX) {
         this.translate.x = -maxTranslationX;
@@ -466,6 +477,7 @@ export default {
       this.prev();
     },
     onWheel(ev) {
+      console.log('wheel', ev);
       const maxZoom = 5000;
       const minZoom = 1000;
 
@@ -473,9 +485,18 @@ export default {
         return;
       }
 
-      if(ev.deltaX < 0) {
+      // large deltaX to work with mousewheel but avoid touchpad changes
+      if(ev.deltaX < -99) {
+        if(Date.now() - this.swipeXDebounce < 200) {
+          return;
+        }
+        this.swipeXDebounce = Date.now();
         this.prev();
-      } else if(ev.deltaX > 0) {
+      } else if(ev.deltaX > 99) {
+        if(Date.now() - this.swipeXDebounce < 200) {
+          return;
+        }
+        this.swipeXDebounce = Date.now();
         this.next()
       } else if(ev.deltaY < 0 && this.zoom < maxZoom) {
         this.zoom -= ev.deltaY;
@@ -495,6 +516,7 @@ export default {
       this.imageStyle.cursor = this.isZoomed ? 'move' : 'grab';
     },
     onPointerDown(ev) {
+      console.log('pointerDown', ev);
       let px, py;
 
       if(this.isDragging === true && ev.touches && ev.touches.length > 0) {
@@ -515,7 +537,7 @@ export default {
       this.translate.startY = py;
     },
     onPointerUp(ev) {
-
+      console.log('pointerUp', ev);
       if(this.isDragging === true && ev.touches && ev.touches.length > 0) {
         if(ev.changedTouches[0].identifier === 0) {
           this.translate.startX = ev.touches[0].screenX;
@@ -555,7 +577,8 @@ export default {
 
       this.isSwipeClose = this.isSwipeNext = this.isSwipePrev = false;
     },
-    onPointerCancel() {
+    onPointerCancel(ev) {
+      console.log('cancel', ev);
       this.isDragging = false;
       this.isSwipeX = this.isSwipeY = false;
       this.isSwipeClose = this.isSwipeNext = this.isSwipePrev = false;
@@ -569,6 +592,7 @@ export default {
       this.updateTranslation();
     },
     onPointerMove(ev) {
+      console.log('pointerMove', ev);
       if(this.isDragging) {
         if(ev.targetTouches && ev.targetTouches.length > 1 && !this.isSwipeX && ! this.isSwipeY) {
           this.handleTwoPointMove(ev);
@@ -580,6 +604,7 @@ export default {
       }
     },
     handleOnePointMove(ev) {
+      console.log('onePointMove', ev);
       const maxTranslate = 2000;
       let px, py;
 
@@ -628,6 +653,7 @@ export default {
       this.translate.startDist = 0;
     },
     handleTwoPointMove(ev) {
+      console.log('twoPointMove', ev);
       const maxTranslate = 2000;
       const zoomMultiplier = 7;
       const p1x = ev.targetTouches[0].screenX;

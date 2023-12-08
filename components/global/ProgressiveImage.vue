@@ -1,21 +1,22 @@
 <template>
-  <div :class="loaderClass" style="cursor:pointer" :style="loaderStyle">
-    <img
-      v-show="ready"
-      :id="id"
-      ref="img"
-      :src="imageSrc"
-      :alt="alt"
-      :class="calcImageClass"
-      :style="imageStyle"
-      loading="lazy"
-      role="button"
-      :tabindex="tabindex"
-      @click="clickImage"
-      @keypress="onKeyPress"
-    />
-    <div class="loader"></div>
-  </div>
+    <div class="relative" :class="loaderClass" style="cursor:pointer" :style="loaderStyle">
+      <img
+        v-show="ready"
+        :id="id"
+        ref="img"
+        :src="imageSrc"
+        :alt="alt"
+        :class="calcImageClass"
+        :style="imageStyle"
+        style="width: 100%; height: 100%; object-fit: cover;"
+        loading="lazy"
+        role="button"
+        :tabindex="tabindex"
+        @click="clickImage"
+        @keypress="onKeyPress"
+      />
+      <div v-show="loading" class="loader"></div>
+    </div>
 </template>
 
 <script>
@@ -74,6 +75,10 @@ import { util } from '~/util/util';
       tabindex: {
         type: Number,
         default: 0
+      },
+      useDiv: {
+        type: Boolean,
+        default: false
       }
     },
     data() {
@@ -85,6 +90,7 @@ import { util } from '~/util/util';
         error: false,
         thumbnail: '',
         imageSrc: '',
+        imageObj: null,
         w: '100%',
         h: '100%',
         ratio: 0,
@@ -92,7 +98,7 @@ import { util } from '~/util/util';
   },
     computed: {
       loaderStyle() {
-        let style = `width:${this.mosaic ? 'auto': '100%'}; min-height:${this.mosaic ? this.h: '100px'}; max-width:${this.w}; max-height:${this.h}; background-repeat:no-repeat; background-size:${this.backgroundSize};`;
+        let style = `width:${this.mosaic ? 'auto': '100%'}; height:100%; min-height:${this.mosaic ? this.h: '100px'}; max-width:${this.w}; max-height:${this.h}; `;
         if(this.loading) {
           style += `filter:blur(${this.loadingBlur});`;
         }
@@ -100,7 +106,7 @@ import { util } from '~/util/util';
           style += `border-radius:${this.radius};`;
         }
         if(this.thumbnail) {
-          style += `background-image:url("${this.thumbnail}");`;
+          style += `background-position:center; background-repeat:no-repeat; background-size:${this.backgroundSize}; background-image:url("${this.thumbnail}");`;
         } else {
           style += `background:linear-gradient(186deg, rgba(43,43,43,1) 0%, rgba(0,0,0,1) 54%, rgba(59,59,59,1) 100%);`;
         }
@@ -120,6 +126,7 @@ import { util } from '~/util/util';
         if(this.radius !== '') {
           style += `border-radius:${this.radius}`;
         }
+        console.log('image style', style)
         return style;
       },
       calcImageClass() {
@@ -156,24 +163,38 @@ import { util } from '~/util/util';
       }
     },
     beforeMount() {
+      if(this.useDiv) {
+        this.imageObj = new Image();
+        this.imageObj.onload = this.onLoad;
+        this.imageObj.onerror = this.onError;
+      }
+
       this.loadImageFromAssets(this.src);
       this.id = this.calculateHashString(this.src, this.size, this.tabindex);
     },
     mounted() {
-      const imageEl = this.$el.querySelector('img');
-      imageEl.addEventListener('load', this.onLoad);
-      imageEl.addEventListener('error', this.onError);
+      if(!this.useDiv) {
+        const imageEl = this.$el.querySelector('img');
+        imageEl.addEventListener('load', this.onLoad);
+        imageEl.addEventListener('error', this.onError);
+      }
       this.ready = true;
     },
     beforeDestroy() {
-      const imageEl = this.$el.querySelector('img');
-      imageEl.removeEventListener('load', this.onLoad);
-      imageEl.removeEventListener('error', this.onError);
+      if(!this.useDiv) {
+        const imageEl = this.$el.querySelector('img');
+        imageEl.removeEventListener('load', this.onLoad);
+        imageEl.removeEventListener('error', this.onError);
+      }
     },
     methods: {
       onLoad() {
         this.loading = false;
-        this.thumbnail = '';
+        if(this.useDiv) {
+           this.thumbnail = this.imageSrc;
+        } else {
+          this.thumbnail = '';
+        }
       },
       onError() {
         if(!this.error && this.ready) {
@@ -231,9 +252,13 @@ import { util } from '~/util/util';
 
         if(this.image) {
           const sizedImage = this.image.generated[size];
-          this.thumbnail = this.image.generated.thumb.data;
+          // this.thumbnail = this.image.generated.thumb.data;
           this.ratio = sizedImage.width / sizedImage.height;
           this.imageSrc = sizedImage.url;
+
+          if(this.useDiv) {
+            this.imageObj.src = this.imageSrc;
+          }
 
           if(this.width === '') {
             this.w = sizedImage.width + 'px';
@@ -251,6 +276,9 @@ import { util } from '~/util/util';
         }
       },
       clickImage() {
+        if(this.useDiv) {
+          return;
+        }
         const imageEl = this.$el.querySelector('img');
         if(this.image && imageEl) {
           const location = imageEl.getBoundingClientRect();
@@ -275,11 +303,7 @@ img {
   height: 100%;
 }
 
-div.thumbnail {
-  background-position: center;
-}
-
-div.loading div.loader {
+div.loader {
   border: 0.3em solid rgba(255, 255, 255, 1);
   border-top: 0.3em solid rgba(255, 255, 255, 0.4);
   border-radius: 50%;

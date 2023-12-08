@@ -18,6 +18,7 @@
       v-if="article.img"
       :src="article.img"
       :alt="article.alt"
+      :use-div="false"
       height="12rem"
       width="calc(100% - 2px)"
       size="medium"
