@@ -40,14 +40,6 @@ jobs:
         with:
           node-version: '16'
           cache: ${{ steps.detect-package-manager.outputs.manager }}
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-        with:
-          # Automatically inject router.base in your Nuxt configuration file and set
-          # target to static (https://nuxtjs.org/docs/configuration-glossary/configuration-target/).
-          #
-          # You may remove this line if you want to manage the configuration yourself.
-          static_site_generator: nuxt
       - name: Restore cache
         uses: actions/cache@v3
         with:
@@ -69,7 +61,10 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: dist
-          path: ./dist
+          path: |
+            ./dist
+            !./.*
+            !./*.md
           retention-days: 7
 
 # Deployment job

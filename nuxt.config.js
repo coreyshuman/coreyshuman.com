@@ -26,21 +26,21 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Corey Shuman'
+        content: 'Corey Shuman\'s Website'
       },
       { name: 'msapplication-TileColor', content: '#37A1AE' },
       { name: 'theme-color', content: '#37A1AE' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/cs-favicon-16.png' },
-      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/cs-favicon-32.png' },
-      { rel: 'icon', type: 'image/png', sizes: '48x48', href: '/cs-favicon-48.png' },
-      { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/cs-favicon-96.png' },
-      { rel: 'apple-touch-icon', type: 'image/png', sizes: '180x180', href: '/cs-favicon-180.png' },
-      { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/cs-favicon-192.png' },
-      { rel: 'msapplication-square310x310logo', type: 'image/png', sizes: '310x310', href: '/cs-favicon-310.png' },
-      { rel: 'icon', type: 'image/png', sizes: '512x512', href: '/cs-favicon-512.png' }
+      { rel: 'icon', type: 'image/x-icon', href: './favicon.ico' },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: './cs-favicon-16.png' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: './cs-favicon-32.png' },
+      { rel: 'icon', type: 'image/png', sizes: '48x48', href: './cs-favicon-48.png' },
+      { rel: 'icon', type: 'image/png', sizes: '96x96', href: './cs-favicon-96.png' },
+      { rel: 'apple-touch-icon', type: 'image/png', sizes: '180x180', href: './cs-favicon-180.png' },
+      { rel: 'icon', type: 'image/png', sizes: '192x192', href: './cs-favicon-192.png' },
+      { rel: 'msapplication-square310x310logo', type: 'image/png', sizes: '310x310', href: './cs-favicon-310.png' },
+      { rel: 'icon', type: 'image/png', sizes: '512x512', href: './cs-favicon-512.png' }
     ]
   },
   /*
