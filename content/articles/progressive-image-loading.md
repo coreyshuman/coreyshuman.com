@@ -50,5 +50,5 @@ tags:
 Image reference
 https://unsplash.com/photos/IEWoxRpew-0
 
-<progressive-image src="assets/headers/car.webp" alt="a scenic desert" size="large" width="100%" >
+<progressive-image src="assets/headers/car.webp" alt="a sports car parked in the California desert" size="large" width="100%" >
 </progresive-imge>

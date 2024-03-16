@@ -2,7 +2,7 @@
 title: Custom BB-8 Progress Update 2016
 description: Mockup photos, circuits, and a quick test video of the BB-8 platform.
 img: /assets/headers/bb-blue-02.webp
-alt: my third blog post
+alt: a 3D CAD model of a triangular platform with 3 wheels installed at the corners at 60 degree angles
 published: true
 created: 2016-05-11
 updated: 2023-11-15
@@ -22,14 +22,14 @@ My BB-8 is a "hamster" design meaning there is a robotic platform that drives al
 **BB-8 drive platform mocked up inside the body sphere**
 
 <position justify="center">
-  <progressive-image src="/assets/posts/bb8-progress-2016/bb8-01.webp" width="650px" alt="a" size="large" >
+  <progressive-image src="/assets/posts/bb8-progress-2016/bb8-01.webp" width="650px" alt="a large clear ball with robotic platform and armature inside it and a styrofoam half-dome sitting atop the ball" size="large" >
   </progressive-image>
 </position>
 
 **BB-8 drive platform 3D model**
 
 <position justify="center">
-  <progressive-image src="/assets/posts/bb8-progress-2016/bb8-02.webp" width="650px" alt="a" size="large" >
+  <progressive-image src="/assets/posts/bb8-progress-2016/bb8-02.webp" width="650px" alt="a 3D CAD model of a triangular platform with 3 wheels installed at the corners at 60 degree angles" size="large" >
   </progressive-image>
 </position>
 
@@ -58,21 +58,21 @@ The primary microprocessor controlling BB-8's body is a Microchip PIC32 Motion C
 **BB-8 Primary MCU: PIC32**
 
 <position justify="center">
-  <progressive-image src="/assets/posts/bb8-progress-2016/bb8-03.webp" width="650px" alt="a" size="large" >
+  <progressive-image src="/assets/posts/bb8-progress-2016/bb8-03.webp" width="650px" alt="triangular plastic platform with an electronic circuit mounted to it and many colorful wires splayed in all directions" size="large" >
   </progressive-image>
 </position>
 
 **Daughter board with XBEE radio, OLED display, and Neopixel LEDs**
 
 <position justify="center">
-  <progressive-image src="/assets/posts/bb8-progress-2016/bb8-04.webp" width="650px" alt="a" size="large" >
+  <progressive-image src="/assets/posts/bb8-progress-2016/bb8-04.webp" width="650px" alt="an electronic circuit wired to a string of RGB LEDs illuminated in many colors" size="large" >
   </progressive-image>
 </position>
 
 **BB-8 Audio: PIC24 MCU, MAX9744 Amp, and transducer "speakers"**
 
 <position justify="center">
-  <progressive-image src="/assets/posts/bb8-progress-2016/bb8-05.webp" width="650px" alt="a" size="large" >
+  <progressive-image src="/assets/posts/bb8-progress-2016/bb8-05.webp" width="650px" alt="an electronic circuit wired to two surface transducer speakers" size="large" >
   </progressive-image>
 </position>
 

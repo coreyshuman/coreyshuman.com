@@ -2,7 +2,7 @@
 title: Stereoscopic Camera Gimbal Wiring Details
 description: Here is how I wired up my 3-axis gimbal controlled by a VR headset.
 img: /assets/posts/camera-gimbal-wiring/gimbal-02.webp
-alt: my third blog post
+alt: metal mechanism mounted to a wooden base via a vertical channel and metal shaft
 published: true
 created: 2016-01-07
 updated: 2023-11-14

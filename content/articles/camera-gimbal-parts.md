@@ -1,6 +1,6 @@
 ---
 title: Stereoscopic Gimbal – Parts List and Detailed Photos
-description: A compiled list of components and upclose photos of the Stereoscopic Gimbal.
+description: A compiled list of components and up-close photos of the Stereoscopic Gimbal.
 img: /assets/posts/camera-gimbal-parts/gimbal-03.webp
 alt: my third blog post
 published: true
@@ -80,12 +80,12 @@ Here are my detailed build photos along with some commentary (click for larger).
 3 inch channel supporting 3/8 inch shaft and mounted to board. Notice the thrust washer (blue) between the base and horizontal channel.
 
 <position justify="center">
-  <progressive-image src="/assets/posts/camera-gimbal-parts/gimbal-01.webp" width="650px" alt="a" size="large" >
+  <progressive-image src="/assets/posts/camera-gimbal-parts/gimbal-01.webp" width="650px" alt="3 inch metal channel with a 3/8 inch metal shaft mounted via two pillow blocks" size="large" >
   </progressive-image>
 </position>
 
 <position justify="center">
-  <progressive-image src="/assets/posts/camera-gimbal-parts/gimbal-02.webp" width="650px" alt="a" size="large" >
+  <progressive-image src="/assets/posts/camera-gimbal-parts/gimbal-02.webp" width="650px" alt="metal mechanism mounted to a wooden base via a vertical channel and metal shaft" size="large" >
   </progressive-image>
 </position>
 
@@ -94,21 +94,21 @@ Here are my detailed build photos along with some commentary (click for larger).
 Note - servo is removed in this photo.
 
 <position justify="center">
-  <progressive-image src="/assets/posts/camera-gimbal-parts/gimbal-03.webp" width="650px" alt="a" size="large" >
+  <progressive-image src="/assets/posts/camera-gimbal-parts/gimbal-03.webp" width="650px" alt="metal gear mounted to a metal channel with an open spot available for mounting a servo motor" size="large" >
   </progressive-image>
 </position>
 
 ## Vertical Channel
 
 <position justify="center">
-  <progressive-image src="/assets/posts/camera-gimbal-parts/gimbal-04.webp" width="650px" alt="a" size="large" >
+  <progressive-image src="/assets/posts/camera-gimbal-parts/gimbal-04.webp" width="650px" alt="vertical length of metal channel with servo mounted to it and lengths of wire running up the channel" size="large" >
   </progressive-image>
 </position>
 
 4.5 inch belt around 1 and 2 inch hubs. I would recommend using a timing (notched) belt instead of this smooth belt because it slips too much.
 
 <position justify="center">
-  <progressive-image src="/assets/posts/camera-gimbal-parts/gimbal-05.webp" width="650px" alt="a" size="large" >
+  <progressive-image src="/assets/posts/camera-gimbal-parts/gimbal-05.webp" width="650px" alt="vertical length of metal channel with a small hub at the bottom and larger hub at the top with a rubber belt stretched around the hubs" size="large" >
   </progressive-image>
 </position>
 
@@ -129,13 +129,13 @@ The tilt mechanism (black) is all from a single kit. Servo City offers a great Y
 ## Complete Without Electronics
 
 <position justify="center">
-  <progressive-image src="/assets/posts/camera-gimbal-parts/gimbal-06.webp" width="650px" alt="a" size="large" >
+  <progressive-image src="/assets/posts/camera-gimbal-parts/gimbal-06.webp" width="650px" alt="a 3-axis metal and plastic gimbal assembly mounted to a piece of wood" size="large" >
   </progressive-image>
 </position>
 
 ## Complete With Electronics
 
 <position justify="center">
-  <progressive-image src="/assets/posts/camera-gimbal-parts/gimbal-07.webp" width="650px" alt="a" size="large" >
+  <progressive-image src="/assets/posts/camera-gimbal-parts/gimbal-07.webp" width="650px" alt="a plastic and metal 3-axis gimbal on which is mounted two raspberry pi computers each connected to a small camera" size="large" >
   </progressive-image>
 </position>

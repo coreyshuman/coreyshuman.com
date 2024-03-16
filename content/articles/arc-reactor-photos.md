@@ -2,7 +2,7 @@
 title: Evolution of a Wearable Arc Reactor – A Photo Diary
 description: From prototype to final prop.
 img: /assets/posts/arc-reactor-photo-diary/arc-13.webp
-alt: my third blog post
+alt: 3D printed &quot;arc reactor&quot; in a finished and assembled state with painted accents and copper wiring details
 published: true
 created: 2015-10-16
 updated: 2023-11-21

@@ -2,7 +2,7 @@
 title: OLED Display for Custom BB-8
 description: Using an OLED screen to diagnose robot pitch, roll, and yaw.
 img: /assets/posts/bb8-progress-2015/bb8-04.webp
-alt: my third blog post
+alt: side-by-side images of an OLED screen in two states, one showing a crude image of bb-8 with the words 'BB-8 Corey' and one showing a series of lines and dots which represent input states
 published: true
 created: 2015-09-15
 updated: 2023-11-15
@@ -27,6 +27,6 @@ I’ve added an OLED display to BB-8 to assist me in configuring and testing the
 **BB-8 OLED Diagnostic Screen**
 
 <position justify="center">
-  <progressive-image src="/assets/posts/bb8-oled/oled-02.webp" width="650px" alt="a small screen showing 8 progress bars which correspond to input data, and 3 numbers cooresponding to pitch, roll, and yaw" size="large" >
+  <progressive-image src="/assets/posts/bb8-oled/oled-02.webp" width="650px" alt="a small screen showing 8 progress bars which correspond to input data, and 3 numbers corresponding to pitch, roll, and yaw" size="large" >
   </progressive-image>
 </position>

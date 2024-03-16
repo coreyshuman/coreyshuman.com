@@ -19,21 +19,21 @@ _This article was originally posted on January 6, 2011 using .NET Framework 4.0 
 Windows Forms components don't support true transparency out of the box. When you set a control to have a transparent background, really all you're doing is telling it to take on the background color of the control underneath it, as in these example pictures:
 
 <position justify="center">
-  <progressive-image src="/assets/posts/transparent-winform/transparent-01.webp" alt="a scenic desert" size="large" radius="7px" >
+  <progressive-image src="/assets/posts/transparent-winform/transparent-01.webp" alt="a winform with two blue boxes side-by-side and text written across them such that the background of the text box is visible" size="large" radius="7px" >
   </progressive-image>
 </position>
 
 In this picture, I have two panels with their `BackColor` set to `ActiveCaption`, and the label's `BackColor` set to `Transparent`. The label is a child of the form, not the panel, so it takes on the form's `BackColor`, which is set to `Control`.
 
 <position justify="center">
-  <progressive-image src="/assets/posts/transparent-winform/transparent-02.webp" alt="a scenic desert" size="large" radius="7px" >
+  <progressive-image src="/assets/posts/transparent-winform/transparent-02.webp" alt="a winform with a blue box which is partially obscured by a white box and a text box" size="large" radius="7px" >
   </progressive-image>
 </position>
 
 In this picture, one of the panels has been moved to overlap the other panel. This panel's `BackColor` property is changed to `Transparent`. I also gave it a border so you could see exactly where it was. Since it is also a child of the form, it has taken in the form's `BackColor` as well. This is more apparent when we set an image as the background of the form:
 
 <position justify="center">
-  <progressive-image src="/assets/posts/transparent-winform/transparent-03.webp" alt="a scenic desert" size="large" radius="7px" >
+  <progressive-image src="/assets/posts/transparent-winform/transparent-03.webp" alt="a winform with a scull background, a blue box obscuring part of the scull, a clear box with black outline showing the scull through part of the blue box, and a text box showing the scull through part of the blue box" size="large" radius="7px" >
   </progressive-image>
 </position>
 
@@ -132,7 +132,7 @@ protected override void OnPaint(PaintEventArgs e)
 We don't want to draw a background at all, so we override `OnPaintBackground` to do nothing. We want to do all our drawing in `OnPaint`. To achieve this I created a new `Color` object using `Color.FromArgb()`. I've used the value of `Opacity` (which is a double from 0 to 1, so it needs to be converted to 0 through 255 to work as an alpha value), and the panel's current `BackColor` to generate a new color with real transparency. I then fill the `ClientRectangle` with that color using the `PaintEventArgs`'s `Graphics` object, and I call `base.OnPaint()`, which does the rest of the processing. You can see the result here:
 
 <position justify="center">
-  <progressive-image src="/assets/posts/transparent-winform/transparent-04.webp" alt="a scenic desert" size="large" radius="7px" >
+  <progressive-image src="/assets/posts/transparent-winform/transparent-04.webp" alt="a winform with a scull background, a blue box obscuring part of the scull, a dark semitransparent box with black outline showing the scull and the blue box behind it, and a text box showing the scull through part of the blue box" size="large" radius="7px" >
   </progressive-image>
 </position>
 
@@ -171,7 +171,7 @@ public partial class TransparentLabel : Label {
 Finally, here is a picture with the properly transparent panel and labels:
 
 <position justify="center">
-  <progressive-image src="/assets/posts/transparent-winform/transparent-05.webp" alt="a scenic desert" size="large" radius="7px" >
+  <progressive-image src="/assets/posts/transparent-winform/transparent-05.webp" alt="a winform with a scull background, a blue box obscuring part of the scull, a dark semitransparent box with black outline showing the scull and the blue box behind it, and a text box showing showing proper transparency of the blue box behind it" size="large" radius="7px" >
   </progressive-image>
 </position>
 
